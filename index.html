@@ -16,24 +16,18 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=16">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..800&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" as="image" href="assets/bg/fundo.png">
+  <link rel="stylesheet" href="css/style.css?v=20">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <a class="skip" href="#app">Pular para o conteúdo</a>
 
-  <!-- fundo: atmosfera vermelha contínua do topo ao rodapé -->
-  <div class="atmos" aria-hidden="true">
-    <span class="orb orb--sun"></span>
-    <span class="orb orb--wine"></span>
-    <span class="orb orb--dark"></span>
-    <span class="orb orb--mid"></span>
-    <span class="orb orb--deep"></span>
-    <span class="orb orb--ember"></span>
-    <span class="orb orb--spark"></span>
-    <span class="atmos__veil"></span>
-  </div>
+  <!-- fundo global: assets/bg/fundo.png atravessa Hero → Projetos → Serviços.
+       As seções ficam transparentes sobre ele, sem quebras. -->
   <div class="grain" aria-hidden="true"></div>
 
   <header class="nav" data-nav>
@@ -50,15 +44,6 @@
     <!-- ================= HOME ================= -->
     <div id="home">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__bg" aria-hidden="true">
-          <span class="hero__glow hero__glow--rise"></span>
-          <span class="hero__glow hero__glow--left"></span>
-          <span class="hero__glow hero__glow--wine"></span>
-          <span class="hero__shade"></span>
-          <span class="hero__horizon"></span>
-          <span class="hero__grain"></span>
-        </div>
-
         <div class="hero__center">
           <p class="hero__kicker" data-in style="--d:.2s">Design · Desenvolvimento · Sistemas</p>
           <h1 class="hero__name" id="hero-title" aria-label="Cardoso"><span class="fit" data-fit data-letters>CARDOSO</span></h1>
@@ -73,17 +58,9 @@
         </div>
       </section>
 
-      <section class="section" id="projetos" aria-labelledby="work-title">
+      <section class="section" id="projetos" aria-labelledby="cat-title">
         <header class="sec-head" data-reveal>
-          <h2 class="sec-title" id="work-title">Trabalhos selecionados</h2>
-          <p class="sec-note" data-count></p>
-        </header>
-        <div class="featured" data-featured></div>
-      </section>
-
-      <section class="section" id="categorias" aria-labelledby="cat-title">
-        <header class="sec-head" data-reveal>
-          <h2 class="sec-title" id="cat-title">Por categoria</h2>
+          <h2 class="sec-title" id="cat-title">Projetos</h2>
           <p class="sec-note">Escolha uma categoria para ver todos os projetos dela.</p>
         </header>
         <div class="shelf" data-shelf></div>
@@ -93,7 +70,7 @@
               <p class="drawer__count" data-drawer-count></p>
               <h3 class="drawer__title" data-drawer-title tabindex="-1"></h3>
             </div>
-            <a class="drawer__close" href="#categorias" data-drawer-close>Fechar categoria <span aria-hidden="true">×</span></a>
+            <a class="drawer__close" href="#projetos" data-drawer-close>Fechar categoria <span aria-hidden="true">×</span></a>
           </header>
           <div class="drawer__grid" data-drawer-grid></div>
         </div>
@@ -125,21 +102,33 @@
     <article id="page" class="proj" hidden></article>
   </main>
 
-  <footer class="footer" id="contato" aria-labelledby="footer-title">
-    <div class="footer__inner">
-      <p class="footer__status"><span class="dot" aria-hidden="true"></span> Disponível para novos projetos</p>
-      <h2 class="footer__title" id="footer-title" data-reveal>Vamos criar o próximo?</h2>
-      <div class="footer__links" data-contact data-reveal></div>
-    </div>
-    <p class="footer__name" aria-hidden="true"><span class="fit" data-fit>CARDOSO</span></p>
-    <div class="footer__base">
-      <span>© <span data-year>2026</span> Cardoso</span>
-      <span>Design · Desenvolvimento · Sistemas</span>
-      <a href="#/" data-top>Voltar ao topo ↑</a>
+  <footer class="foot" id="contato">
+    <div class="wrap">
+      <div class="foot-word" data-foot-word aria-hidden="true">CARDOSO</div>
+      <div class="foot-grid">
+        <div>
+          <h3>Vamos tirar<br>seu projeto do papel?</h3>
+          <a class="btn wa" data-foot-wa href="#contato" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-3.4-.7a11.6 11.6 0 0 1-4.8-4.2c-.4-.5-1.3-1.7-1.3-3.2s.8-2.3 1.1-2.6c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.3.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.5Z"/></svg>Chamar no WhatsApp</a>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <ul data-foot-contact></ul>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#/" data-top>Voltar ao topo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom"><span>© <span data-year>2026</span> Cardoso · Design &amp; Desenvolvimento</span><span>Feito com cuidado</span></div>
     </div>
   </footer>
 
   <script src="js/data.js?v=10"></script>
-  <script src="js/main.js?v=14" defer></script>
+  <script src="js/main.js?v=16" defer></script>
 </body>
 </html>

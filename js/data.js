@@ -21,9 +21,8 @@ window.CATEGORIES = [
   { id: 'sistemas', name: 'Sistemas' }
 ];
 
-// featured: aparece em "Trabalhos selecionados", na ordem do número
 window.PROJECTS = [
-  { id: 'doctorsmall', cat: 'academias', name: 'Doctor Small Academia', type: 'Academia premium', place: 'Araguatins — TO', featured: 1,
+  { id: 'doctorsmall', cat: 'academias', name: 'Doctor Small Academia', type: 'Academia premium', place: 'Araguatins — TO',
     text: 'Site comercial para uma academia premium: estrutura, diferenciais, horário em tempo real e matrícula integrada ao checkout da NextFit.',
     services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2', 's3'] },
 
@@ -34,7 +33,7 @@ window.PROJECTS = [
     text: 'Presença digital editorial para um estúdio de beleza, com tipografia elegante e agendamento em destaque.',
     services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2'] },
 
-  { id: 'miphone', cat: 'tecnologia', name: 'MiPhone', type: 'Loja de iPhones e assistência', place: 'Brasil', featured: 2,
+  { id: 'miphone', cat: 'tecnologia', name: 'MiPhone', type: 'Loja de iPhones e assistência', place: 'Brasil',
     text: 'Loja de aparelhos e assistência técnica. A abertura é um vídeo controlado pela rolagem: os iPhones giram enquanto a mensagem muda.',
     services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: ['s1', 's2', 's3'],
     variants: [{ id: 'jkimports', name: 'JK Imports' }, { id: 'jlcimportados', name: 'JLC Importados' }, { id: 'lealimports', name: 'Leal Imports' }] },
@@ -42,11 +41,11 @@ window.PROJECTS = [
     text: 'Site bilíngue de uma agência de sites e sistemas sob medida, com processo, serviços e contato.',
     services: ['Web design', 'Desenvolvimento'], tech: ['Next.js'], shots: ['s1', 's2'] },
 
-  { id: 'blackburguer', cat: 'alimentacao', name: 'Black Burguer', type: 'Hamburgueria artesanal', place: 'Araguatins — TO', featured: 4,
+  { id: 'blackburguer', cat: 'alimentacao', name: 'Black Burguer', type: 'Hamburgueria artesanal', place: 'Araguatins — TO',
     text: 'O hambúrguer se desmonta camada por camada enquanto a página rola — e cada camada vira um argumento. Cardápio e pedido pelo WhatsApp.',
     services: ['Web design', 'Desenvolvimento'], tech: ['React', 'TypeScript', 'Framer Motion'], shots: ['s1'],
     variants: [{ id: 'cajui', name: 'Cajuí — Palmas' }] },
-  { id: 'brasa77', cat: 'alimentacao', name: 'Brasa 77', type: 'Hamburgueria artesanal', place: 'São Paulo — SP', featured: 5,
+  { id: 'brasa77', cat: 'alimentacao', name: 'Brasa 77', type: 'Hamburgueria artesanal', place: 'São Paulo — SP',
     text: 'Identidade de brasa e fumaça para uma hamburgueria: cardápio visual, destaques da casa e pedido direto.',
     services: ['Web design', 'Desenvolvimento'], tech: ['React'], shots: ['s1', 's2'] },
   { id: 'bucco', cat: 'alimentacao', name: 'Bucco Burger', type: 'Hamburgueria', place: 'Morretes — PR',
@@ -78,7 +77,7 @@ window.PROJECTS = [
     text: 'Landing page de hospital veterinário 24 horas: estrutura, emergência e contato imediato com a equipe.',
     services: ['Web design', 'Desenvolvimento'], tech: ['Next.js'], shots: ['s1', 's2'] },
 
-  { id: 'helios', cat: 'energia', name: 'Helios', type: 'Energia solar de alto padrão', place: 'Brasil', featured: 6,
+  { id: 'helios', cat: 'energia', name: 'Helios', type: 'Energia solar de alto padrão', place: 'Brasil',
     text: 'Energia solar de alto padrão com uma estética escura e precisa: resultados, engenharia e simulação.',
     services: ['Web design', 'Desenvolvimento'], tech: ['Next.js'], shots: ['s1', 's2'] },
   { id: 'nowtech', cat: 'energia', name: 'Nowtech', type: 'Energia solar', place: 'Brasil',
@@ -94,7 +93,7 @@ window.PROJECTS = [
     text: 'Site multipágina de energia solar com serviços, projetos, calculadora e blog.',
     services: ['Web design'], tech: ['Framer'], shots: ['s1', 's2'] },
 
-  { id: 'advocacia', cat: 'institucional', name: 'Guilherme Podgaietsky', type: 'Advocacia criminal', place: 'Brasil', featured: 3,
+  { id: 'advocacia', cat: 'institucional', name: 'Guilherme Podgaietsky', type: 'Advocacia criminal', place: 'Brasil',
     text: 'Advocacia criminal com sobriedade: preto, dourado e uma comunicação direta sobre sigilo e estratégia.',
     services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2'] },
   { id: 'portoglass', cat: 'institucional', name: 'Porto Glass', type: 'Vidros, alumínio e mármore', place: 'Bacabal — MA',

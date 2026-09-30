@@ -46,34 +46,23 @@
   fit();
   let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(fit, 80); });
   const ready = () => { fit(); root.classList.add('is-ready'); };
+  // CARDOSO aparece desde o primeiro frame: pronto imediato e síncrono
+  // (sem esperar fonte, CSS externo ou próximo quadro). A fonte só refaz
+  // a medição quando carregar.
+  ready();
   if (document.fonts && document.fonts.load) {
-    Promise.race([document.fonts.load('800 100px "Inter Tight"'), new Promise((r) => setTimeout(r, 1200))]).then(ready, ready);
-  } else ready();
+    document.fonts.load('800 100px "Inter Tight"').then(fit, fit);
+  }
 
-  /* ---------- navegação e fundo ---------- */
+  /* ---------- navegação ---------- */
   const nav = $('[data-nav]');
-  const sun = $('.orb--sun');
-  const spark = $('.orb--spark');
   let ticking = false;
   function onScroll() {
     ticking = false;
     nav.classList.toggle('is-solid', scrollY > 30);
-    if (!reduced && sun) sun.style.translate = `0 ${(-scrollY * 0.04).toFixed(1)}px`;
   }
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
-  if (finePointer && !reduced && spark) {
-    let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
-    const loop = () => {
-      cx += (tx - cx) * 0.04; cy += (ty - cy) * 0.04;
-      spark.style.translate = `${cx.toFixed(1)}px ${cy.toFixed(1)}px`;
-      raf = Math.abs(tx - cx) + Math.abs(ty - cy) > 0.5 ? requestAnimationFrame(loop) : 0;
-    };
-    addEventListener('pointermove', (e) => {
-      tx = (e.clientX / innerWidth - 0.5) * 80; ty = (e.clientY / innerHeight - 0.5) * 60;
-      if (!raf) raf = requestAnimationFrame(loop);
-    }, { passive: true });
-  }
 
   /* ---------- rastro de tinta rubi que segue o cursor ----------
      Reinterpretação em vermelho da lógica de trail do portfólio de
@@ -175,14 +164,12 @@
   const observe = (scope = document) => $$('[data-reveal]:not(.in)', scope).forEach((el) => io.observe(el));
 
   /* ---------- card de projeto ---------- */
-  function card(p, { tag = false, delay = 0 } = {}) {
-    const c = catById(p.cat);
+  function card(p, { delay = 0 } = {}) {
     return `
       <a class="card" href="#/projeto/${p.id}" data-id="${p.id}" data-reveal style="--d:${delay}s">
         <div class="card__media">
           <img src="${src(p.id + '/hero-sm')}" srcset="${src(p.id + '/hero-sm')} 800w, ${src(p.id + '/hero')} 1600w"
             sizes="(max-width: 860px) 92vw, 50vw" alt="Página inicial do site ${esc(p.name)}" loading="lazy" decoding="async">
-          ${tag ? `<span class="card__tag">${esc(c.name)}</span>` : ''}
           <span class="card__go" aria-hidden="true">↗</span>
         </div>
         <div class="card__meta">
@@ -192,12 +179,7 @@
       </a>`;
   }
 
-  /* trabalhos selecionados */
-  const featured = PROJECTS.filter((p) => p.featured).sort((a, b) => a.featured - b.featured);
-  $('[data-featured]').innerHTML = featured.map((p, i) => card(p, { tag: true, delay: (i % 2) * 0.1 })).join('');
-  $('[data-count]').textContent = `${PROJECTS.length} projetos em ${CATS.length} categorias. Uma seleção:`;
-
-  /* ---------- categorias ---------- */
+  /* ---------- categorias (seção principal: Projetos) ---------- */
   const shelf = $('[data-shelf]');
   shelf.innerHTML = CATS.map((c, i) => {
     const ps = inCat(c.id);
@@ -268,6 +250,15 @@
     $$('.folder', shelf).forEach((f) => f.classList.remove('is-open'));
     drawer.hidden = true; drawerGrid.innerHTML = '';
   }
+  document.addEventListener('click', (e) => {
+    const close = e.target.closest('[data-drawer-close]');
+    if (!close) return;
+    e.preventDefault();
+    closeDrawer();
+    history.replaceState(null, '', '#projetos');
+    const target = document.getElementById('projetos');
+    if (target) target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+  });
 
   /* ---------- página do projeto ---------- */
   function renderProject(p) {
@@ -380,7 +371,6 @@
       return;
     }
     const target = h.length > 1 && !h.startsWith('#/') ? document.getElementById(h.slice(1)) : null;
-    if (h === '#categorias') closeDrawer();
     if (view === 'page') {
       showHome(() => { if (target) target.scrollIntoView({ behavior: 'instant' }); else jump(!h || h === '#/' ? 0 : homeY); });
       return;
@@ -390,13 +380,86 @@
   addEventListener('hashchange', route);
   if (location.hash.startsWith('#/')) route();
 
-  /* ---------- contato ---------- */
-  const links = [];
-  if (CONFIG.whatsapp) links.push([`https://wa.me/${CONFIG.whatsapp}`, 'WhatsApp']);
-  if (CONFIG.email) links.push([`mailto:${CONFIG.email}`, CONFIG.email]);
-  if (CONFIG.instagram) links.push([CONFIG.instagram, 'Instagram']);
-  $('[data-contact]').innerHTML = links.map(([href, t]) => `<a href="${esc(href)}"${href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${esc(t)} <span aria-hidden="true">↗</span></a>`).join('');
+  /* ---------- rodapé: contatos do CONFIG + palavra gigante animada ----------
+     Estrutura do Mauricio (foot-word por letra, onda + proximidade do mouse),
+     paleta adaptada à identidade Cardoso (vinho/rubi/branco). Sem inventar
+     dados: só renderiza o que existir em window.CONFIG. */
+  const waMsg = 'Olá! Vi seu portfólio e gostaria de fazer um orçamento.';
+  const waHref = CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(waMsg)}` : null;
+  const footWa = $('[data-foot-wa]');
+  if (footWa) {
+    if (waHref) { footWa.href = waHref; }
+    else { footWa.hidden = true; }
+  }
+  const footLinks = [];
+  if (CONFIG.whatsapp) footLinks.push([waHref, 'WhatsApp', true]);
+  if (CONFIG.email) footLinks.push([`mailto:${CONFIG.email}`, CONFIG.email, false]);
+  if (CONFIG.instagram) footLinks.push([CONFIG.instagram, 'Instagram', true]);
+  const footContact = $('[data-foot-contact]');
+  if (footContact) {
+    footContact.innerHTML = footLinks.map(([href, t, ext]) =>
+      `<li><a href="${esc(href)}"${ext ? ' target="_blank" rel="noopener"' : ''}>${esc(t)}</a></li>`).join('');
+  }
   const yr = $('[data-year]'); if (yr) yr.textContent = new Date().getFullYear();
+
+  /* palavra gigante do rodapé: onda contínua + destaque perto do mouse.
+     Mesma técnica da referência: cada letra é um span, a cor mistura
+     base → rubi → branco quente conforme a onda passa. */
+  (() => {
+    const word = $('[data-foot-word]');
+    if (!word) return;
+    const text = word.textContent;
+    word.textContent = '';
+    const letters = [...text].map((ch) => {
+      const s = document.createElement('span');
+      s.textContent = ch === ' ' ? ' ' : ch;
+      word.append(s);
+      return { el: s, k: 0 };
+    });
+    if (reduced) return;
+    const foot = word.closest('.foot') || document.body;
+    const base = [86, 50, 54], hi = [225, 60, 75], peak = [255, 232, 233];
+    const mix = (a, b, k) => a.map((v, i) => Math.round(v + (b[i] - v) * k));
+    const mouse = { x: -9999, y: -9999 };
+    if (finePointer) {
+      foot.addEventListener('pointermove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+      foot.addEventListener('pointerleave', () => { mouse.x = mouse.y = -9999; });
+    }
+    let on = false, last = 0;
+    const n = letters.length;
+    let fs = parseFloat(getComputedStyle(word).fontSize) || 16;
+    addEventListener('resize', () => { fs = parseFloat(getComputedStyle(word).fontSize) || 16; }, { passive: true });
+    function frame(now) {
+      if (!on) return;
+      const t = now * 0.001;
+      const dt = last ? Math.min((now - last) * 0.001, 0.05) : 1 / 60;
+      last = now;
+      const p = ((t * 0.32) % 1.5) * (n + 6) - 3;
+      const pointerActive = finePointer && mouse.x > -9000;
+      const bounds = pointerActive ? letters.map((L) => L.el.getBoundingClientRect()) : null;
+      const targets = letters.map((L, i) => {
+        const wave = Math.exp(-Math.pow(i - p, 2) / 5);
+        if (!pointerActive) return wave * 0.85;
+        const r = bounds[i];
+        const d = Math.hypot(mouse.x - (r.left + r.width / 2), (mouse.y - (r.top + r.height / 2)) * 0.7);
+        const near = Math.max(0, 1 - d / (fs * 1.5));
+        return Math.max(wave * 0.85, near * near);
+      });
+      const ease = 1 - Math.exp(-dt * 10.5);
+      letters.forEach((L, i) => {
+        L.k += (targets[i] - L.k) * ease;
+        const c = L.k < 0.6 ? mix(base, hi, L.k / 0.6) : mix(hi, peak, (L.k - 0.6) / 0.4);
+        L.el.style.color = `rgb(${c})`;
+        L.el.style.transform = `translateY(${-L.k * 0.14}em)`;
+      });
+      requestAnimationFrame(frame);
+    }
+    new IntersectionObserver(([e]) => {
+      const visible = e.isIntersecting;
+      if (visible && !on) { on = true; last = 0; requestAnimationFrame(frame); }
+      else if (!visible) { on = false; last = 0; }
+    }).observe(word);
+  })();
 
   observe();
 })();
