@@ -39,7 +39,7 @@
       el.style.setProperty('--fs', '100px');
       const w = el.getBoundingClientRect().width || 1;
       let fs = 100 * box.clientWidth / w;
-      if (box.classList.contains('hero__name')) fs = Math.min(fs, innerHeight * 0.42);
+      if (box.classList.contains('hero__name')) fs = Math.min(fs, innerHeight * 0.34);
       el.style.setProperty('--fs', (fs * 0.995).toFixed(2) + 'px');
     });
   }
