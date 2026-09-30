@@ -1,8 +1,4 @@
-/* CARDOSO — portfólio
-   Rotas por hash, sem camadas fixas e sem travar a rolagem:
-   #/                    início
-   #/categoria/<id>      início com a categoria aberta
-   #/projeto/<id>        página do projeto (rolagem normal da janela) */
+/* CARDOSO — portfólio. As pastas e os projetos vivem no mesmo modal sobre a home. */
 (() => {
   'use strict';
 
@@ -11,7 +7,6 @@
   const root = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
-  const pad = (n) => String(n).padStart(2, '0');
   const src = (path) => `assets/work/${path}.webp`;
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -23,9 +18,11 @@
   const inCat = (id) => PROJECTS.filter((p) => p.cat === id);
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
-  const home = $('#home');
-  const page = $('#page');
-  history.scrollRestoration = 'manual';
+  const modal = $('[data-modal]');
+  const panel = $('[data-modal-panel]');
+  const content = $('[data-modal-content]');
+  const backButton = $('[data-modal-back]');
+  const context = $('[data-modal-context]');
 
   /* ---------- tipografia que ocupa a largura ---------- */
   $$('[data-letters]').forEach((el) => {
@@ -163,13 +160,13 @@
   }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   const observe = (scope = document) => $$('[data-reveal]:not(.in)', scope).forEach((el) => io.observe(el));
 
-  /* ---------- card de projeto ---------- */
-  function card(p, { delay = 0 } = {}) {
+  /* ---------- pastas na home ---------- */
+  function card(p, index) {
     return `
-      <a class="card" href="#/projeto/${p.id}" data-id="${p.id}" data-reveal style="--d:${delay}s">
+      <a class="card" href="#projetos" data-id="${p.id}" aria-label="Ver projeto ${esc(p.name)}">
         <div class="card__media">
           <img src="${src(p.id + '/hero-sm')}" srcset="${src(p.id + '/hero-sm')} 800w, ${src(p.id + '/hero')} 1600w"
-            sizes="(max-width: 860px) 92vw, 50vw" alt="Página inicial do site ${esc(p.name)}" loading="lazy" decoding="async">
+            sizes="(max-width: 760px) 88vw, 42vw" alt="Página inicial do site ${esc(p.name)}" loading="${index < 2 ? 'eager' : 'lazy'}" decoding="async">
           <span class="card__go" aria-hidden="true">↗</span>
         </div>
         <div class="card__meta">
@@ -179,7 +176,6 @@
       </a>`;
   }
 
-  /* ---------- categorias (seção principal: Projetos) ---------- */
   const shelf = $('[data-shelf]');
   shelf.innerHTML = CATS.map((c, i) => {
     const ps = inCat(c.id);
@@ -187,204 +183,158 @@
     const extra = ps[0] ? (ps[0].shots || []).map((s) => (s.includes('/') ? s : ps[0].id + '/' + s)) : [];
     while (imgs.length < 3 && extra.length) imgs.push(extra.shift());
     while (imgs.length < 3 && ps[0]) imgs.push(ps[0].id + '/hero-sm');
-    // ordem de pintura: laterais atrás, principal na frente
     const order = [imgs[1], imgs[2], imgs[0]];
     return `
-      <a class="folder" href="#/categoria/${c.id}" data-cat="${c.id}" data-reveal style="--d:${(i % 4) * 0.06}s" aria-controls="drawer" aria-label="${esc(c.name)}: ${plural(ps.length, 'projeto', 'projetos')}">
+      <button class="folder" type="button" data-cat="${c.id}" data-reveal style="--d:${(i % 4) * 0.06}s" aria-label="${esc(c.name)}: ${plural(ps.length, 'projeto', 'projetos')}">
         <span class="folder__back"></span>
         <span class="folder__screens">${order.map((s) => `<span class="folder__screen"><img src="${src(s)}" alt="" loading="lazy" decoding="async"></span>`).join('')}</span>
         <span class="folder__front">
           <span class="folder__name">${esc(c.name)}</span>
           <span class="folder__count">${plural(ps.length, 'projeto', 'projetos')}<span class="folder__arrow" aria-hidden="true">↗</span></span>
         </span>
-      </a>`;
+      </button>`;
   }).join('');
 
-  const drawer = $('[data-drawer]');
-  drawer.id = 'drawer';
-  const drawerGrid = $('[data-drawer-grid]');
-  let openCat = null;
+  let activeCat = null;
+  let activeProject = null;
+  let opener = null;
+  let savedScroll = 0;
+  let categoryScroll = 0;
+  let savedPaddingRight = '';
 
-  function openDrawer(id, { scroll = true, animate = true } = {}) {
-    const c = catById(id); if (!c) return;
-    const ps = inCat(id);
-    const folder = $(`.folder[data-cat="${id}"]`, shelf);
-    $$('.folder', shelf).forEach((f) => f.classList.toggle('is-open', f === folder));
-    if (openCat === id && !drawer.hidden) {
-      if (scroll) drawer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
-      return;
-    }
-    openCat = id;
-    $('[data-drawer-title]').textContent = c.name;
-    $('[data-drawer-count]').textContent = plural(ps.length, 'projeto', 'projetos');
-    drawerGrid.innerHTML = ps.map((p, i) => card(p, { delay: Math.min(i, 6) * 0.07 })).join('');
-    drawer.hidden = false;
-    const cards = $$('.card', drawerGrid);
-
-    if (animate && !reduced && folder) {
-      // os primeiros projetos saem das telas da pasta (FLIP em coordenadas do documento)
-      const screens = $$('.folder__screen', folder).reverse();
-      cards.forEach((el, i) => {
-        el.classList.add('in');
-        const media = $('.card__media', el);
-        const from = screens[i];
-        if (from && i < 3) {
-          const a = from.getBoundingClientRect(), b = media.getBoundingClientRect();
-          const sx = a.width / b.width;
-          media.animate([
-            { transform: `translate(${a.left - b.left}px, ${a.top - b.top}px) scale(${sx})`, transformOrigin: '0 0', opacity: 0.9 },
-            { transform: 'none', transformOrigin: '0 0', opacity: 1 }
-          ], { duration: 1100, delay: i * 70, easing: 'cubic-bezier(.16, 1, .3, 1)', fill: 'backwards' });
-          $('.card__meta', el).animate([{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: 500 + i * 70, easing: 'ease-out', fill: 'backwards' });
-        } else {
-          el.animate([{ opacity: 0, transform: 'translateY(40px)' }, { opacity: 1, transform: 'none' }], { duration: 900, delay: 300 + i * 70, easing: 'cubic-bezier(.16, 1, .3, 1)', fill: 'backwards' });
-        }
-      });
-    } else cards.forEach((el) => el.classList.add('in'));
-
-    if (scroll) requestAnimationFrame(() => drawer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }));
+  function animateContent() {
+    if (reduced) return;
+    content.classList.remove('is-swapping');
+    void content.offsetWidth;
+    content.classList.add('is-swapping');
   }
-  function closeDrawer() {
-    if (drawer.hidden) return;
-    openCat = null;
-    $$('.folder', shelf).forEach((f) => f.classList.remove('is-open'));
-    drawer.hidden = true; drawerGrid.innerHTML = '';
-  }
-  document.addEventListener('click', (e) => {
-    const close = e.target.closest('[data-drawer-close]');
-    if (!close) return;
-    e.preventDefault();
-    closeDrawer();
-    history.replaceState(null, '', '#projetos');
-    const target = document.getElementById('projetos');
-    if (target) target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
-  });
 
-  /* ---------- página do projeto ---------- */
+  function renderCategory(c) {
+    const ps = inCat(c.id);
+    activeProject = null;
+    backButton.hidden = true;
+    context.textContent = 'Projetos';
+    content.innerHTML = `
+      <header class="modal-category__head">
+        <p class="modal-category__eyebrow">Projetos / ${esc(c.name)}</p>
+        <h2 id="portfolio-modal-title" class="modal-category__title" tabindex="-1">${esc(c.name)}</h2>
+        <p class="modal-category__count">${plural(ps.length, 'projeto', 'projetos')}</p>
+      </header>
+      <div class="modal-category__grid">${ps.map(card).join('')}</div>`;
+    animateContent();
+  }
+
   function renderProject(p) {
     const c = catById(p.cat);
-    const idx = PROJECTS.indexOf(p);
-    const next = PROJECTS[(idx + 1) % PROJECTS.length];
-    const shots = (p.shots || []).map((s) => (s.includes('/') ? s : p.id + '/' + s));
-    const g = [];
-    const phone = p.noMobile ? '' : `<figure class="shot shot--phone" data-reveal><img src="${src(p.id + '/m')}" alt="${esc(p.name)} no celular" loading="lazy"></figure>`;
-    if (shots.length) {
-      g.push(`<figure class="shot${phone ? ' shot--wide' : ''}" data-reveal><img src="${src(shots[0])}" alt="Outra seção do site ${esc(p.name)}" loading="lazy"></figure>`);
-      if (phone) g.push(phone);
-      shots.slice(1).forEach((s, i, arr) => g.push(`<figure class="shot${arr.length > 1 ? ' shot--half' : ''}" data-reveal style="--d:${i * 0.08}s"><img src="${src(s)}" alt="Outra seção do site ${esc(p.name)}" loading="lazy"></figure>`));
-    } else if (phone) g.push(phone.replace('shot--phone', 'shot--phone shot--solo'));
-
+    activeProject = p;
+    backButton.hidden = false;
+    backButton.textContent = `← ${c.name}`;
+    context.textContent = 'Projeto';
+    const shots = (p.shots || []).slice(0, 2).map((s) => (s.includes('/') ? s : p.id + '/' + s));
     const variants = p.variants ? `
-      <h2 class="proj__sub" data-reveal>A mesma base em outras marcas</h2>
-      <div class="variants">${p.variants.map((v, i) => `
-        <figure data-reveal style="--d:${i * 0.08}s"><div class="shot"><img src="${src(v.id + '/hero-sm')}" alt="Página inicial do site ${esc(v.name)}" loading="lazy"></div><figcaption>${esc(v.name)}</figcaption></figure>`).join('')}
+      <h3 class="proj__sub">A mesma base em outras marcas</h3>
+      <div class="variants">${p.variants.map((v) => `
+        <figure><div class="shot"><img src="${src(v.id + '/hero-sm')}" alt="Página inicial do site ${esc(v.name)}" loading="lazy" decoding="async"></div><figcaption>${esc(v.name)}</figcaption></figure>`).join('')}
       </div>` : '';
-
-    const meta = [['Categoria', c.name], ['Local', p.place], ['Serviços', p.services.join(', ')], ['Tecnologias', p.tech.join(', ')]]
+    const meta = [['Local', p.place], ['Serviços', p.services.join(' · ')], ['Tecnologias', p.tech.join(' · ')]]
       .filter(([, v]) => v && v !== '—');
-
-    page.innerHTML = `
-      <div class="proj__bar">
-        <a class="back" href="#/categoria/${c.id}">← Voltar</a>
-        <span>${pad(idx + 1)} / ${pad(PROJECTS.length)}</span>
-      </div>
-      <header class="proj__head">
-        <div>
-          <p class="proj__cat">${esc(c.name)} — ${esc(p.type)}</p>
-          <h1 class="proj__title" tabindex="-1">${esc(p.name)}</h1>
-          ${p.status ? `<p class="proj__status">${esc(p.status)}</p>` : ''}
-        </div>
-        <div class="proj__side">
-          <p class="proj__text">${esc(p.text)}</p>
-          <dl class="proj__meta">${meta.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
-          ${p.url ? `<a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener">Ver projeto <span aria-hidden="true">↗</span></a>` : ''}
-        </div>
-      </header>
-      <figure class="shot proj__hero" style="view-transition-name: shot"><img src="${src(p.id + '/hero')}" alt="Página inicial do site ${esc(p.name)}"></figure>
-      <div class="proj__gallery">${g.join('')}</div>
-      ${variants}
-      <a class="next" href="#/projeto/${next.id}">
-        <div><p class="next__label">Próximo projeto</p><p class="next__name">${esc(next.name)}</p></div>
-        <div class="card__media"><img src="${src(next.id + '/hero-sm')}" alt="" loading="lazy"></div>
-      </a>`;
-    observe(page);
+    content.innerHTML = `
+      <article class="portfolio-case">
+        <header class="proj__head">
+          <div>
+            <p class="proj__cat">${esc(c.name)}</p>
+            <h2 id="portfolio-modal-title" class="proj__title" tabindex="-1">${esc(p.name)}</h2>
+            <p class="proj__type">${esc(p.type)}</p>
+            ${p.status ? `<p class="proj__status">${esc(p.status)}</p>` : ''}
+          </div>
+          <div class="proj__side">
+            <p class="proj__text">${esc(p.text)}</p>
+            <dl class="proj__meta">${meta.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
+            ${p.url ? `<a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener">Ver projeto <span aria-hidden="true">↗</span></a>` : ''}
+          </div>
+        </header>
+        <figure class="shot proj__hero"><img src="${src(p.id + '/hero')}" alt="Página inicial do site ${esc(p.name)}" decoding="async"></figure>
+        ${shots.length ? `<h3 class="proj__sub">Outras telas</h3><div class="proj__gallery">${shots.map((s, i) => `<figure class="shot"><img src="${src(s)}" alt="Seção ${i + 1} do site ${esc(p.name)}" loading="lazy" decoding="async"></figure>`).join('')}</div>` : ''}
+        ${variants}
+      </article>`;
+    animateContent();
   }
 
-  /* ---------- rotas ---------- */
-  let view = 'home';
-  let homeY = 0;
-  let lastCardId = null;
-  document.addEventListener('click', (e) => {
-    const a = e.target.closest('a.card[data-id]');
-    if (a) lastCardId = a.dataset.id;
+  function openModal(c, folder) {
+    if (!c || !modal.hidden) return;
+    activeCat = c;
+    opener = folder;
+    savedScroll = window.scrollY;
+    categoryScroll = 0;
+    savedPaddingRight = document.body.style.paddingRight;
+    const scrollbar = window.innerWidth - document.documentElement.clientWidth;
+    if (scrollbar > 0) document.body.style.paddingRight = `${scrollbar}px`;
+    renderCategory(c);
+    modal.hidden = false;
+    $('#app').inert = true;
+    $('[data-nav]').inert = true;
+    $('footer').inert = true;
+    root.classList.add('modal-open');
+    panel.scrollTop = 0;
+    panel.focus({ preventScroll: true });
+  }
+
+  function closeModal() {
+    if (modal.hidden) return;
+    root.classList.remove('modal-open');
+    modal.hidden = true;
+    $('#app').inert = false;
+    $('[data-nav]').inert = false;
+    $('footer').inert = false;
+    document.body.style.paddingRight = savedPaddingRight;
+    window.scrollTo({ top: savedScroll, behavior: 'instant' });
+    opener?.focus({ preventScroll: true });
+    activeCat = null;
+    activeProject = null;
+  }
+
+  shelf.addEventListener('click', (event) => {
+    const folder = event.target.closest('.folder[data-cat]');
+    if (folder) openModal(catById(folder.dataset.cat), folder);
+  });
+  content.addEventListener('click', (event) => {
+    const item = event.target.closest('.card[data-id]');
+    if (!item) return;
+    event.preventDefault();
+    const p = projById(item.dataset.id);
+    if (!p) return;
+    categoryScroll = panel.scrollTop;
+    renderProject(p);
+    panel.scrollTop = 0;
+    $('#portfolio-modal-title').focus({ preventScroll: true });
+  });
+  backButton.addEventListener('click', () => {
+    if (!activeCat || !activeProject) return;
+    renderCategory(activeCat);
+    panel.scrollTop = categoryScroll;
+    backButton.focus({ preventScroll: true });
+    panel.focus({ preventScroll: true });
+  });
+  $('[data-modal-close]').addEventListener('click', closeModal);
+  modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+  document.addEventListener('keydown', (event) => {
+    if (modal.hidden) return;
+    if (event.key === 'Escape') { event.preventDefault(); closeModal(); return; }
+    if (event.key !== 'Tab') return;
+    const focusables = $$('button:not([hidden]):not([disabled]), a[href], [tabindex]:not([tabindex="-1"])', panel)
+      .filter((el) => el.getClientRects().length);
+    if (!focusables.length) { event.preventDefault(); panel.focus(); return; }
+    const first = focusables[0], last = focusables.at(-1);
+    if (event.shiftKey && (document.activeElement === first || document.activeElement === panel)) {
+      event.preventDefault(); last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault(); first.focus();
+    }
   });
 
-  const canVT = !!document.startViewTransition && !reduced;
-  function transition(apply, done) {
-    if (canVT) {
-      const t = document.startViewTransition(apply);
-      t.finished.finally(() => done && done());
-    } else { apply(); done && done(); }
-  }
-  const jump = (y) => window.scrollTo({ top: y, behavior: 'instant' });
-  const enter = (el) => { if (canVT || reduced) return; el.classList.remove('is-entering'); void el.offsetWidth; el.classList.add('is-entering'); };
-
-  function showProject(id) {
-    const p = projById(id); if (!p) { location.hash = '#/'; return; }
-    let named = null;
-    if (view === 'home') {
-      homeY = scrollY;
-      const all = $$(`.card[data-id="${id}"] .card__media`, home);
-      named = all.find((m) => { const r = m.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }) || null;
-      if (named) named.style.viewTransitionName = 'shot';
-    }
-    transition(() => {
-      if (named) named.style.viewTransitionName = '';
-      home.hidden = true; page.hidden = false;
-      renderProject(p);
-      view = 'page';
-      jump(0);
-      document.title = `${p.name} — Cardoso`;
-      enter(page);
-    }, () => { const t = $('.proj__title', page); if (t) t.focus({ preventScroll: true }); });
-  }
-
-  function showHome(after) {
-    transition(() => {
-      page.hidden = true; page.innerHTML = '';
-      home.hidden = false; view = 'home';
-      document.title = 'Cardoso — Design, desenvolvimento e sistemas';
-      fit();
-      after();
-      enter(home);
-    });
-  }
-
-  function route() {
-    const h = location.hash;
-    let m;
-    if ((m = h.match(/^#\/projeto\/([\w-]+)/))) { showProject(m[1]); return; }
-    if ((m = h.match(/^#\/categoria\/([\w-]+)/))) {
-      const id = m[1];
-      if (view === 'page') showHome(() => { openDrawer(id, { scroll: false, animate: false }); jump(homeY || drawer.getBoundingClientRect().top + scrollY - 80); });
-      else openDrawer(id);
-      return;
-    }
-    const target = h.length > 1 && !h.startsWith('#/') ? document.getElementById(h.slice(1)) : null;
-    if (view === 'page') {
-      showHome(() => { if (target) target.scrollIntoView({ behavior: 'instant' }); else jump(!h || h === '#/' ? 0 : homeY); });
-      return;
-    }
-    if (h === '#/') window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
-  }
-  addEventListener('hashchange', route);
-  if (location.hash.startsWith('#/')) route();
-
-  /* ---------- rodapé: contatos do CONFIG + palavra gigante animada ----------
-     Estrutura do Mauricio (foot-word por letra, onda + proximidade do mouse),
-     paleta adaptada à identidade Cardoso (vinho/rubi/branco). Sem inventar
-     dados: só renderiza o que existir em window.CONFIG. */
-  const waMsg = 'Olá! Vi seu portfólio e gostaria de fazer um orçamento.';
+  /* ---------- rodapé: CTA + contatos do CONFIG ----------
+     Sem inventar dados: só renderiza o que existir em window.CONFIG. */
+  const waMsg = 'Olá! Vi seu portfólio e gostaria de conversar sobre um projeto.';
   const waHref = CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(waMsg)}` : null;
   const footWa = $('[data-foot-wa]');
   if (footWa) {
@@ -392,74 +342,15 @@
     else { footWa.hidden = true; }
   }
   const footLinks = [];
-  if (CONFIG.whatsapp) footLinks.push([waHref, 'WhatsApp', true]);
-  if (CONFIG.email) footLinks.push([`mailto:${CONFIG.email}`, CONFIG.email, false]);
   if (CONFIG.instagram) footLinks.push([CONFIG.instagram, 'Instagram', true]);
+  if (CONFIG.whatsapp) footLinks.push([waHref, 'WhatsApp', true]);
+  if (CONFIG.email) footLinks.push([`mailto:${CONFIG.email}`, 'Email', false]);
   const footContact = $('[data-foot-contact]');
   if (footContact) {
     footContact.innerHTML = footLinks.map(([href, t, ext]) =>
       `<li><a href="${esc(href)}"${ext ? ' target="_blank" rel="noopener"' : ''}>${esc(t)}</a></li>`).join('');
   }
   const yr = $('[data-year]'); if (yr) yr.textContent = new Date().getFullYear();
-
-  /* palavra gigante do rodapé: onda contínua + destaque perto do mouse.
-     Mesma técnica da referência: cada letra é um span, a cor mistura
-     base → rubi → branco quente conforme a onda passa. */
-  (() => {
-    const word = $('[data-foot-word]');
-    if (!word) return;
-    const text = word.textContent;
-    word.textContent = '';
-    const letters = [...text].map((ch) => {
-      const s = document.createElement('span');
-      s.textContent = ch === ' ' ? ' ' : ch;
-      word.append(s);
-      return { el: s, k: 0 };
-    });
-    if (reduced) return;
-    const foot = word.closest('.foot') || document.body;
-    const base = [86, 50, 54], hi = [225, 60, 75], peak = [255, 232, 233];
-    const mix = (a, b, k) => a.map((v, i) => Math.round(v + (b[i] - v) * k));
-    const mouse = { x: -9999, y: -9999 };
-    if (finePointer) {
-      foot.addEventListener('pointermove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
-      foot.addEventListener('pointerleave', () => { mouse.x = mouse.y = -9999; });
-    }
-    let on = false, last = 0;
-    const n = letters.length;
-    let fs = parseFloat(getComputedStyle(word).fontSize) || 16;
-    addEventListener('resize', () => { fs = parseFloat(getComputedStyle(word).fontSize) || 16; }, { passive: true });
-    function frame(now) {
-      if (!on) return;
-      const t = now * 0.001;
-      const dt = last ? Math.min((now - last) * 0.001, 0.05) : 1 / 60;
-      last = now;
-      const p = ((t * 0.32) % 1.5) * (n + 6) - 3;
-      const pointerActive = finePointer && mouse.x > -9000;
-      const bounds = pointerActive ? letters.map((L) => L.el.getBoundingClientRect()) : null;
-      const targets = letters.map((L, i) => {
-        const wave = Math.exp(-Math.pow(i - p, 2) / 5);
-        if (!pointerActive) return wave * 0.85;
-        const r = bounds[i];
-        const d = Math.hypot(mouse.x - (r.left + r.width / 2), (mouse.y - (r.top + r.height / 2)) * 0.7);
-        const near = Math.max(0, 1 - d / (fs * 1.5));
-        return Math.max(wave * 0.85, near * near);
-      });
-      const ease = 1 - Math.exp(-dt * 10.5);
-      letters.forEach((L, i) => {
-        L.k += (targets[i] - L.k) * ease;
-        const c = L.k < 0.6 ? mix(base, hi, L.k / 0.6) : mix(hi, peak, (L.k - 0.6) / 0.4);
-        L.el.style.color = `rgb(${c})`;
-        L.el.style.transform = `translateY(${-L.k * 0.14}em)`;
-      });
-      requestAnimationFrame(frame);
-    }
-    new IntersectionObserver(([e]) => {
-      const visible = e.isIntersecting;
-      if (visible && !on) { on = true; last = 0; requestAnimationFrame(frame); }
-      else if (!visible) { on = false; last = 0; }
-    }).observe(word);
-  })();
 
   observe();
 })();

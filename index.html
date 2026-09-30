@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..800&display=swap" rel="stylesheet"></noscript>
   <link rel="preload" as="image" href="assets/bg/fundo.png">
-  <link rel="stylesheet" href="css/style.css?v=20">
+  <link rel="stylesheet" href="css/style.css?v=26">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -64,16 +64,6 @@
           <p class="sec-note">Escolha uma categoria para ver todos os projetos dela.</p>
         </header>
         <div class="shelf" data-shelf></div>
-        <div class="drawer" data-drawer hidden>
-          <header class="drawer__head">
-            <div>
-              <p class="drawer__count" data-drawer-count></p>
-              <h3 class="drawer__title" data-drawer-title tabindex="-1"></h3>
-            </div>
-            <a class="drawer__close" href="#projetos" data-drawer-close>Fechar categoria <span aria-hidden="true">×</span></a>
-          </header>
-          <div class="drawer__grid" data-drawer-grid></div>
-        </div>
       </section>
 
       <section class="section services" id="servicos" aria-labelledby="svc-title">
@@ -98,37 +88,40 @@
       </section>
     </div>
 
-    <!-- ================= PÁGINA DO PROJETO ================= -->
-    <article id="page" class="proj" hidden></article>
   </main>
 
-  <footer class="foot" id="contato">
-    <div class="wrap">
-      <div class="foot-word" data-foot-word aria-hidden="true">CARDOSO</div>
-      <div class="foot-grid">
-        <div>
-          <h3>Vamos tirar<br>seu projeto do papel?</h3>
-          <a class="btn wa" data-foot-wa href="#contato" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-3.4-.7a11.6 11.6 0 0 1-4.8-4.2c-.4-.5-1.3-1.7-1.3-3.2s.8-2.3 1.1-2.6c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.3.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.5Z"/></svg>Chamar no WhatsApp</a>
-        </div>
-        <div>
-          <h4>Contato</h4>
-          <ul data-foot-contact></ul>
-        </div>
-        <div>
-          <h4>Navegação</h4>
-          <ul>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <li><a href="#/" data-top>Voltar ao topo</a></li>
-          </ul>
-        </div>
+  <div class="portfolio-modal" data-modal hidden>
+    <section class="portfolio-modal__panel" data-modal-panel role="dialog" aria-modal="true" aria-labelledby="portfolio-modal-title" tabindex="-1">
+      <div class="portfolio-modal__toolbar">
+        <button class="portfolio-modal__back" type="button" data-modal-back hidden></button>
+        <span class="portfolio-modal__context" data-modal-context>Projetos</span>
+        <button class="portfolio-modal__close" type="button" data-modal-close aria-label="Fechar janela de projetos">×</button>
       </div>
-      <div class="foot-bottom"><span>© <span data-year>2026</span> Cardoso · Design &amp; Desenvolvimento</span><span>Feito com cuidado</span></div>
+      <div class="portfolio-modal__content" data-modal-content></div>
+    </section>
+  </div>
+
+  <footer class="footer" id="contato">
+    <div class="footer__inner">
+      <div class="footer__cta">
+        <div data-reveal>
+          <h2 class="footer__title">Tem um projeto em mente?</h2>
+          <p class="footer__sub">Vamos transformar a ideia em algo<br>que as pessoas vão lembrar.</p>
+        </div>
+        <a class="btn" data-foot-wa href="#contato" target="_blank" rel="noopener" data-reveal>Vamos conversar <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer__row" data-reveal>
+        <a class="footer__brand" href="#/" aria-label="Cardoso — início"><img src="assets/logo-c.png" width="128" height="128" alt="Cardoso"></a>
+        <ul class="footer__contacts" data-foot-contact></ul>
+      </div>
+      <div class="footer__base">
+        <span>© <span data-year>2026</span> Cardoso</span>
+        <span>Design · Desenvolvimento · Sistemas</span>
+      </div>
     </div>
   </footer>
 
-  <script src="js/data.js?v=10"></script>
-  <script src="js/main.js?v=16" defer></script>
+  <script src="js/data.js?v=11"></script>
+  <script src="js/main.js?v=21" defer></script>
 </body>
 </html>
