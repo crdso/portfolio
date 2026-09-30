@@ -1,110 +1,116 @@
 /*
-  Arquivo de trabalhos.
-  Cada pasta (nicho) guarda projetos. Cada projeto usa a HERO REAL do site,
-  capturada rodando o projeto localmente (assets/work/<id>/).
-
-  Para adicionar um projeto: crie assets/work/<id>/ com hero.webp, hero-sm.webp
-  (e opcionalmente s1..s3.webp e m.webp) e adicione um objeto em `projects`.
-  `caseStudy` fica reservado para uma página de estudo de caso no futuro.
+  Conteúdo do portfólio.
+  Imagens: assets/work/<id>/ — hero.webp (1600), hero-sm.webp (800),
+  s1/s2.webp (outras telas) e m.webp (celular), capturadas dos sites rodando.
 */
 window.CONFIG = {
-  name: 'Ezequias Cardoso',
-  github: 'https://github.com/crdso',
-  // Preencha para exibir no contato:
-  email: '',        // ex.: 'contato@seudominio.com'
-  whatsapp: '',     // ex.: '5563999999999'
-  instagram: ''     // ex.: 'https://instagram.com/seuperfil'
+  // Preencha para aparecer no rodapé e no botão de contato:
+  email: '',       // 'contato@seudominio.com'
+  whatsapp: '',    // '5563999999999'
+  instagram: ''    // 'https://instagram.com/seuperfil'
 };
 
-window.FOLDERS = [
-  { id: 'academias', name: 'Academias', accent: '#E3202A',
-    note: 'Estrutura, horário e matrícula — a academia vendida antes da visita.',
-    sheets: ['doctorsmall/hero-sm', 'doctorsmall/s1', 'doctorsmall/s2'] },
-  { id: 'moda', name: 'Moda', accent: '#D9D2C5',
-    note: 'Produto como protagonista, marca como atmosfera.',
-    sheets: ['best/hero-sm', 'best/p1', 'best/p2'] },
-  { id: 'tecnologia', name: 'Tecnologia', accent: '#FF7A1A', alias: 'Celulares',
-    note: 'Lojas de iPhone e assistência. Uma base, várias marcas.',
-    sheets: ['miphone/hero-sm', 'lealimports/hero-sm', 'jlcimportados/hero-sm'] },
-  { id: 'alimentacao', name: 'Alimentação', accent: '#E8B04B',
-    note: 'Hamburguerias com cardápio e pedido a um toque.',
-    sheets: ['blackburguer/hero-sm', 'cajui/hero-sm', 'blackburguer/s1'] },
-  { id: 'institucional', name: 'Institucional', accent: '#A99BFF', alias: 'Eventos',
-    note: 'Eventos e iniciativas do IFTO — da identidade à interação.',
-    sheets: ['entec/hero-sm', 'correio/hero-sm', 'entec-fotos/hero-sm'] },
-  { id: 'produtos', name: 'Produtos', accent: '#6FD4B4', alias: 'Outros',
-    note: 'Ferramentas próprias, com página pública e área de uso.',
-    sheets: ['findmap/hero-sm', 'findmap/m', 'findmap/hero-sm'] }
+window.CATEGORIES = [
+  { id: 'academias', name: 'Academias' },
+  { id: 'moda', name: 'Moda & Beleza' },
+  { id: 'tecnologia', name: 'Tecnologia' },
+  { id: 'alimentacao', name: 'Alimentação' },
+  { id: 'saude', name: 'Saúde' },
+  { id: 'energia', name: 'Energia' },
+  { id: 'institucional', name: 'Institucional' },
+  { id: 'sistemas', name: 'Sistemas' }
 ];
 
+// featured: aparece em "Trabalhos selecionados", na ordem do número
 window.PROJECTS = [
-  {
-    id: 'doctorsmall', folder: 'academias',
-    name: 'Doctor Small Academia', niche: 'Academia premium', place: 'Araguatins — TO',
-    repo: 'crdso/doctorsmall',
-    summary: 'Site comercial para uma academia premium. Leva a pessoa da primeira impressão até a matrícula, que continua no checkout da NextFit.',
-    highlights: ['Status “aberto agora” calculado no fuso local', 'Bloco do Instagram com posts reais', 'Hero cinematográfica em preto e vermelho'],
-    stack: ['HTML', 'CSS', 'JavaScript'],
-    screens: ['s1', 's2', 's3'], mobile: true, status: null, caseStudy: null
-  },
-  {
-    id: 'best', folder: 'moda',
-    name: 'Best Multimarcas', niche: 'Loja multimarcas', place: 'Araguatins · Augustinópolis — TO',
-    repo: null,
-    summary: 'Site de inauguração de uma nova unidade. Uma hero em capítulos, guiada pela rolagem, com os produtos entrando em cena.',
-    highlights: ['Hero em capítulos guiada por rolagem (GSAP ScrollTrigger)', 'Vitrine de marcas e unidades'],
-    stack: ['React', 'TypeScript', 'Tailwind', 'GSAP'],
-    screens: [], mobile: false, status: 'Em desenvolvimento — capa montada com os assets do projeto', caseStudy: null
-  },
-  {
-    id: 'miphone', folder: 'tecnologia',
-    name: 'MiPhone', niche: 'Loja de iPhones e assistência', place: 'Brasil',
-    repo: 'crdso/miphone',
-    summary: 'Loja de aparelhos e assistência técnica. A hero é um vídeo controlado pela rolagem: os iPhones giram enquanto a mensagem muda.',
-    highlights: ['Vídeo sincronizado com a rolagem (desktop e mobile)', 'Tema claro e escuro', 'Loja, assistência e contato por WhatsApp'],
-    stack: ['React', 'Vite', 'React Router'],
-    screens: ['s1', 's2', 's3'], mobile: true, status: null, caseStudy: null,
-    variants: [
-      { id: 'jkimports', name: 'JK Imports', repo: 'crdso/jkimports' },
-      { id: 'jlcimportados', name: 'JLC Importados', repo: 'crdso/jlcimportados' },
-      { id: 'lealimports', name: 'Leal Imports', repo: 'crdso/lealimports' }
-    ]
-  },
-  {
-    id: 'blackburguer', folder: 'alimentacao',
-    name: 'Black Burguer', niche: 'Hamburgueria artesanal', place: 'Araguatins — TO',
-    repo: 'crdso/burguerv1',
-    summary: 'Hamburgueria artesanal. O hambúrguer se desmonta camada por camada enquanto a página rola, e cada camada vira um argumento.',
-    highlights: ['Vídeo em scrub quadro a quadro', 'Cardápio e pedido pelo WhatsApp'],
-    stack: ['React', 'TypeScript', 'Tailwind', 'Framer Motion'],
-    screens: ['s1'], mobile: true, status: null, caseStudy: null,
-    variants: [{ id: 'cajui', name: 'Cajuí — Palmas', repo: 'crdso/burguerv2' }]
-  },
-  {
-    id: 'entec', folder: 'institucional',
-    name: 'ENTEC 2026', niche: 'Encontro de Tecnologia do IFTO', place: 'IFTO — Tocantins',
-    repo: null,
-    summary: 'Site do evento e acervo oficial de fotos. Hero com shader em WebGL e uma prévia das fotos em galeria curva.',
-    highlights: ['Hero com shader WebGL', 'Galeria de fotos em curva 3D', 'Contador de visitas com Supabase'],
-    stack: ['HTML', 'JavaScript', 'WebGL', 'Supabase'],
-    screens: [], extra: 'entec-fotos', mobile: true, status: null, caseStudy: null
-  },
-  {
-    id: 'correio', folder: 'institucional',
-    name: 'Correio Elegante', niche: 'Cartinhas anônimas', place: 'IFTO — Tocantins',
-    repo: 'zRise/correiotrc',
-    summary: 'Aplicação para enviar cartinhas anônimas no evento: a pessoa escreve, escolhe o presente e a equipe entrega.',
-    highlights: ['Fluxo de envio em 4 passos', 'Painel administrativo', 'Autenticação e dados no Supabase'],
-    stack: ['React', 'Tailwind', 'Supabase'],
-    screens: ['s1', 's2'], mobile: true, status: null, caseStudy: null
-  },
-  {
-    id: 'findmap', folder: 'produtos',
-    name: 'FindMap', niche: 'Plataforma de prospecção', place: 'Produto próprio',
-    repo: 'crdso/prospectmap',
-    summary: 'Encontre empresas por categoria e localização. Página pública de produto e área privada de busca.',
-    highlights: ['Busca por categoria + localização', 'Hero com grade de pontos animada'],
-    stack: ['HTML', 'CSS', 'JavaScript'],
-    screens: [], mobile: true, status: null, caseStudy: null
-  }
+  { id: 'doctorsmall', cat: 'academias', name: 'Doctor Small Academia', type: 'Academia premium', place: 'Araguatins — TO', featured: 1,
+    text: 'Site comercial para uma academia premium: estrutura, diferenciais, horário em tempo real e matrícula integrada ao checkout da NextFit.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2', 's3'] },
+
+  { id: 'best', cat: 'moda', name: 'Best Multimarcas', type: 'Loja multimarcas', place: 'Araguatins · Augustinópolis — TO',
+    text: 'Site de inauguração de uma nova unidade, com uma abertura em capítulos guiada pela rolagem e os produtos entrando em cena.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'TypeScript', 'GSAP'], shots: ['p1', 'p2'], noMobile: true, status: 'Em desenvolvimento' },
+  { id: 'tavares', cat: 'moda', name: 'Studio Tavares', type: 'Salão de beleza', place: 'Brasil',
+    text: 'Presença digital editorial para um estúdio de beleza, com tipografia elegante e agendamento em destaque.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2'] },
+
+  { id: 'miphone', cat: 'tecnologia', name: 'MiPhone', type: 'Loja de iPhones e assistência', place: 'Brasil', featured: 2,
+    text: 'Loja de aparelhos e assistência técnica. A abertura é um vídeo controlado pela rolagem: os iPhones giram enquanto a mensagem muda.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: ['s1', 's2', 's3'],
+    variants: [{ id: 'jkimports', name: 'JK Imports' }, { id: 'jlcimportados', name: 'JLC Importados' }, { id: 'lealimports', name: 'Leal Imports' }] },
+  { id: 'nexa', cat: 'tecnologia', name: 'Nexa Agency', type: 'Agência de sites e sistemas', place: 'Brasil',
+    text: 'Site bilíngue de uma agência de sites e sistemas sob medida, com processo, serviços e contato.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['Next.js'], shots: ['s1', 's2'] },
+
+  { id: 'blackburguer', cat: 'alimentacao', name: 'Black Burguer', type: 'Hamburgueria artesanal', place: 'Araguatins — TO', featured: 4,
+    text: 'O hambúrguer se desmonta camada por camada enquanto a página rola — e cada camada vira um argumento. Cardápio e pedido pelo WhatsApp.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'TypeScript', 'Framer Motion'], shots: ['s1'],
+    variants: [{ id: 'cajui', name: 'Cajuí — Palmas' }] },
+  { id: 'brasa77', cat: 'alimentacao', name: 'Brasa 77', type: 'Hamburgueria artesanal', place: 'São Paulo — SP', featured: 5,
+    text: 'Identidade de brasa e fumaça para uma hamburgueria: cardápio visual, destaques da casa e pedido direto.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React'], shots: ['s1', 's2'] },
+  { id: 'bucco', cat: 'alimentacao', name: 'Bucco Burger', type: 'Hamburgueria', place: 'Morretes — PR',
+    text: 'Hamburgueria da serra paranaense com cardápio completo, avaliações e pedido em destaque.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2'] },
+  { id: 'olimpo', cat: 'alimentacao', name: 'Olimpo Restaurante', type: 'Gastronomia regional', place: 'Morretes — PR',
+    text: 'Restaurante tradicional de Morretes, com a história da casa, o barreado e reservas.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2'] },
+  { id: 'bodega', cat: 'alimentacao', name: 'Bodega Poços', type: 'Charcutaria e vinhos', place: 'Poços de Caldas — MG',
+    text: 'Charcutaria, queijos, fondues e vinhos, com cardápio completo e reservas pelo WhatsApp.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2'] },
+  { id: 'minero', cat: 'alimentacao', name: 'Restaurante do Minero', type: 'Comida mineira', place: 'Morretes — PR',
+    text: 'Comida mineira com personalidade: mascote, cores fortes, cardápio e história da casa.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2'] },
+  { id: 'umami', cat: 'alimentacao', name: 'Umami', type: 'Pizzaria e bistrô', place: '—',
+    text: 'Pizzaria e bistrô com abertura de impacto, pratos em destaque, eventos e reservas.',
+    services: ['Web design'], tech: ['Framer'], shots: ['s1', 's2'] },
+  { id: 'goutu', cat: 'alimentacao', name: 'Goutu', type: 'Hamburgueria', place: '—',
+    text: 'Hamburgueria leve e divertida, com cardápio, horários e avaliações.',
+    services: ['Web design'], tech: ['Framer'], shots: ['s1', 's2'] },
+  { id: 'foodee', cat: 'alimentacao', name: 'Foodee', type: 'Restaurante', place: '—',
+    text: 'Restaurante com identidade vibrante: vermelho, pratos coloridos e tipografia de impacto.',
+    services: ['Web design'], tech: ['Framer'], shots: ['s1', 's2'] },
+
+  { id: 'odonto', cat: 'saude', name: 'Dra. Gabriella Cavalcante', type: 'Odontologia', place: 'Brasil',
+    text: 'Consultório odontológico para toda a família: tratamentos, apresentação da profissional e agendamento.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['JavaScript', 'Vite'], shots: ['s1', 's2'] },
+  { id: 'hospitalvet', cat: 'saude', name: 'Hospital Veterinário 24h', type: 'Hospital veterinário', place: 'Brasil',
+    text: 'Landing page de hospital veterinário 24 horas: estrutura, emergência e contato imediato com a equipe.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['Next.js'], shots: ['s1', 's2'] },
+
+  { id: 'helios', cat: 'energia', name: 'Helios', type: 'Energia solar de alto padrão', place: 'Brasil', featured: 6,
+    text: 'Energia solar de alto padrão com uma estética escura e precisa: resultados, engenharia e simulação.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['Next.js'], shots: ['s1', 's2'] },
+  { id: 'nowtech', cat: 'energia', name: 'Nowtech', type: 'Energia solar', place: 'Brasil',
+    text: 'Energia solar que reduz custos: projetos, simulação de economia e depoimentos.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2'] },
+  { id: 'solvex', cat: 'energia', name: 'Solvex', type: 'Energia renovável', place: '—',
+    text: 'Energia renovável com páginas de serviços, projetos e blog.',
+    services: ['Web design'], tech: ['Framer'], shots: ['s1', 's2'] },
+  { id: 'solare', cat: 'energia', name: 'Solare', type: 'Energia solar residencial', place: '—',
+    text: 'Energia solar residencial com calculadora de economia e processo de instalação.',
+    services: ['Web design'], tech: ['Framer'], shots: ['s1', 's2'] },
+  { id: 'solaix', cat: 'energia', name: 'Solaix', type: 'Energia solar', place: '—',
+    text: 'Site multipágina de energia solar com serviços, projetos, calculadora e blog.',
+    services: ['Web design'], tech: ['Framer'], shots: ['s1', 's2'] },
+
+  { id: 'advocacia', cat: 'institucional', name: 'Guilherme Podgaietsky', type: 'Advocacia criminal', place: 'Brasil', featured: 3,
+    text: 'Advocacia criminal com sobriedade: preto, dourado e uma comunicação direta sobre sigilo e estratégia.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2'] },
+  { id: 'portoglass', cat: 'institucional', name: 'Porto Glass', type: 'Vidros, alumínio e mármore', place: 'Bacabal — MA',
+    text: 'Vidros, espelhos, alumínio e mármore: catálogo de obras, diferenciais e orçamento pelo WhatsApp.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2'] },
+  { id: 'letsfly', cat: 'institucional', name: "Let'sFly", type: 'Aviação executiva', place: '—',
+    text: 'Aviação executiva com fotografia de produto e composição minimalista.',
+    services: ['Web design'], tech: ['Framer'], shots: ['s1', 's2'] },
+
+  { id: 'entec', cat: 'sistemas', name: 'ENTEC 2026', type: 'Evento de tecnologia do IFTO', place: 'IFTO — Tocantins',
+    text: 'Site do evento e acervo oficial de fotos, com administração, banco de dados e funções no Supabase. Abertura com shader em WebGL e galeria curva.',
+    services: ['Web design', 'Front-end', 'Back-end', 'Banco de dados'], tech: ['JavaScript', 'WebGL', 'Supabase'], shots: ['entec-fotos/hero'] },
+  { id: 'correio', cat: 'sistemas', name: 'Correio Elegante', type: 'Aplicação web', place: 'IFTO — Tocantins',
+    text: 'Aplicação para enviar cartinhas anônimas no evento: fluxo de envio, pagamento, painel administrativo e autenticação.',
+    services: ['Web design', 'Front-end', 'Back-end', 'Painel administrativo'], tech: ['React', 'Tailwind', 'Supabase'], shots: ['s1', 's2'] },
+  { id: 'findmap', cat: 'sistemas', name: 'FindMap', type: 'Plataforma de prospecção', place: 'Produto próprio',
+    text: 'Encontre empresas por categoria e localização. Página pública de produto e área privada de busca.',
+    services: ['Web design', 'Front-end', 'Sistema'], tech: ['JavaScript', 'Google Places'], shots: [] }
 ];

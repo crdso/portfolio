@@ -3,214 +3,127 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Ezequias Cardoso — Web design, front-end e experiências digitais</title>
-  <meta name="description" content="Portfólio de Ezequias Cardoso. Web design, desenvolvimento front-end e experiências digitais — um arquivo de sites reais organizado por nicho.">
-  <meta name="theme-color" content="#0b0a09">
+  <title>Cardoso — Design, desenvolvimento e sistemas</title>
+  <meta name="description" content="Cardoso — web design, desenvolvimento front-end e back-end, sistemas e experiências digitais. Sites e aplicações para academias, lojas, restaurantes, saúde, energia e eventos.">
+  <meta name="theme-color" content="#070203">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ezequias Cardoso — Arquivo">
-  <meta property="og:description" content="Web design, front-end e experiências digitais. Sites reais, organizados em pastas por nicho.">
+  <meta property="og:title" content="Cardoso — Design, desenvolvimento e sistemas">
+  <meta property="og:description" content="Sites e sistemas web para marcas que querem ser vistas.">
   <meta property="og:image" content="assets/og.jpg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=4">
-  <script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('ec-intro'))document.documentElement.classList.add('seen')}catch(e){}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=12">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <a class="skip" href="#arquivo">Pular para o arquivo</a>
+  <a class="skip" href="#app">Pular para o conteúdo</a>
 
-  <!-- Intro: terminal listando o arquivo -->
-  <div class="intro" aria-hidden="true">
-    <div class="intro__term">
-      <p class="intro__cmd"><span class="intro__prompt">~/ezequias-cardoso</span> <span class="intro__typed" data-type="ls arquivo/"></span><i class="intro__caret"></i></p>
-      <ul class="intro__list"></ul>
-    </div>
-    <div class="intro__count"><span data-intro-count>000</span></div>
+  <!-- fundo: luz vermelha difusa -->
+  <div class="atmos" aria-hidden="true">
+    <span class="orb orb--sun"></span>
+    <span class="orb orb--wine"></span>
+    <span class="orb orb--dark"></span>
+    <span class="orb orb--spark"></span>
+    <span class="atmos__veil"></span>
   </div>
-
-  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><em class="cursor__label"></em></span></div>
   <div class="grain" aria-hidden="true"></div>
 
-  <!-- Cabeçalho -->
-  <header class="top">
-    <a class="top__mark" href="#topo" aria-label="Ezequias Cardoso — início">
-      <span class="top__ec">EC</span><span class="top__name">Ezequias Cardoso</span>
-    </a>
-    <p class="top__path" aria-live="polite"><span class="top__tilde">~/</span><span data-path>ezequias-cardoso</span></p>
-    <nav class="top__nav" aria-label="Principal">
-      <a href="#arquivo" data-cursor="ir">Arquivo</a>
-      <a href="#sobre" data-cursor="ir">Sobre</a>
-      <a href="#contato" data-cursor="ir">Contato</a>
+  <header class="nav" data-nav>
+    <a class="nav__brand" href="#/" aria-label="Cardoso — início">CARDOSO</a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#projetos">Projetos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
     </nav>
-    <p class="top__clock"><span>BR</span> <time data-clock>--:--</time></p>
+    <a class="nav__cta" href="#contato">Vamos conversar</a>
   </header>
 
-  <main id="topo">
-    <!-- ================= HERO ================= -->
-    <section class="hero" aria-labelledby="hero-name">
-      <canvas class="hero__dots" aria-hidden="true"></canvas>
-
-      <div class="hero__inner">
-        <p class="hero__roles">
-          <span><i>01</i> Web design</span>
-          <span><i>02</i> Desenvolvimento front-end</span>
-          <span><i>03</i> Experiências digitais</span>
-        </p>
-
-        <p class="hero__aside">sites que <b>seguram</b><br>a primeira tela.</p>
-
-        <h1 class="name" id="hero-name" aria-label="Ezequias Cardoso">
-          <span class="name__row name__row--1" aria-hidden="true">
-            <span class="name__layer name__solid" data-split>EZEQUIAS</span>
-            <span class="name__layer name__work">EZEQUIAS</span>
-          </span>
-          <span class="name__row name__row--2" aria-hidden="true">
-            <span class="name__word">
-              <span class="name__layer name__solid" data-split>CARDOSO</span>
-              <span class="name__layer name__work">CARDOSO</span>
-            </span>
-          </span>
-        </h1>
-
-        <div class="hero__foot">
-          <p class="hero__lens-hint"><span class="pulse"></span> Passe o cursor no nome — <em>ele é feito dos meus sites.</em></p>
-          <a class="hero__cue" href="#arquivo" data-cursor="abrir">
-            <span>Abrir o arquivo</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15m0 0-6-6m6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          </a>
+  <main id="app" tabindex="-1">
+    <!-- ================= HOME ================= -->
+    <div id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__top">
+          <p class="hero__kicker" data-in style="--d:.2s">Design · Desenvolvimento · Sistemas</p>
+          <p class="hero__intro" data-in style="--d:.35s">Sites e sistemas web para marcas que querem ser vistas — e funcionar de verdade.</p>
         </div>
-      </div>
-    </section>
+        <h1 class="hero__name" id="hero-title" aria-label="Cardoso"><span class="fit" data-fit data-letters>CARDOSO</span></h1>
+        <div class="hero__foot" data-in style="--d:.9s">
+          <ul class="hero__services">
+            <li>Web Design</li><li>Front-end</li><li>Back-end</li><li>Experiências digitais</li>
+          </ul>
+          <a class="hero__down" href="#projetos">Ver projetos <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
 
-    <!-- ================= ARQUIVO ================= -->
-    <section class="archive" id="arquivo" aria-labelledby="archive-title">
-      <header class="archive__head">
-        <p class="mono archive__path">~/ezequias-cardoso/<b>arquivo</b></p>
-        <h2 class="archive__title" id="archive-title">
-          <span class="archive__big" data-split>Arquivo</span>
-          <em class="archive__em">de trabalhos</em>
-        </h2>
-        <dl class="archive__stats mono">
-          <div><dt>pastas</dt><dd data-stat="folders">06</dd></div>
-          <div><dt>projetos</dt><dd data-stat="projects">07</dd></div>
-          <div><dt>variações</dt><dd data-stat="variants">04</dd></div>
-        </dl>
-        <p class="archive__hint mono"><span class="pulse"></span> Cada pasta guarda a hero real dos sites. Abra uma.</p>
-      </header>
+      <section class="section" id="projetos" aria-labelledby="work-title">
+        <header class="sec-head" data-reveal>
+          <h2 class="sec-title" id="work-title">Trabalhos selecionados</h2>
+          <p class="sec-note" data-count></p>
+        </header>
+        <div class="featured" data-featured></div>
+      </section>
 
-      <div class="cabinet" role="list" data-cabinet></div>
+      <section class="section" id="categorias" aria-labelledby="cat-title">
+        <header class="sec-head" data-reveal>
+          <h2 class="sec-title" id="cat-title">Por categoria</h2>
+          <p class="sec-note">Escolha uma categoria para ver todos os projetos dela.</p>
+        </header>
+        <div class="shelf" data-shelf></div>
+        <div class="drawer" data-drawer hidden>
+          <header class="drawer__head">
+            <div>
+              <p class="drawer__count" data-drawer-count></p>
+              <h3 class="drawer__title" data-drawer-title tabindex="-1"></h3>
+            </div>
+            <a class="drawer__close" href="#categorias" data-drawer-close>Fechar categoria <span aria-hidden="true">×</span></a>
+          </header>
+          <div class="drawer__grid" data-drawer-grid></div>
+        </div>
+      </section>
 
-      <noscript>
-        <ul class="noscript-list">
-          <li>Academias — Doctor Small Academia</li>
-          <li>Moda — Best Multimarcas</li>
-          <li>Tecnologia — MiPhone (e variações JK Imports, JLC Importados, Leal Imports)</li>
-          <li>Alimentação — Black Burguer (e variação Cajuí)</li>
-          <li>Institucional — ENTEC 2026, Correio Elegante</li>
-          <li>Produtos — FindMap</li>
-        </ul>
-      </noscript>
-    </section>
+      <section class="section services" id="servicos" aria-labelledby="svc-title">
+        <header class="services__head" data-reveal>
+          <h2 class="sec-title" id="svc-title">Da landing page<br>ao sistema completo.</h2>
+          <p class="services__lead">Um site que apresenta bem a sua marca ou uma aplicação com banco de dados, login e painel administrativo — desenhados e construídos do começo ao fim.</p>
+        </header>
+        <div class="services__grid">
+          <article class="svc" data-reveal>
+            <h3>Design</h3>
+            <ul><li>Web design</li><li>Identidade digital</li><li>Landing pages</li><li>Interfaces de sistemas</li></ul>
+          </article>
+          <article class="svc" data-reveal style="--d:.08s">
+            <h3>Desenvolvimento</h3>
+            <ul><li>Sites institucionais</li><li>Lojas e catálogos</li><li>Front-end rápido e responsivo</li><li>Animação e experiências digitais</li></ul>
+          </article>
+          <article class="svc" data-reveal style="--d:.16s">
+            <h3>Sistemas</h3>
+            <ul><li>Back-end e bancos de dados</li><li>Supabase e autenticação</li><li>Painéis administrativos e dashboards</li><li>Automações e aplicações web</li></ul>
+          </article>
+        </div>
+      </section>
+    </div>
 
-    <!-- ================= SOBRE ================= -->
-    <section class="about" id="sobre" aria-labelledby="about-title">
-      <p class="mono about__path">~/ezequias-cardoso/<b>sobre.txt</b></p>
-      <h2 class="visually-hidden" id="about-title">Sobre</h2>
-      <p class="about__statement" data-words>
-        Desenho e construo sites para negócios de verdade — academias, lojas, hamburguerias, eventos.
-        Cada um começa pela pergunta que decide tudo: <em>o que a pessoa precisa sentir na primeira tela?</em>
-        O resto é direção de arte, código cuidadoso e movimento com propósito.
-      </p>
-
-      <div class="about__grid">
-        <article class="skill">
-          <p class="skill__n mono">01</p>
-          <h3>Web design</h3>
-          <p>Direção de arte, identidade digital, tipografia, composição e interface — pensadas para cada nicho, não para um template.</p>
-        </article>
-        <article class="skill">
-          <p class="skill__n mono">02</p>
-          <h3>Front-end</h3>
-          <p>HTML, CSS e JavaScript no detalhe. React, TypeScript, Vite e Tailwind quando o projeto pede. Rápido, responsivo e acessível.</p>
-        </article>
-        <article class="skill">
-          <p class="skill__n mono">03</p>
-          <h3>Experiências digitais</h3>
-          <p>Vídeo guiado pela rolagem, shaders, 3D e microinterações com GSAP e Framer Motion — sempre a serviço da mensagem.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ================= CONTATO ================= -->
-    <section class="contact" id="contato" aria-labelledby="contact-title">
-      <p class="mono contact__path">~/ezequias-cardoso/arquivo/<b>nova-pasta</b><i class="caret"></i></p>
-      <h2 class="contact__title" id="contact-title">
-        <span data-split>Nova pasta?</span>
-        <em>O próximo arquivo pode ser o seu.</em>
-      </h2>
-      <div class="contact__links" data-contact></div>
-    </section>
+    <!-- ================= PÁGINA DO PROJETO ================= -->
+    <article id="page" class="proj" hidden></article>
   </main>
 
-  <footer class="foot">
-    <p class="mono">© <span data-year>2026</span> Ezequias Cardoso</p>
-    <p class="mono">Web design · Front-end · Experiências digitais</p>
-    <a class="mono" href="#topo" data-cursor="topo">Voltar ao topo ↑</a>
+  <footer class="footer" id="contato" aria-labelledby="footer-title">
+    <div class="footer__inner">
+      <p class="footer__status"><span class="dot" aria-hidden="true"></span> Disponível para novos projetos</p>
+      <h2 class="footer__title" id="footer-title" data-reveal>Vamos criar o próximo?</h2>
+      <div class="footer__links" data-contact data-reveal></div>
+    </div>
+    <p class="footer__name" aria-hidden="true"><span class="fit" data-fit>CARDOSO</span></p>
+    <div class="footer__base">
+      <span>© <span data-year>2026</span> Cardoso</span>
+      <span>Design · Desenvolvimento · Sistemas</span>
+      <a href="#/" data-top>Voltar ao topo ↑</a>
+    </div>
   </footer>
 
-  <!-- ================= VISUALIZADOR DE PASTA ================= -->
-  <div class="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title" hidden>
-    <div class="viewer__bg"></div>
-    <div class="viewer__bar">
-      <p class="mono viewer__crumb"><span>~/arquivo/</span><b data-v-crumb></b></p>
-      <p class="mono viewer__count" data-v-count></p>
-      <button class="viewer__close mono" type="button" data-close data-cursor="fechar">Fechar pasta <kbd>esc</kbd></button>
-    </div>
-    <header class="viewer__head">
-      <p class="viewer__index mono" data-v-index></p>
-      <h2 class="viewer__title" id="viewer-title" data-v-title></h2>
-      <p class="viewer__note" data-v-note></p>
-    </header>
-    <div class="viewer__track" data-v-track tabindex="-1"></div>
-    <div class="viewer__progress" aria-hidden="true"><span data-v-progress></span></div>
-    <div class="bigfolder" aria-hidden="true">
-      <div class="bigfolder__back"><span class="bigfolder__tab mono" data-v-tab></span></div>
-      <div class="bigfolder__front"><span class="bigfolder__label" data-v-flap></span></div>
-    </div>
-
-    <!-- Detalhe do projeto -->
-    <article class="detail" aria-labelledby="detail-title" hidden>
-      <div class="detail__scroll" data-d-scroll>
-        <div class="detail__bar">
-          <p class="mono detail__crumb" data-d-crumb></p>
-          <button class="detail__close mono" type="button" data-d-close data-cursor="voltar">← Voltar à pasta</button>
-        </div>
-        <figure class="detail__hero">
-          <div class="frame">
-            <div class="frame__chrome mono"><i></i><i></i><i></i><span data-d-url></span></div>
-            <img data-d-hero alt="">
-          </div>
-        </figure>
-        <div class="detail__body">
-          <header class="detail__head">
-            <p class="mono detail__niche" data-d-niche></p>
-            <h3 class="detail__title" id="detail-title" data-d-title></h3>
-            <p class="detail__status mono" data-d-status hidden></p>
-          </header>
-          <p class="detail__summary" data-d-summary></p>
-          <dl class="detail__meta mono" data-d-meta></dl>
-          <ul class="detail__highlights" data-d-highlights></ul>
-          <div class="detail__variants" data-d-variants hidden></div>
-          <div class="detail__screens" data-d-screens></div>
-          <div class="detail__actions" data-d-actions></div>
-        </div>
-      </div>
-    </article>
-  </div>
-
-  <script src="js/data.js?v=2"></script>
-  <script src="js/main.js?v=2" defer></script>
+  <script src="js/data.js?v=10"></script>
+  <script src="js/main.js?v=10" defer></script>
 </body>
 </html>
