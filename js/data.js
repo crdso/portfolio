@@ -11,7 +11,6 @@ window.CONFIG = {
 };
 
 window.CATEGORIES = [
-  { id: 'academias', name: 'Academias' },
   { id: 'moda', name: 'Moda & Beleza' },
   { id: 'tecnologia', name: 'Tecnologia' },
   { id: 'alimentacao', name: 'Alimentação' },
@@ -22,10 +21,6 @@ window.CATEGORIES = [
 ];
 
 window.PROJECTS = [
-  { id: 'doctorsmall', cat: 'academias', name: 'Doctor Small Academia', type: 'Academia premium', place: 'Araguatins — TO',
-    text: 'Site comercial para uma academia premium: estrutura, diferenciais, horário em tempo real e matrícula integrada ao checkout da NextFit.',
-    services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['section-01', 'section-02'] },
-
   { id: 'best', cat: 'moda', name: 'Best Multimarcas', type: 'Loja multimarcas', place: 'Araguatins · Augustinópolis — TO',
     text: 'Site de inauguração de uma nova unidade, com uma abertura em capítulos guiada pela rolagem e os produtos entrando em cena.',
     services: ['Web design', 'Desenvolvimento'], tech: ['React', 'TypeScript', 'GSAP'], shots: [], status: 'Em desenvolvimento' },
