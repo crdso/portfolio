@@ -75,6 +75,99 @@
     }, { passive: true });
   }
 
+  /* ---------- rastro de tinta rubi que segue o cursor ----------
+     Reinterpretação em vermelho da lógica de trail do portfólio de
+     referência: um traço único em canvas que afina nas pontas,
+     engrossa com a velocidade e some suave.
+     Só com mouse, leve, sem bloquear clique, respeita reduced-motion. */
+  (() => {
+    if (!finePointer || reduced) return;
+    const cv = document.createElement('canvas');
+    cv.className = 'inkfx';
+    cv.setAttribute('aria-hidden', 'true');
+    document.body.prepend(cv);
+    const ctx = cv.getContext('2d');
+    let W = 0, H = 0, run = false, last = null;
+    const T = [];
+    const MAX = 28;
+
+    function size() {
+      const dpr = Math.min(devicePixelRatio || 1, 1.75);
+      W = innerWidth; H = innerHeight;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.clearRect(0, 0, W, H);
+    }
+
+    function draw() {
+      if (T.length < 3) return;
+      const n = T.length;
+      const left = [], right = [];
+      for (let i = 0; i < n; i++) {
+        const p = T[i];
+        const a = T[Math.max(0, i - 1)], b = T[Math.min(n - 1, i + 1)];
+        let dx = b.x - a.x, dy = b.y - a.y;
+        const m = Math.hypot(dx, dy) || 1; dx /= m; dy /= m;
+        const t = i / (n - 1);
+        const tip = Math.sin(Math.PI * t); // 0 nas pontas, 1 no meio
+        const w = p.w * tip * p.life * 0.5;
+        left.push([p.x - dy * w, p.y + dx * w]);
+        right.push([p.x + dy * w, p.y - dx * w]);
+      }
+      ctx.beginPath();
+      ctx.moveTo(left[0][0], left[0][1]);
+      for (let i = 1; i < n; i++) {
+        const [x, y] = left[i], [px, py] = left[i - 1];
+        ctx.quadraticCurveTo(px, py, (px + x) / 2, (py + y) / 2);
+      }
+      for (let i = n - 1; i >= 0; i--) {
+        const [x, y] = right[i], [px, py] = right[Math.min(n - 1, i + 1)];
+        ctx.quadraticCurveTo(px, py, (px + x) / 2, (py + y) / 2);
+      }
+      ctx.closePath();
+      const g = ctx.createLinearGradient(T[0].x, T[0].y, T[n - 1].x, T[n - 1].y);
+      g.addColorStop(0, 'rgba(225, 29, 46, .08)');
+      g.addColorStop(0.55, 'rgba(225, 29, 46, .30)');
+      g.addColorStop(1, 'rgba(255, 106, 115, .48)');
+      ctx.fillStyle = g;
+      ctx.fill();
+    }
+
+    function point(x, y) {
+      if (!last) last = { x, y };
+      const d = Math.hypot(x - last.x, y - last.y);
+      if (d < 1.5) return;
+      const steps = Math.min(4, Math.floor(d / 14) + 1);
+      const sp = Math.min(1, d / 32);
+      for (let k = 1; k <= steps; k++) {
+        T.push({
+          x: last.x + (x - last.x) * k / steps,
+          y: last.y + (y - last.y) * k / steps,
+          life: 1, w: 6 + sp * 16
+        });
+        if (T.length > MAX) T.shift();
+      }
+      last = { x, y };
+    }
+
+    const wake = () => { if (run) return; run = true; requestAnimationFrame(frame); };
+    addEventListener('pointermove', (e) => { point(e.clientX, e.clientY); wake(); }, { passive: true });
+    document.addEventListener('pointerleave', () => { last = null; });
+
+    function frame() {
+      ctx.clearRect(0, 0, W, H);
+      draw();
+      for (let i = T.length - 1; i >= 0; i--) { T[i].life -= 0.035; if (T[i].life <= 0) T.splice(i, 1); }
+      if (T.length) requestAnimationFrame(frame);
+      else { run = false; ctx.clearRect(0, 0, W, H); }
+    }
+
+    size();
+    addEventListener('resize', size);
+    addEventListener('scroll', () => { T.length = 0; last = null; }, { passive: true });
+  })();
+
   /* ---------- revelar ao rolar ---------- */
   const io = new IntersectionObserver((entries) => entries.forEach((en) => {
     if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }

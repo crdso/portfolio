@@ -40,8 +40,16 @@ ul { list-style: none; padding: 0; }
 .skip:focus { top: 1rem; }
 #app { outline: none; }
 
-/* ---------------- Fundo ---------------- */
-.atmos { position: fixed; inset: 0; z-index: -2; overflow: hidden; background: var(--bg); pointer-events: none; }
+/* ---------------- Fundo: uma atmosfera contínua ----------------
+   Identidade única do topo ao rodapé: vinho, crimson, rubi,
+   vermelho profundo e preto, com pontos suaves de luz.
+   O .atmos é fixo, então a continuidade é automática no scroll;
+   os orbes extras garantem que o vermelho respire também no meio. */
+.atmos {
+  position: fixed; inset: 0; z-index: -2; overflow: hidden; background: var(--bg); pointer-events: none;
+  background:
+    linear-gradient(180deg, #050102 0%, #150408 16%, #070203 34%, #1c0509 52%, #0a0204 70%, #180409 86%, #070203 100%);
+}
 .orb { position: absolute; border-radius: 50%; aspect-ratio: 1; will-change: transform; }
 /* esfera principal: luz vermelha com volume */
 .orb--sun {
@@ -64,14 +72,32 @@ ul { list-style: none; padding: 0; }
 /* ponto de luz mais vivo */
 .orb--spark {
   width: 34vmax; right: 8vmax; top: 30vh;
-  background: radial-gradient(circle, rgba(255, 70, 80, .32) 0%, rgba(225, 29, 46, .12) 35%, transparent 65%);
+  background: radial-gradient(circle, rgba(255, 70, 80, .3) 0%, rgba(225, 29, 46, .11) 35%, transparent 65%);
   animation: drift-b 30s ease-in-out infinite alternate-reverse;
+}
+/* continuidade no meio da página: vinho difuso */
+.orb--mid {
+  width: 110vmax; left: -32vmax; top: 18%;
+  background: radial-gradient(circle at 60% 50%, rgba(157, 13, 27, .5) 0%, rgba(90, 6, 16, .26) 32%, transparent 62%);
+  animation: drift-c 60s ease-in-out infinite alternate;
+}
+/* continuidade no meio-baixo: crimson profundo */
+.orb--deep {
+  width: 105vmax; right: -36vmax; top: 52%;
+  background: radial-gradient(circle at 42% 50%, rgba(200, 18, 35, .36) 0%, rgba(90, 6, 16, .2) 36%, transparent 65%);
+  animation: drift-a 55s ease-in-out infinite alternate-reverse;
+}
+/* brasa baixa: rubi suave que abraça serviços + rodapé */
+.orb--ember {
+  width: 62vmax; left: 8vw; bottom: -26vmax;
+  background: radial-gradient(circle, rgba(255, 60, 72, .2) 0%, rgba(157, 13, 27, .11) 42%, transparent 68%);
+  animation: drift-b 42s ease-in-out infinite alternate;
 }
 .atmos__veil {
   position: absolute; inset: 0;
   background:
-    radial-gradient(120% 90% at 50% 40%, transparent 40%, rgba(4, 1, 2, .7) 100%),
-    linear-gradient(180deg, rgba(7, 2, 3, .35), rgba(7, 2, 3, .1) 45%, rgba(7, 2, 3, .5));
+    radial-gradient(120% 90% at 50% 40%, transparent 42%, rgba(4, 1, 2, .62) 100%),
+    linear-gradient(180deg, rgba(7, 2, 3, .32), rgba(7, 2, 3, .06) 42%, rgba(7, 2, 3, .1) 60%, rgba(7, 2, 3, .42));
 }
 @keyframes drift-a { to { transform: translate3d(-6vmax, -5vmax, 0) scale(1.06); } }
 @keyframes drift-b { to { transform: translate3d(7vmax, 5vmax, 0) scale(1.08); } }
@@ -82,6 +108,14 @@ ul { list-style: none; padding: 0; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* rastro de tinta do cursor (reinterpretação em rubi/crimson):
+   canvas fixo, pointer-events none, só existe com mouse */
+.inkfx {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 80; opacity: .8;
+}
+@media (hover: none), (pointer: coarse) { .inkfx { display: none; } }
+
 /* ---------------- Navegação ---------------- */
 .nav {
   position: fixed; inset: 0 0 auto; z-index: 50; height: var(--nav-h);
@@ -90,7 +124,13 @@ ul { list-style: none; padding: 0; }
   border-bottom: 1px solid transparent;
 }
 .nav.is-solid { background: rgba(8, 2, 3, .72); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); border-color: var(--line); }
-.nav__brand { font-weight: 800; font-size: 1.05rem; letter-spacing: .14em; }
+.nav__brand { display: inline-flex; align-items: center; line-height: 0; }
+.nav__brand img {
+  height: 44px; width: auto; display: block;
+  filter: drop-shadow(0 4px 18px rgba(225, 29, 46, .35));
+  transition: transform .4s var(--ease), filter .4s;
+}
+.nav__brand:hover img { transform: translateY(-1px); filter: drop-shadow(0 6px 22px rgba(225, 29, 46, .5)); }
 .nav__links { display: flex; gap: 2rem; margin-left: auto; font-size: .92rem; color: var(--ink-2); }
 .nav__links a { position: relative; padding: .4rem 0; transition: color .3s; }
 .nav__links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--glow); transform: scaleX(0); transform-origin: right; transition: transform .5s var(--ease); }
@@ -105,6 +145,7 @@ ul { list-style: none; padding: 0; }
 @media (max-width: 760px) {
   :root { --nav-h: 62px; }
   .nav { gap: 1rem; }
+  .nav__brand img { height: 36px; }
   .nav__links { gap: 1.2rem; font-size: .88rem; }
   .nav__links a:nth-child(2) { display: none; }
   .nav__cta { display: none; }
@@ -159,21 +200,22 @@ ul { list-style: none; padding: 0; }
 .hero__name { width: 100%; display: flex; justify-content: center; line-height: .82; font-weight: 800; letter-spacing: -.05em; }
 .fit { display: block; width: max-content; flex: none; white-space: nowrap; font-size: var(--fs, 17vw); padding-bottom: .04em; }
 
-/* CARDOSO: metal claro com uma faixa de luz atravessando */
-@property --shine { syntax: '<percentage>'; inherits: false; initial-value: 110%; }
+/* CARDOSO: vermelho profundo premium com faixa de luz lenta e elegante.
+   Travessia ~5.2s + pausa: total 9.5s, faixa percorre 55% do ciclo. */
+@property --shine { syntax: '<percentage>'; inherits: false; initial-value: 115%; }
 .hero__name .fit {
-  --shine: 110%;
+  --shine: 115%;
   background-image:
-    linear-gradient(100deg, transparent 0 41%, rgba(70, 4, 12, .5) 46%, #ffffff 48.6%, #ffe2e5 50%, rgba(70, 4, 12, .5) 53%, transparent 57% 100%),
-    linear-gradient(180deg, #ffffff 0%, #f7e1e3 34%, #e3b3b8 68%, #c9848c 100%);
-  background-size: 260% 100%, 100% 100%;
+    linear-gradient(100deg, transparent 0 42%, rgba(40, 2, 7, .45) 46.5%, #ffd6da 49%, #ffffff 50%, #ffc2c7 51%, rgba(40, 2, 7, .45) 53.5%, transparent 58% 100%),
+    linear-gradient(180deg, #e63244 0%, #b01020 28%, #7c0a15 48%, #c31425 62%, #6b0711 82%, #4d040b 100%);
+  background-size: 280% 100%, 100% 100%;
   background-position: var(--shine) 0, 0 0;
   background-repeat: no-repeat;
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  filter: drop-shadow(0 0 34px rgba(255, 36, 54, .28)) drop-shadow(0 18px 40px rgba(0, 0, 0, .45));
+  filter: drop-shadow(0 0 30px rgba(200, 18, 35, .3)) drop-shadow(0 18px 40px rgba(0, 0, 0, .5));
 }
-.js.is-ready .hero__name .fit { animation: shine 7.5s cubic-bezier(.55, 0, .3, 1) 1.6s infinite; }
-@keyframes shine { 0% { --shine: 110%; } 38%, 100% { --shine: -10%; } }
+.js.is-ready .hero__name .fit { animation: shine 9.5s cubic-bezier(.55, .05, .25, 1) 1.6s infinite; }
+@keyframes shine { 0% { --shine: 115%; } 55%, 100% { --shine: -15%; } }
 
 .hero__line { margin-top: clamp(1.2rem, 3.5vh, 2rem); font-size: clamp(1.02rem, 1.3vw, 1.2rem); color: var(--ink-2); }
 .hero__foot { width: 100%; max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
@@ -377,24 +419,38 @@ ul { list-style: none; padding: 0; }
   .next { grid-template-columns: 1fr; }
 }
 
-/* ---------------- Rodapé ---------------- */
-.footer { position: relative; overflow: hidden; padding: clamp(5rem, 11vw, 9rem) var(--pad) 0; border-top: 1px solid var(--line); isolation: isolate; }
+/* ---------------- Rodapé (compacto premium, mesma atmosfera) ---------------- */
+.footer {
+  position: relative; overflow: hidden; isolation: isolate;
+  padding: clamp(3.2rem, 7vw, 5.8rem) var(--pad) 0;
+  border-top: 1px solid rgba(255, 90, 100, .14);
+  background: linear-gradient(180deg, transparent 0%, rgba(58, 5, 11, .32) 42%, rgba(20, 3, 7, .55) 100%);
+}
 .footer::before {
   content: ""; position: absolute; left: 50%; bottom: -70vmax; width: 120vmax; aspect-ratio: 1; transform: translateX(-50%); z-index: -1; border-radius: 50%;
-  background: radial-gradient(circle at 50% 30%, rgba(255, 58, 72, .55), rgba(157, 13, 27, .35) 30%, transparent 60%);
+  background: radial-gradient(circle at 50% 30%, rgba(255, 58, 72, .5), rgba(157, 13, 27, .32) 30%, transparent 60%);
 }
-.footer__inner { max-width: var(--max); margin: 0 auto; display: grid; justify-items: start; gap: 1.6rem; }
+.footer__inner { max-width: var(--max); margin: 0 auto; display: grid; justify-items: start; gap: 1.1rem; }
 .footer__status { display: inline-flex; align-items: center; gap: .6rem; color: var(--ink-2); }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: #3ee08a; box-shadow: 0 0 0 0 rgba(62, 224, 138, .55); animation: ping 2.4s infinite; }
 @keyframes ping { 70% { box-shadow: 0 0 0 9px rgba(62, 224, 138, 0); } 100% { box-shadow: 0 0 0 0 rgba(62, 224, 138, 0); } }
-.footer__title { font-size: clamp(2.6rem, 7vw, 6.4rem); line-height: .92; font-weight: 700; letter-spacing: -.05em; max-width: 12ch; }
-.footer__links { display: flex; flex-wrap: wrap; gap: .8rem; }
+.footer__title { font-size: clamp(2.2rem, 5.2vw, 4.4rem); line-height: .94; font-weight: 700; letter-spacing: -.045em; max-width: 12ch; }
+.footer__links { display: flex; flex-wrap: wrap; gap: .7rem; }
 .footer__links:empty { display: none; }
-.footer__links a { display: inline-flex; align-items: center; gap: .6rem; padding: 1rem 1.5rem; border-radius: 999px; border: 1px solid var(--line-2); font-weight: 500; transition: background-color .35s, color .35s, border-color .35s; }
+.footer__links a { display: inline-flex; align-items: center; gap: .6rem; padding: .85rem 1.3rem; border-radius: 999px; border: 1px solid var(--line-2); font-weight: 500; transition: background-color .35s, color .35s, border-color .35s; }
 .footer__links a:first-child { background: #fff; color: #120305; border-color: #fff; }
 .footer__links a:hover { background: var(--red); border-color: var(--red); color: #fff; }
-.footer__name { max-width: var(--max); margin: clamp(3rem, 8vw, 6rem) auto 0; line-height: .76; font-weight: 800; letter-spacing: -.055em; color: rgba(255, 238, 238, .92); }
-.footer__base { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 1.4rem 0 calc(1.4rem + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+/* identidade Cardoso no rodapé: menor (~-30%), mesmo vermelho premium, estático */
+.footer__name {
+  max-width: 980px; margin: clamp(1.8rem, 4.5vw, 3.6rem) auto 0;
+  line-height: .78; font-weight: 800; letter-spacing: -.055em;
+}
+.footer__name .fit {
+  background-image: linear-gradient(180deg, #d92033 0%, #8d0c1a 38%, #5a060f 68%, #3a0309 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, .45)) drop-shadow(0 0 24px rgba(200, 18, 35, .22));
+}
+.footer__base { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 1.1rem 0 calc(1.1rem + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
 .footer__base a:hover { color: #fff; }
 @media (max-width: 760px) { .footer__base span:nth-child(2) { display: none; } }
 
@@ -408,7 +464,8 @@ ul { list-style: none; padding: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .orb, .dot, .hero__glow, .hero__horizon::after { animation: none; }
-  .js.is-ready .hero__name .fit { animation: none; }
+  .js.is-ready .hero__name .fit { animation: none; --shine: 0%; }
+  .inkfx { display: none; }
   *, *::before, *::after { transition-duration: .001ms !important; transition-delay: 0s !important; }
   .js [data-reveal], .js [data-in], .js .hero__name .ltr { opacity: 1; transform: none; filter: none; }
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }

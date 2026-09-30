@@ -10,28 +10,34 @@
   <meta property="og:title" content="Cardoso — Design, desenvolvimento e sistemas">
   <meta property="og:description" content="Sites e sistemas web para marcas que querem ser vistas.">
   <meta property="og:image" content="assets/og.jpg">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon-32.png" type="image/png">
+  <link rel="icon" href="assets/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <a class="skip" href="#app">Pular para o conteúdo</a>
 
-  <!-- fundo: luz vermelha difusa -->
+  <!-- fundo: atmosfera vermelha contínua do topo ao rodapé -->
   <div class="atmos" aria-hidden="true">
     <span class="orb orb--sun"></span>
     <span class="orb orb--wine"></span>
     <span class="orb orb--dark"></span>
+    <span class="orb orb--mid"></span>
+    <span class="orb orb--deep"></span>
+    <span class="orb orb--ember"></span>
     <span class="orb orb--spark"></span>
     <span class="atmos__veil"></span>
   </div>
   <div class="grain" aria-hidden="true"></div>
 
   <header class="nav" data-nav>
-    <a class="nav__brand" href="#/" aria-label="Cardoso — início">CARDOSO</a>
+    <a class="nav__brand" href="#/" aria-label="Cardoso — início"><img src="assets/logo-c.png" width="88" height="88" alt="Cardoso"></a>
     <nav class="nav__links" aria-label="Principal">
       <a href="#projetos">Projetos</a>
       <a href="#servicos">Serviços</a>
@@ -134,6 +140,6 @@
   </footer>
 
   <script src="js/data.js?v=10"></script>
-  <script src="js/main.js?v=13" defer></script>
+  <script src="js/main.js?v=14" defer></script>
 </body>
 </html>
