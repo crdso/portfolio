@@ -25,10 +25,6 @@
   const context = $('[data-modal-context]');
 
   /* ---------- tipografia que ocupa a largura ---------- */
-  $$('[data-letters]').forEach((el) => {
-    const t = el.textContent; el.textContent = '';
-    [...t].forEach((c, i) => { const s = document.createElement('span'); s.className = 'ltr'; s.style.setProperty('--i', i); s.textContent = c; el.appendChild(s); });
-  });
   function fit() {
     $$('[data-fit]').forEach((el) => {
       const box = el.parentElement;
@@ -43,9 +39,8 @@
   fit();
   let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(fit, 80); });
   const ready = () => { fit(); root.classList.add('is-ready'); };
-  // CARDOSO aparece desde o primeiro frame: pronto imediato e síncrono
-  // (sem esperar fonte, CSS externo ou próximo quadro). A fonte só refaz
-  // a medição quando carregar.
+  // As entradas dos textos de apoio ainda usam is-ready; CARDOSO já está
+  // visível no HTML e usa fit() só para ajustar a largura, sem esperar a fonte.
   ready();
   if (document.fonts && document.fonts.load) {
     document.fonts.load('800 100px "Inter Tight"').then(fit, fit);
