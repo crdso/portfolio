@@ -321,6 +321,8 @@ html.modal-open { overflow: hidden; }
 .proj__meta dd { color: var(--ink-2); overflow-wrap: anywhere; }
 .btn { display: inline-flex; align-items: center; gap: .6rem; justify-self: start; padding: .95rem 1.5rem; border-radius: 999px; background: #fff; color: #120305; font-weight: 600; transition: transform .4s var(--ease), box-shadow .4s; }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -12px rgba(225, 29, 46, .6); }
+.proj__cta { transition: background .25s, color .25s, transform .4s var(--ease), box-shadow .4s; }
+.proj__cta:hover, .proj__cta:focus-visible { background: var(--red); color: #fff; }
 .shot { overflow: hidden; border-radius: var(--radius); background: #120507; box-shadow: 0 30px 80px -50px rgba(0, 0, 0, .95), 0 0 0 1px rgba(255, 255, 255, .08); }
 .shot img { display: block; width: 100%; height: auto; object-fit: cover; object-position: top center; }
 .project-screens { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(1rem, 2vw, 1.5rem); }

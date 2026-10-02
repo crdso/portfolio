@@ -227,6 +227,8 @@
     context.textContent = 'Projeto';
     const shots = (p.shots || []).slice(0, 2).map((s) => (s.includes('/') ? s : p.id + '/' + s));
     const showPlace = p.place && !['—', 'Brasil', 'Produto próprio'].includes(p.place);
+    const whatsapp = String(CONFIG.whatsapp || '').trim();
+    const whatsappMessage = `Olá! Vi o projeto ${p.name} no seu portfólio e gostaria de conversar sobre algo nesse estilo.`;
     content.innerHTML = `
       <article class="portfolio-case">
         <header class="proj__head">
@@ -240,6 +242,7 @@
             <p class="proj__text">${esc(p.text)}</p>
             ${showPlace ? `<dl class="proj__meta"><dt>Local</dt><dd>${esc(p.place)}</dd></dl>` : ''}
             ${p.url ? `<a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener">Ver projeto <span aria-hidden="true">↗</span></a>` : ''}
+            ${whatsapp ? `<a class="btn proj__cta" href="${esc(`https://wa.me/${whatsapp}?text=${encodeURIComponent(whatsappMessage)}`)}" target="_blank" rel="noopener">Quero um projeto como este <span aria-hidden="true">↗</span></a>` : ''}
           </div>
         </header>
         <div class="project-screens">

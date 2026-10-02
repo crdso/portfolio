@@ -6,6 +6,7 @@ import threading
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 
 from playwright.sync_api import sync_playwright
 
@@ -50,6 +51,7 @@ def case_check(page, title: str):
     copy = case.inner_text()
     for unwanted in ("Serviços", "Tecnologias", "Framer", "Outras telas"):
         assert unwanted not in copy, f"{unwanted} appeared in {title}"
+    cta_check(page, title)
     assert page.locator(".proj__meta").count() <= 1
     images = case.locator(".project-screens img")
     assert 1 <= images.count() <= 3
@@ -69,6 +71,20 @@ def case_check(page, title: str):
         widths.append(metrics["width"])
     assert max(widths) - min(widths) < 1, "screenshots have different widths"
     assert page.evaluate("document.querySelector('[data-modal-panel]').scrollWidth <= document.querySelector('[data-modal-panel]').clientWidth + 1"), "modal horizontal overflow"
+
+
+def cta_check(page, title: str):
+    cta = page.locator(".portfolio-case .proj__cta")
+    whatsapp = page.evaluate("String(window.CONFIG.whatsapp || '').trim()")
+    if not whatsapp:
+        assert cta.count() == 0, "CTA appeared without WhatsApp number"
+        return
+    assert cta.count() == 1 and cta.is_visible()
+    assert cta.inner_text().startswith("Quero um projeto como este")
+    href = urlparse(cta.get_attribute("href"))
+    assert (href.scheme, href.netloc, href.path) == ("https", "wa.me", f"/{whatsapp}")
+    assert parse_qs(href.query)["text"] == [f"Olá! Vi o projeto {title} no seu portfólio e gostaria de conversar sobre algo nesse estilo."]
+    assert cta.get_attribute("target") == "_blank"
 
 
 def app_console_error(message):
@@ -149,6 +165,21 @@ def main():
                     before = page.evaluate("scrollY")
                     page.mouse.click(2, 2)
                     close_check(page, before, "alimentacao")
+                    if width == 1440:
+                        for category in page.evaluate("window.CATEGORIES"):
+                            page.locator(f'.folder[data-cat="{category["id"]}"]').click()
+                            for project in page.evaluate("window.PROJECTS"):
+                                if project["cat"] != category["id"]:
+                                    continue
+                                page.locator(f'.card[data-id="{project["id"]}"]').click()
+                                cta_check(page, project["name"])
+                                page.locator("[data-modal-back]").click()
+                            page.locator("[data-modal-close]").click()
+                        page.evaluate("window.CONFIG.whatsapp = ''")
+                        systems.click()
+                        page.locator('.card[data-id="entec"]').click()
+                        cta_check(page, "ENTEC 2026")
+                        page.locator("[data-modal-close]").click()
                     assert not errors, errors
                     print(f"OK {width}x{height}: modal flow, images, scroll, focus, ESC, backdrop, overflow", flush=True)
                     page.close()
