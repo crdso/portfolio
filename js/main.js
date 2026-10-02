@@ -226,13 +226,7 @@
     backButton.textContent = `← ${c.name}`;
     context.textContent = 'Projeto';
     const shots = (p.shots || []).slice(0, 2).map((s) => (s.includes('/') ? s : p.id + '/' + s));
-    const variants = p.variants ? `
-      <h3 class="proj__sub">A mesma base em outras marcas</h3>
-      <div class="variants">${p.variants.map((v) => `
-        <figure><div class="shot"><img src="${src(v.id + '/hero-sm')}" alt="Página inicial do site ${esc(v.name)}" loading="lazy" decoding="async"></div><figcaption>${esc(v.name)}</figcaption></figure>`).join('')}
-      </div>` : '';
-    const meta = [['Local', p.place], ['Serviços', p.services.join(' · ')], ['Tecnologias', p.tech.join(' · ')]]
-      .filter(([, v]) => v && v !== '—');
+    const showPlace = p.place && !['—', 'Brasil', 'Produto próprio'].includes(p.place);
     content.innerHTML = `
       <article class="portfolio-case">
         <header class="proj__head">
@@ -244,13 +238,14 @@
           </div>
           <div class="proj__side">
             <p class="proj__text">${esc(p.text)}</p>
-            <dl class="proj__meta">${meta.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
+            ${showPlace ? `<dl class="proj__meta"><dt>Local</dt><dd>${esc(p.place)}</dd></dl>` : ''}
             ${p.url ? `<a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener">Ver projeto <span aria-hidden="true">↗</span></a>` : ''}
           </div>
         </header>
-        <figure class="shot proj__hero"><img src="${src(p.id + '/hero')}" alt="Página inicial do site ${esc(p.name)}" decoding="async"></figure>
-        ${shots.length ? `<h3 class="proj__sub">Outras telas</h3><div class="proj__gallery">${shots.map((s, i) => `<figure class="shot"><img src="${src(s)}" alt="Seção ${i + 1} do site ${esc(p.name)}" loading="lazy" decoding="async"></figure>`).join('')}</div>` : ''}
-        ${variants}
+        <div class="project-screens">
+          <figure class="shot"><img src="${src(p.id + '/hero')}" alt="Página inicial do site ${esc(p.name)}" decoding="async"></figure>
+          ${shots.map((s, i) => `<figure class="shot"><img src="${src(s)}" alt="Seção ${i + 1} do site ${esc(p.name)}" loading="lazy" decoding="async"></figure>`).join('')}
+        </div>
       </article>`;
     animateContent();
   }

@@ -44,6 +44,38 @@ def close_check(page, before, folder):
     assert page.evaluate("document.activeElement.dataset.cat") == folder, "focus did not return to folder"
 
 
+def case_check(page, title: str):
+    state(page, title)
+    case = page.locator(".portfolio-case")
+    copy = case.inner_text()
+    for unwanted in ("Serviços", "Tecnologias", "Framer", "Outras telas"):
+        assert unwanted not in copy, f"{unwanted} appeared in {title}"
+    assert page.locator(".proj__meta").count() <= 1
+    images = case.locator(".project-screens img")
+    assert 1 <= images.count() <= 3
+    assert case.locator(".project-screens .shot").count() == images.count()
+    widths = []
+    for image in images.all():
+        image.scroll_into_view_if_needed()
+        image.evaluate("i => i.decode()")
+        metrics = image.evaluate("""i => ({
+          naturalWidth: i.naturalWidth, naturalHeight: i.naturalHeight,
+          width: i.getBoundingClientRect().width, height: i.getBoundingClientRect().height,
+          frameWidth: i.closest('.shot').getBoundingClientRect().width
+        })""")
+        assert metrics["naturalWidth"] > 0 and metrics["naturalHeight"] > 0
+        assert abs(metrics["width"] - metrics["frameWidth"]) < 1
+        assert abs(metrics["width"] / metrics["height"] - metrics["naturalWidth"] / metrics["naturalHeight"]) < .01, "image distorted"
+        widths.append(metrics["width"])
+    assert max(widths) - min(widths) < 1, "screenshots have different widths"
+    assert page.evaluate("document.querySelector('[data-modal-panel]').scrollWidth <= document.querySelector('[data-modal-panel]').clientWidth + 1"), "modal horizontal overflow"
+
+
+def app_console_error(message):
+    # O sandbox bloqueia a fonte externa; erros locais ainda devem falhar o teste.
+    return message.type == "error" and not message.location.get("url", "").startswith("https://fonts.googleapis.com/")
+
+
 def main():
     server = ThreadingHTTPServer(("127.0.0.1", 0), partial(QuietHandler, directory=str(ROOT)))
     threading.Thread(target=server.serve_forever, daemon=True).start()
@@ -55,6 +87,7 @@ def main():
                     page = browser.new_page(viewport={"width": width, "height": height}, reduced_motion="reduce")
                     errors = []
                     page.on("pageerror", lambda error: errors.append(str(error)))
+                    page.on("console", lambda message: errors.append(message.text) if app_console_error(message) else None)
                     page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="load")
                     state(page)
                     base_url = page.url
@@ -70,20 +103,15 @@ def main():
                     page.mouse.wheel(0, 600)
                     assert page.evaluate("scrollY") == before, "home scrolled behind modal"
                     page.locator('.card[data-id="blackburguer"]').click()
-                    state(page, "Black Burguer")
+                    case_check(page, "Black Burguer")
                     assert page.url == base_url, "project changed URL"
                     assert page.locator("[data-modal-panel]").count() == 1
-                    assert page.locator(".proj__gallery img").count() <= 2
-                    for image in page.locator(".proj__gallery img, .variants img").all():
-                        image.scroll_into_view_if_needed()
-                        image.evaluate("i => i.decode()")
-                        assert image.evaluate("i => i.naturalWidth > 0")
                     assert page.locator("[data-modal-close]").is_visible()
                     assert page.locator("[data-modal-close]").bounding_box()["y"] < height * .2, "close button did not stay sticky"
                     page.locator("[data-modal-back]").click()
                     state(page, "Alimentação")
                     page.locator('.card[data-id="brasa77"]').click()
-                    state(page, "Brasa 77")
+                    case_check(page, "Brasa 77")
                     page.locator("[data-modal-close]").click()
                     close_check(page, before, "alimentacao")
 
@@ -92,11 +120,26 @@ def main():
                     before = page.evaluate("scrollY")
                     state(page, "Sistemas")
                     page.locator('.card[data-id="entec"]').click()
-                    state(page, "ENTEC 2026")
+                    case_check(page, "ENTEC 2026")
+                    assert page.locator(".proj__text").inner_text() == "Site oficial da ENTEC 2026, criado para reunir as principais informações do evento, inscrições, resultados e o acervo de fotos da edição em uma experiência organizada e fácil de navegar."
+                    assert page.locator(".proj__meta").inner_text() == "Local\nIFTO — Tocantins"
                     page.locator("[data-modal-back]").click()
                     state(page, "Sistemas")
                     page.locator("[data-modal-close]").click()
                     close_check(page, before, "sistemas")
+
+                    for category, category_name, project, title in (("tecnologia", "Tecnologia", "miphone", "MiPhone"), ("energia", "Energia", "nowtech", "Nowtech")):
+                        page.locator(f'.folder[data-cat="{category}"]').click()
+                        before = page.evaluate("scrollY")
+                        state(page, category_name)
+                        page.locator(f'.card[data-id="{project}"]').click()
+                        case_check(page, title)
+                        if project == "miphone":
+                            assert page.locator(".proj__meta").count() == 0
+                        page.locator("[data-modal-back]").click()
+                        state(page, category_name)
+                        page.locator("[data-modal-close]").click()
+                        close_check(page, before, category)
 
                     food.click()
                     before = page.evaluate("scrollY")
@@ -113,6 +156,7 @@ def main():
                 page = browser.new_page(viewport={"width": 1440, "height": 900}, reduced_motion="no-preference")
                 errors = []
                 page.on("pageerror", lambda error: errors.append(str(error)))
+                page.on("console", lambda message: errors.append(message.text) if app_console_error(message) else None)
                 page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="load")
                 page.locator('.folder[data-cat="alimentacao"]').click()
                 state(page, "Alimentação")

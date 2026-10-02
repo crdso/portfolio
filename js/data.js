@@ -99,7 +99,7 @@ window.PROJECTS = [
     services: ['Web design'], tech: ['Framer'], shots: ['section-02', 'section-03'] },
 
   { id: 'entec', cat: 'sistemas', name: 'ENTEC 2026', type: 'Evento de tecnologia do IFTO', place: 'IFTO — Tocantins',
-    text: 'Site do evento e acervo oficial de fotos, com administração, banco de dados e funções no Supabase. Abertura com shader em WebGL e galeria curva.',
+    text: 'Site oficial da ENTEC 2026, criado para reunir as principais informações do evento, inscrições, resultados e o acervo de fotos da edição em uma experiência organizada e fácil de navegar.',
     services: ['Web design', 'Front-end', 'Back-end', 'Banco de dados'], tech: ['JavaScript', 'WebGL', 'Supabase'], shots: ['entec-fotos/hero'] },
   { id: 'correio', cat: 'sistemas', name: 'Correio Elegante', type: 'Aplicação web', place: 'IFTO — Tocantins',
     text: 'Aplicação para enviar cartinhas anônimas no evento: fluxo de envio, pagamento, painel administrativo e autenticação.',
