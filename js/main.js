@@ -7,7 +7,8 @@
   const root = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
-  const src = (path) => `assets/work/${path}.webp`;
+  const pngImages = new Set(['solare/hero', 'solare/section-01', 'solare/section-02']);
+  const src = (path) => `assets/work/${path}.${pngImages.has(path) ? 'png' : 'webp'}`;
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   const CATS = window.CATEGORIES || [];
@@ -160,7 +161,7 @@
     return `
       <a class="card" href="#projetos" data-id="${p.id}" aria-label="Ver projeto ${esc(p.name)}">
         <div class="card__media">
-          <img src="${src(p.id + '/hero-sm')}" srcset="${src(p.id + '/hero-sm')} 800w, ${src(p.id + '/hero')} 1600w"
+          <img src="${src(p.id + '/hero-sm')}" srcset="${src(p.id + '/hero-sm')} 800w, ${src(p.id + '/hero')} ${p.id === 'solare' ? 1448 : 1600}w"
             sizes="(max-width: 760px) 88vw, 42vw" alt="Página inicial do site ${esc(p.name)}" loading="${index < 2 ? 'eager' : 'lazy'}" decoding="async">
           <span class="card__go" aria-hidden="true">↗</span>
         </div>

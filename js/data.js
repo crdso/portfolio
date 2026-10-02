@@ -1,7 +1,7 @@
 /*
   Conteúdo do portfólio.
-  Imagens: assets/work/<id>/ — hero.webp (1600), hero-sm.webp (800),
-  section-01/02/03.webp (trechos escolhidos), capturadas dos sites rodando.
+  Imagens: assets/work/<id>/ — os nomes abaixo não incluem extensão.
+  O main.js usa as capturas corrigidas em PNG quando existem; as demais seguem em WebP.
 */
 window.CONFIG = {
   // Contatos exibidos no rodapé:
