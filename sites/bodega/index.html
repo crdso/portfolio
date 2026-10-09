@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><base href="/sites/bodega/">
+  <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=f244088c-750a-4784-9b9f-cc73a5f46d8d
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bodega Poços — Charcutaria, queijos, fondues e vinhos em Poços de Caldas</title>
+  <meta name="description" content="A Bodega é a extensão da nossa casa: charcutaria artesanal, queijos mineiros premiados, fondues exclusivos, coquetelaria autoral e uma carta de vinhos de inverno. Av. Champagnat, 355 – Poços de Caldas – MG.">
+  <meta name="theme-color" content="#0F1015">
+
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Bodega Poços — Charcutaria, queijos, fondues e vinhos">
+  <meta property="og:description" content="Charcutaria artesanal, queijos mineiros premiados, fondues exclusivos, coquetelaria autoral e vinhos de inverno. Av. Champagnat, 355 – Poços de Caldas – MG.">
+  <meta property="og:url" content="https://bodegapocos.com/">
+  <meta property="og:image" content="https://bodegapocos.com/img/og.jpg">
+  <meta property="og:locale" content="pt_BR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+  <link href="external/fonts.googleapis.com/file/css2__q_family=Montserrat_wght@300;400;500;600;700&display=swap.css" rel="stylesheet">
+  <link rel="preload" as="image" href="img/hero.jpg" media="(min-width: 900px)">
+  <link rel="preload" as="image" href="img/hero-mobile.jpg" media="(max-width: 899px)">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script src="external/cdnjs.cloudflare.com/file/ajax/libs/jszip/3.10.1/jszip.min.js"></script></head>
+<body class="has-cursor is-loaded header-hidden">
+
+  <!-- ===================== LOGO (símbolos SVG reutilizáveis) ===================== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Marca: taça com vinho -->
+      <symbol id="logo-mark" viewBox="0 0 80 100">
+        <path class="lg-bowl" d="M12 6 C10 34, 20 62, 40 64 C60 62, 70 34, 68 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
+        <path class="lg-wine" d="M15 32 C22 66, 58 66, 65 32 C56 54, 24 54, 15 32 Z"></path>
+        <path class="lg-stem" d="M40 64 V92" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
+      </symbol>
+      <!-- Logo completa: taça + BODEGA + base -->
+      <symbol id="logo-full" viewBox="0 0 200 176">
+        <path class="lg-bowl" d="M72 6 C70 34, 80 62, 100 64 C120 62, 130 34, 128 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
+        <path class="lg-wine" d="M75 32 C82 66, 118 66, 125 32 C116 54, 84 54, 75 32 Z"></path>
+        <path class="lg-stem" d="M100 64 V118" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
+        <text class="lg-text" x="100" y="136" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="30" letter-spacing="8" transform="translate(100 0) scale(0.78 1) translate(-100 0)" fill="currentColor">BODEGA</text>
+        <path class="lg-foot" d="M80 152 Q100 143 120 152" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ===================== PRELOADER ===================== -->
+  
+
+  <!-- ===================== CURSOR (desktop) ===================== -->
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header header--solid header--hidden" id="header">
+    <div class="header__inner">
+      <a href="#topo" class="logo" aria-label="Bodega — início">
+        <svg class="logo__icon logo-svg" viewBox="0 0 80 100"><use href="#logo-mark"></use></svg>
+        <span class="logo__word">Bodega</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <a href="#sobre" class="nav__link is-active">Sobre</a>
+        <a href="#cardapio" class="nav__link">Cardápio</a>
+        <a href="#bebidas" class="nav__link">Bebidas</a>
+        <a href="#vinhos" class="nav__link">Vinhos</a>
+        <a href="#contato" class="nav__link">Contato</a>
+        <a href="https://wa.me/5535999893555?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Bodega." class="btn btn--sm btn--primary nav__cta" data-whatsapp="" target="_blank" rel="noopener">Reservar</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <picture class="hero__photo">
+          <source srcset="img/hero-mobile.jpg" media="(max-width: 899px)">
+          <img src="img/hero.jpg" alt="" fetchpriority="high" decoding="async">
+        </picture>
+        <div class="hero__overlay"></div>
+        <div class="hero__glow"></div>
+        <div class="hero__grain"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal-line"><span>Poços de Caldas · desde 2021</span></p>
+        <h1 class="hero__logo" aria-label="Bodega">
+          <svg class="logo-svg logo-svg--hero" viewBox="0 0 200 176" role="img" aria-hidden="true"><use href="#logo-full"></use></svg>
+        </h1>
+        <p class="hero__tagline reveal-line">
+          <span>Charcutaria, queijos mineiros, fondues<br class="br-desktop"> e vinhos de inverno.</span>
+        </p>
+        <p class="hero__quote reveal-line"><span>“A Bodega é a extensão da nossa casa.”</span></p>
+        <div class="hero__actions reveal-line">
+          <span>
+            <a href="#cardapio" class="btn btn--primary">Ver cardápio</a>
+            <a href="https://wa.me/5535999893555?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Bodega." class="btn btn--ghost" data-whatsapp="" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"></path></svg>
+              Reservar pelo WhatsApp
+            </a>
+          </span>
+        </div>
+        <p class="hero__status reveal-line"><span id="statusAberto" class="is-open">Aberto agora · até 23h</span></p>
+      </div>
+
+      <a href="#sobre" class="hero__scroll" aria-label="Rolar para baixo">
+        <span class="hero__scroll-line"></span>
+        <span class="hero__scroll-text">role</span>
+      </a>
+    </section>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Charcutaria artesanal</span><i></i>
+        <span>Queijos mineiros</span><i></i>
+        <span>Fondues exclusivos</span><i></i>
+        <span>Vinhos de inverno</span><i></i>
+        <span>Coquetelaria autoral</span><i></i>
+        <span>Café especial</span><i></i>
+        <span>Charcutaria artesanal</span><i></i>
+        <span>Queijos mineiros</span><i></i>
+        <span>Fondues exclusivos</span><i></i>
+        <span>Vinhos de inverno</span><i></i>
+        <span>Coquetelaria autoral</span><i></i>
+        <span>Café especial</span><i></i>
+      </div>
+    </div>
+
+    <!-- ===================== SOBRE ===================== -->
+    <section class="sobre section" id="sobre">
+      <div class="container">
+        <div class="sobre__grid">
+          <div class="sobre__head">
+            <p class="eyebrow reveal is-visible">Nossa história</p>
+            <h2 class="title reveal is-visible">Pequena venda de secos e molhados</h2>
+            <div class="divider reveal is-visible"></div>
+          </div>
+
+          <div class="sobre__text">
+            <p class="reveal is-visible">Felipe Nishida, idealizador da Bodega, sempre gostou de se reunir com os amigos e a família para petiscar, tomar boas bebidas e jogar conversa fora. Foi em um desses encontros que surgiu a ideia de construir um local aconchegante e agradável que pudesse transmitir esses mesmos valores a outras pessoas.</p>
+            <p class="reveal is-visible">Então, em 2021, nasceu a <strong>Bodega</strong> — nome cujo significado é “pequena venda de secos e molhados”. Desde o início prezamos pela qualidade dos produtos, buscando insumos artesanais de produtores locais e focando sempre no melhor atendimento. Afinal, a Bodega é a extensão de nossa casa, e fazemos questão que cada um sinta esse mesmo aconchego.</p>
+            <p class="reveal is-visible">Em 2024, com a chegada de Waldemar Netto — amante de boa gastronomia e conhecedor de bares e restaurantes do país e do mundo —, a Bodega ganhou ainda mais identidade.</p>
+            <p class="sobre__sign reveal is-visible">Sejam muito bem-vindos.<br><em>Com carinho, equipe Bodega.</em></p>
+          </div>
+
+          <ol class="timeline" aria-label="Linha do tempo">
+            <li class="timeline__item reveal is-visible">
+              <span class="timeline__year">2021</span>
+              <span class="timeline__text">Nasce a Bodega, idealizada por Felipe Nishida.</span>
+            </li>
+            <li class="timeline__item reveal is-visible">
+              <span class="timeline__year">2024</span>
+              <span class="timeline__text">Waldemar Netto se junta à casa e traz novas ideias.</span>
+            </li>
+            <li class="timeline__item reveal is-visible">
+              <span class="timeline__year">Hoje</span>
+              <span class="timeline__text">Fondues exclusivos do chef Thiago Nishida e coquetelaria autoral de Leonardo Willian.</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PILARES ===================== -->
+    <section class="pilares">
+      <div class="container">
+        <div class="pilares__grid">
+          <article class="pilar reveal is-visible">
+            <svg class="pilar__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 30c0-9 7-16 16-16s16 7 16 16v4H8v-4z" fill="none" stroke="currentColor" stroke-width="1.5"></path><path d="M8 34h32M14 24l4-4M22 22l3-3M30 24l-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+            <h3 class="pilar__title">Queijos premiados</h3>
+            <p class="pilar__text">Canastra, Alagoa, Tulha, Mantiqueira e Porão — queijos mineiros reconhecidos entre os melhores do Brasil e do mundo.</p>
+          </article>
+          <article class="pilar reveal is-visible">
+            <svg class="pilar__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M18 4h12v10c0 4-4 6-4 10v20h-4V24c0-4-4-6-4-10V4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M18 14h12" stroke="currentColor" stroke-width="1.5"></path></svg>
+            <h3 class="pilar__title">Vinhos de inverno</h3>
+            <p class="pilar__text">A Bodega prioriza e valoriza os produtores locais. Vinhos para viagem têm 10% de desconto.</p>
+          </article>
+          <article class="pilar reveal is-visible">
+            <svg class="pilar__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 8h28l-12 16v14h6v2H16v-2h6V24L10 8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M14 13h20" stroke="currentColor" stroke-width="1.5"></path></svg>
+            <h3 class="pilar__title">Coquetelaria autoral</h3>
+            <p class="pilar__text">Drinks feitos para serem sentidos, por Leonardo Willian — clássicos bem executados e criações da casa.</p>
+          </article>
+        </div>
+
+        <div class="produtores reveal is-visible">
+          <span class="produtores__label">Produtores que servimos</span>
+          <p class="produtores__list">Queijos Canastra, Alagoa, Tulha, Mantiqueira e Porão · Charcutaria Ceratti · Café Fazenda Retiro Ponte Preta · Vinícolas Arpuro, Casa Geraldo, Primeira Estrada, Barbara Eliodora, Davo, Três Batalhas, Terra Nossa e Maria Maria</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GALERIA ===================== -->
+    <section class="galeria section" id="galeria">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal is-visible">Da nossa cozinha</p>
+          <h2 class="title reveal is-visible">Feito na hora, do nosso jeito</h2>
+          <div class="divider reveal is-visible"></div>
+        </div>
+      </div>
+      <div class="galeria__track">
+        <a href="#porcoes" class="foto reveal" style="--i:0">
+          <div class="foto__frame"><img src="img/croquete.jpg" alt="Croquetes de fraldinha empanados no panko com aioli de dijon" loading="lazy" decoding="async" data-parallax="" style="transform: translateY(-6.9123%) scale(1.15);"></div>
+          <span class="foto__caption"><strong>Croquete de Fraldinha</strong><em>Porções · R$ 50</em></span>
+        </a>
+        <a href="#porcoes" class="foto foto--offset reveal" style="--i:1">
+          <div class="foto__frame"><img src="img/picanha.jpg" alt="Picanha angus fatiada com pão de alho gratinado, farofa, vinagrete e rúcula" loading="lazy" decoding="async" data-parallax=""></div>
+          <span class="foto__caption"><strong>Picanha Angus Argentina</strong><em>Porções · R$ 150</em></span>
+        </a>
+        <a href="#principais" class="foto reveal" style="--i:2">
+          <div class="foto__frame"><img src="img/massa.jpg" alt="Massa artesanal com tomate cereja, manjericão, limão grelhado e parmesão" loading="lazy" decoding="async" data-parallax="" style="transform: translateY(-6.9123%) scale(1.15);"></div>
+          <span class="foto__caption"><strong>Massas artesanais</strong><em>Principais · a partir de R$ 55</em></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== CARDÁPIO ===================== -->
+    <div class="menus">
+    <section class="cardapio section cardapio--head" id="cardapio">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal">Cardápio</p>
+          <h2 class="title title--xl reveal">Para petiscar<br>e jogar conversa fora</h2>
+          <div class="divider reveal"></div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="subnav" id="subnav" aria-label="Categorias do cardápio">
+      <div class="subnav__track" id="subnavTrack"><a href="#fondues" class="subnav__link" data-target="fondues">Fondues</a><a href="#entradas" class="subnav__link" data-target="entradas">Entradas</a><a href="#principais" class="subnav__link" data-target="principais">Principais</a><a href="#porcoes" class="subnav__link" data-target="porcoes">Porções</a><a href="#pizzas" class="subnav__link" data-target="pizzas">Pizzas</a><a href="#sobremesas" class="subnav__link" data-target="sobremesas">Sobremesas</a><a href="#tabua" class="subnav__link" data-target="tabua">Tábua</a><a href="#cafe" class="subnav__link" data-target="cafe">Café</a><span class="subnav__sep"></span><a href="#drinks" class="subnav__link" data-target="drinks">Drinks</a><a href="#autorais" class="subnav__link" data-target="autorais">Autorais</a><a href="#sem-alcool" class="subnav__link" data-target="sem-alcool">Sem álcool</a><a href="#cervejas" class="subnav__link" data-target="cervejas">Cervejas</a><a href="#destilados" class="subnav__link" data-target="destilados">Destilados</a><span class="subnav__sep"></span><a href="#vinhos" class="subnav__link" data-target="vinhos">Vinhos</a></div>
+    </nav>
+
+    <section class="cardapio section cardapio--body" aria-label="Itens do cardápio">
+      <div class="container">
+        <div id="cardapioRoot" class="menu-root">
+      <section class="menu-section" id="fondues" data-nav="Fondues">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">01</span>
+            <h3 class="subtitle reveal">Fondues</h3>
+          </div>
+          <div class="divider"></div>
+          <p class="menu-section__intro reveal">Nossos fondues nasceram da nossa paixão por queijos e sabores artesanais. Dessa paixão surgiu a parceria com o chef Thiago Nishida, formado em gastronomia e chef de cozinha há mais de 20 anos, que já trabalhou ao lado do chef Olivier Anquier e em restaurantes duas estrelas Michelin em Sion, na Suíça. Todos os nossos fondues são receitas exclusivas da Bodega.</p>
+          
+        </header>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        <span class="item__badge">Destaque da casa</span>
+        <div class="item__row">
+          <span class="item__name">Cinco Queijos</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>250</span>
+        </div>
+        <p class="item__desc">Elaborado com os queijos Mantiqueira, Porão, Tulha, Alagoa e Canastra, criando um fondue intenso, cremoso e cheio de personalidade. Acompanha filé mignon, filé de frango, filé mignon suíno, linguiça fina, brócolis, batata, tomate cereja, pêra e pão italiano.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Chocolate com Doce de Leite</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>195</span>
+        </div>
+        <p class="item__desc">Uma combinação sofisticada de chocolate nobre meio amargo e doce de leite Aviação, criando um fondue cremoso e irresistível. Servido com frutas frescas, marshmallow, canudos de wafer e pão italiano.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Dois Amores</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>220</span>
+        </div>
+        <p class="item__desc">Metade chocolate nobre branco, metade creme de avelã: uma combinação perfeita entre suavidade e intensidade. O lado branco ganha uma finalização especial com leite Ninho polvilhado. Servido com frutas frescas, marshmallow, canudos de wafer e pão italiano.</p>
+      </li></ul>
+      </section>
+      <section class="menu-section" id="entradas" data-nav="Entradas">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">02</span>
+            <h3 class="subtitle reveal">Entradas</h3>
+          </div>
+          <div class="divider"></div>
+          
+          
+        </header>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Sopa de Tomate</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>40</span>
+        </div>
+        <p class="item__desc">Sopa de tomate assado com legumes caramelizados, textura cremosa e sabor profundo. Acompanha pão italiano com grana padano gratinado.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Carpaccio</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>60</span>
+        </div>
+        <p class="item__desc">Rosbife de mignon servido com homus e rúcula. Finalizado com parmesão ralado. Acompanha pães italianos.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Dueto</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>60</span>
+        </div>
+        <p class="item__desc">Bruschettas com quatro opções de recheio (queijos especiais, presunto parma, caprese ou cogumelos). Escolha duas opções.</p>
+      </li></ul>
+      </section>
+      <section class="menu-section" id="principais" data-nav="Principais">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">03</span>
+            <h3 class="subtitle reveal">Principais</h3>
+          </div>
+          <div class="divider"></div>
+          
+          <p class="menu-section__aviso reveal">Não fazemos troca de ingredientes.</p>
+        </header>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Tagliatelle al Sugo</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>55</span>
+        </div>
+        <p class="item__desc">Massa artesanal ao molho sugo. Acompanha tiras de mignon.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Fetuccine do Chef</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>68</span>
+        </div>
+        <p class="item__desc">Massa artesanal envolvida em molho bechamel e gorgonzola, tiras de mignon e finalizada com nozes.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Fetuccine Alagoa</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>70</span>
+        </div>
+        <p class="item__desc">Massa artesanal salteada na manteiga finalizada com parmesão Alagoa. Acompanha medalhão de mignon.</p>
+      </li>
+      <li class="item reveal" style="--i:3">
+        
+        <div class="item__row">
+          <span class="item__name">Risotto Blu</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>75</span>
+        </div>
+        <p class="item__desc">Arroz arbóreo incorporado com gorgonzola e damasco. Acompanha bife ancho.</p>
+      </li>
+      <li class="item reveal" style="--i:4">
+        
+        <div class="item__row">
+          <span class="item__name">Risotto Speciale</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>75</span>
+        </div>
+        <p class="item__desc">Arroz arbóreo incorporado com parmesão Alagoa. Acompanha medalhão de mignon.</p>
+      </li>
+      <li class="item reveal" style="--i:5">
+        
+        <div class="item__row">
+          <span class="item__name">Risotto Caprese</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>60</span>
+        </div>
+        <p class="item__desc">Arroz arbóreo incorporado com tomates assados da casa, muçarela de búfala e pesto de manjericão fresco.</p>
+      </li>
+      <li class="item reveal" style="--i:6">
+        
+        <div class="item__row">
+          <span class="item__name">Escondidinho de Fraldinha</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>75</span>
+        </div>
+        <p class="item__desc">Camadas de fraldinha desfiada ao molho sugo artesanal e purê de mandioquinha-salsa enriquecido com queijo Canastra, gratinadas ao forno até atingir uma crosta dourada e irresistível.</p>
+      </li>
+      <li class="item reveal" style="--i:7">
+        
+        <div class="item__row">
+          <span class="item__name">Lasanha Bolonhesa</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>68</span>
+        </div>
+        <p class="item__desc">Massa fresca em camadas recheada com molho bolonhesa, mix de queijos artesanais e molho ao sugo.</p>
+      </li>
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Lasanha de Frango Cremoso</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>69</span>
+        </div>
+        <p class="item__desc">Massa fresca em camadas recheada com frango desfiado ao molho sugo e requeijão, envolvida no molho bechamel e mix de queijos especiais gratinados.</p>
+      </li></ul>
+      </section>
+      <section class="menu-section" id="porcoes" data-nav="Porções">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">04</span>
+            <h3 class="subtitle reveal">Porções</h3>
+          </div>
+          <div class="divider"></div>
+          
+          <p class="menu-section__aviso reveal">Embalagem para viagem R$ 3.</p>
+        </header>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        <span class="item__badge">Destaque da casa</span>
+        <div class="item__row">
+          <span class="item__name">Picanha Angus Argentina</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>150</span>
+        </div>
+        <p class="item__desc">Corte especial de picanha angus grelhada no broiler. Acompanha pão de alho artesanal, aioli de dijon, vinagrete, farofa e salada de rúcula fresca.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Ancho com Fritas</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>115</span>
+        </div>
+        <p class="item__desc">Bife ancho especial grelhado no broiler. Acompanha fritas, farofa artesanal, vinagrete e molho de pimenta da casa.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Linguiça Artesanal</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>115</span>
+        </div>
+        <p class="item__desc">Elaborada com 100% de pernil suíno, sem conservantes. Grelhada no azeite. Acompanha vinagrete, farofa e pães italianos.</p>
+      </li>
+      <li class="item reveal" style="--i:3">
+        
+        <div class="item__row">
+          <span class="item__name">Panhoca</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>105</span>
+        </div>
+        <p class="item__desc">Pão italiano artesanal, recheado com blend de queijos artesanais gratinados no forno. Acompanha melaço e crocante de castanhas.</p>
+      </li>
+      <li class="item reveal" style="--i:4">
+        
+        <div class="item__row">
+          <span class="item__name">Burrata</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>99</span>
+        </div>
+        <p class="item__desc">Queijo de mussarela de búfala, molho pesto artesanal, copa lombo, tomates assados e folhas de rúcula. Acompanha pães italianos.</p>
+      </li>
+      <li class="item reveal" style="--i:5">
+        
+        <div class="item__row">
+          <span class="item__name">Pernil Mirepoix</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>80</span>
+        </div>
+        <p class="item__desc">Pernil suíno desfiado e suculento envolto em mirepoix. Acompanha batata canoa crocante, pães italianos e geleia de abacaxi com pimenta.</p>
+      </li>
+      <li class="item reveal" style="--i:6">
+        
+        <div class="item__row">
+          <span class="item__name">Carne Seca com Mandioca</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>70</span>
+        </div>
+        <p class="item__desc">Carne seca artesanal desfiada puxada na manteiga, servida com mandioca frita ou cozida.</p>
+      </li>
+      <li class="item reveal" style="--i:7">
+        
+        <div class="item__row">
+          <span class="item__name">Isca de Tilápia</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>65</span>
+        </div>
+        <p class="item__desc">Filé de tilápia com empanamento duplo na farinha panko. Acompanha aioli de limão siciliano.</p>
+      </li>
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Croquete de Fraldinha</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>50</span>
+        </div>
+        <p class="item__desc">Fraldinha cozida e desfiada, empanamento duplo na farinha panko. Acompanha aioli de dijon artesanal.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Torresmo</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>45</span>
+        </div>
+        <p class="item__desc">Barriga de porco assada lentamente e frita na hora, crocante por fora e macia por dentro. Acompanha molho de goiabada artesanal.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Batata Frita</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>35</span>
+        </div>
+        <p class="item__desc">Batata palito com nuvem de parmesão grana padano.</p>
+      </li>
+      <li class="item reveal" style="--i:3">
+        
+        <div class="item__row">
+          <span class="item__name">Amendoim da Tininha</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>12</span>
+        </div>
+        <p class="item__desc">Amendoim artesanal torrado e temperado.</p>
+      </li></ul>
+      </section>
+      <section class="menu-section" id="pizzas" data-nav="Pizzas">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">05</span>
+            <h3 class="subtitle reveal">Pizzas</h3>
+          </div>
+          <div class="divider"></div>
+          <p class="menu-section__intro reveal">Massa artesanal de longa fermentação e molho de tomate feito na casa.</p>
+          
+        </header>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Margherita</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>60</span>
+        </div>
+        <p class="item__desc">Molho de tomate artesanal, mussarela, Canastra e tomate cereja. Finalizada com manjericão fresco.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Italiana</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>75</span>
+        </div>
+        <p class="item__desc">Molho de tomate artesanal, mussarela, Canastra e salame italiano.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Especiale do Gui</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>115</span>
+        </div>
+        <p class="item__desc">Molho de tomate artesanal, mussarela, Canastra, presunto parma, tomates assados e rúcula fresca.</p>
+      </li></ul>
+      </section>
+      <section class="menu-section" id="sobremesas" data-nav="Sobremesas">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">06</span>
+            <h3 class="subtitle reveal">Sobremesas</h3>
+          </div>
+          <div class="divider"></div>
+          
+          
+        </header>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Torta Fudge</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>45</span>
+        </div>
+        <p class="item__desc">Torta cremosa de chocolate meio amargo coberta com brigadeiro de colher e crumble de castanhas.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Banana Foster</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>45</span>
+        </div>
+        <p class="item__desc">Base de pão de ló, banana caramelizada em calda amanteigada de açúcar mascavo flambada no conhaque, sorvete de laranja, crumble de castanhas e doce de leite.</p>
+      </li></ul>
+      </section>
+      <section class="menu-section" id="tabua" data-nav="Tábua">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">07</span>
+            <h3 class="subtitle reveal">Charcutarias &amp; Queijos</h3>
+          </div>
+          <div class="divider"></div>
+          <p class="menu-section__intro reveal">Monte sua experiência: escolha entre nossa seleção de charcutarias e queijos especiais e crie uma tábua única, do seu jeito.</p>
+          
+        </header>
+        
+      <div class="menu-group">
+        <h4 class="menu-group__title reveal">Charcutarias</h4>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Salame Ceratti<span class="item__medida">100 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>35</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Presunto Cru Ceratti<span class="item__medida">100 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>45</span>
+        </div>
+        <p class="item__desc">Maturado naturalmente por 12 meses seguindo os métodos tradicionais da charcutaria italiana.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Lombo Defumado<span class="item__medida">50 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>20</span>
+        </div>
+        <p class="item__desc">Receita autoral. Fica 20 dias no tempero a vácuo em cura seca, depois passa pela defumação natural por 12 h com lenha de laranjeira.</p>
+      </li>
+      <li class="item reveal" style="--i:3">
+        
+        <div class="item__row">
+          <span class="item__name">Copa Lombo Maturada<span class="item__medida">50 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>20</span>
+        </div>
+        <p class="item__desc">Temperos caseiros e especiarias. Fica 60 dias maturando em câmara fria.</p>
+      </li>
+      <li class="item reveal" style="--i:4">
+        
+        <div class="item__row">
+          <span class="item__name">Copa Lombo Defumada<span class="item__medida">50 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>20</span>
+        </div>
+        <p class="item__desc">Curada nos temperos e embalada a vácuo durante 15 dias, depois defumação natural por 12 h com lenhas de árvores frutíferas.</p>
+      </li></ul>
+        
+      </div>
+      <div class="menu-group">
+        <h4 class="menu-group__title reveal">Queijos</h4>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Canastra<span class="item__medida">50 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>9</span>
+        </div>
+        <p class="item__desc">Típico queijo brasileiro, da Serra da Canastra, em Minas Gerais. Carrega mais de 200 anos de tradição, preservando suas particularidades regionais.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Alagoa<span class="item__medida">50 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>13</span>
+        </div>
+        <p class="item__desc">Queijo mineiro da região de Alagoa, com alto tempo de maturação e notas semelhantes às do parmesão, preservando as nuances do bom e velho queijo mineiro.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Mantiqueira<span class="item__medida">50 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>15</span>
+        </div>
+        <p class="item__desc">Baixa acidez e cremosidade média, produzido a partir do leite de vacas holandesas e maturado por aproximadamente 3 meses.</p>
+      </li>
+      <li class="item reveal" style="--i:3">
+        
+        <div class="item__row">
+          <span class="item__name">Gorgonzola<span class="item__medida">50 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>20</span>
+        </div>
+        <p class="item__desc">Queijo de mofo azul, caracterizado por sua textura cremosa e sabor marcante.</p>
+      </li>
+      <li class="item reveal" style="--i:4">
+        
+        <div class="item__row">
+          <span class="item__name">Porão<span class="item__medida">50 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>20</span>
+        </div>
+        <p class="item__desc">Massa semidura, com presença de olhaduras e paladar amanteigado, maturado por aproximadamente cinco meses.</p>
+      </li>
+      <li class="item reveal" style="--i:5">
+        
+        <div class="item__row">
+          <span class="item__name">Tulha<span class="item__medida">50 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>25</span>
+        </div>
+        <p class="item__desc">Maturado por 12 meses, massa quebradiça com cristais e notas frutadas. Ouro no World Cheese Awards e ouro por 2 anos consecutivos no Prêmio Queijos Brasil.</p>
+      </li>
+      <li class="item reveal" style="--i:6">
+        
+        <div class="item__row">
+          <span class="item__name">Parmesão tipo Grana Padano<span class="item__medida">50 g</span></span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>25</span>
+        </div>
+        <p class="item__desc">O rei dos queijos: segue a fórmula ancestral italiana e passa por ao menos doze meses de maturação, com coloração, textura, sabor e aroma inconfundíveis.</p>
+      </li></ul>
+        
+      </div>
+      </section>
+      <section class="menu-section" id="cafe" data-nav="Café">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">08</span>
+            <h3 class="subtitle reveal">Café Especial</h3>
+          </div>
+          <div class="divider"></div>
+          <p class="menu-section__intro reveal">Fazenda Retiro Ponte Preta, Poços de Caldas – MG. Variedade Catucaí.</p>
+          
+        </header>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Expresso Curto</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>7</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Expresso Longo</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>14</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Pacote 500 g</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>65</span>
+        </div>
+        
+      </li></ul>
+      </section></div>
+      </div>
+    </section>
+
+    <!-- ===================== BEBIDAS ===================== -->
+    <section class="bebidas section" id="bebidas">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal">Bebidas</p>
+          <h2 class="title title--xl reveal">Feito para<br>ser sentido</h2>
+          <div class="divider reveal"></div>
+        </div>
+        <div id="bebidasRoot" class="menu-root">
+      <section class="menu-section" id="drinks" data-nav="Drinks">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">09</span>
+            <h3 class="subtitle reveal">Drinks</h3>
+          </div>
+          <div class="divider"></div>
+          
+          
+        </header>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Gin Tônica</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>35</span>
+        </div>
+        <p class="item__desc">Gin, água tônica e toque cítrico.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Carajillo</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>42</span>
+        </div>
+        <p class="item__desc">Licor 43 e café expresso.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Moscow Mule</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>34</span>
+        </div>
+        <p class="item__desc">Vodka, limão, xarope simples, extrato de gengibre, bitter e espuma de gengibre.</p>
+      </li>
+      <li class="item reveal" style="--i:3">
+        
+        <div class="item__row">
+          <span class="item__name">Negroni</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>38</span>
+        </div>
+        <p class="item__desc">Gin, bitter e vermute Carpano.</p>
+      </li>
+      <li class="item reveal" style="--i:4">
+        
+        <div class="item__row">
+          <span class="item__name">Boulevardier</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>40</span>
+        </div>
+        <p class="item__desc">Bourbon, bitter e vermute Carpano.</p>
+      </li>
+      <li class="item reveal" style="--i:5">
+        
+        <div class="item__row">
+          <span class="item__name">Fitzgerald</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>34</span>
+        </div>
+        <p class="item__desc">Gin, limão siciliano, xarope simples e Angostura.</p>
+      </li>
+      <li class="item reveal" style="--i:6">
+        
+        <div class="item__row">
+          <span class="item__name">Whisky Sour</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>36</span>
+        </div>
+        <p class="item__desc">Bourbon, limão, xarope simples e albumina.</p>
+      </li>
+      <li class="item reveal" style="--i:7">
+        
+        <div class="item__row">
+          <span class="item__name">French 75</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>36</span>
+        </div>
+        <p class="item__desc">Gin, limão siciliano, xarope simples e espumante brut.</p>
+      </li>
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Aperol Spritz</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>40</span>
+        </div>
+        <p class="item__desc">Aperol, espumante brut e água com gás.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Mojito</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>35</span>
+        </div>
+        <p class="item__desc">Rum branco, limão, xarope de hortelã artesanal e água com gás.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Macunaíma</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>34</span>
+        </div>
+        <p class="item__desc">Cachaça premiada Âmago, limão, açúcar e Fernet.</p>
+      </li></ul>
+      </section>
+      <section class="menu-section" id="autorais" data-nav="Autorais">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">10</span>
+            <h3 class="subtitle reveal">Drinks Autorais</h3>
+          </div>
+          <div class="divider"></div>
+          <p class="menu-section__intro reveal">Coquetelaria autoral, feita para ser sentida. Por Leonardo Willian.</p>
+          
+        </header>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Sweet Spot</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>38</span>
+        </div>
+        <p class="item__tag">Aperol, caramelo salgado, limão siciliano e licor de morango</p><p class="item__perfil">Levemente doce, levemente amargo</p><p class="item__desc">Aperol, licor de morango artesanal, xarope de caramelo salgado, suco de limão siciliano e orange bitters Angostura.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Plot Twist</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>40</span>
+        </div>
+        <p class="item__tag">Rum, abacaxi, caramelo salgado e canela</p><p class="item__perfil">Cítrico, quente, frutado</p><p class="item__desc">Rum envelhecido, cordial de abacaxi, xarope de caramelo salgado e chá estabilizado de canela.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        <span class="item__badge">Destaque da casa</span>
+        <div class="item__row">
+          <span class="item__name">Smokin' Pig</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>48</span>
+        </div>
+        <p class="item__tag">Bourbon, bacon, caramelo salgado e água com gás</p><p class="item__perfil">Salgado, umami, defumado</p><p class="item__desc">Fat wash de bacon em bourbon, xarope de caramelo salgado, orange e aromatic bitters Angostura, solução ácida, água com gás e defumado de casca de laranja.</p>
+      </li>
+      <li class="item reveal" style="--i:3">
+        
+        <div class="item__row">
+          <span class="item__name">Arid</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>42</span>
+        </div>
+        <p class="item__tag">Caju, gin e vermute</p><p class="item__perfil">Seco, adulto, equilibrado</p><p class="item__desc">Cordial de caju, gin Tanqueray, vermute dry e aromatic bitters Angostura.</p>
+      </li>
+      <li class="item reveal" style="--i:4">
+        
+        <div class="item__row">
+          <span class="item__name">Brio</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>40</span>
+        </div>
+        <p class="item__tag">Maracujá, vodka, limão, albumina e baunilha</p><p class="item__perfil">Cítrico, refrescante, levemente doce, cremoso e aromático</p><p class="item__desc">Vodka Ketel One, purê de maracujá, xarope cítrico de limão, albumina e farinha de baunilha.</p>
+      </li></ul>
+      </section>
+      <section class="menu-section" id="sem-alcool" data-nav="Sem álcool">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">11</span>
+            <h3 class="subtitle reveal">Não Alcoólicos</h3>
+          </div>
+          <div class="divider"></div>
+          
+          
+        </header>
+        <ul class="menu-list">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Yellow</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>22</span>
+        </div>
+        <p class="item__desc">Cordial de abacaxi, chá de canela estabilizado, xarope de caramelo salgado e twist de limão siciliano.</p>
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Orange</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>22</span>
+        </div>
+        <p class="item__desc">Oleo-saccharum de tangerina, chá de pimenta rosa estabilizado, purê de maracujá e twist de laranja.</p>
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Red</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>22</span>
+        </div>
+        <p class="item__desc">Cordial de melancia, chá de hibisco estabilizado, purê de maracujá e água com gás.</p>
+      </li>
+      <li class="item reveal" style="--i:3">
+        
+        <div class="item__row">
+          <span class="item__name">White</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>22</span>
+        </div>
+        <p class="item__desc">Shrub de maçã verde, suco de limão siciliano e água tônica zero açúcar.</p>
+      </li>
+      <li class="item reveal" style="--i:4">
+        
+        <div class="item__row">
+          <span class="item__name">Green</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>22</span>
+        </div>
+        <p class="item__desc">Xarope de hortelã, suco de limão taiti, hortelã, capim-limão e água com gás.</p>
+      </li>
+      <li class="item reveal" style="--i:5">
+        
+        <div class="item__row">
+          <span class="item__name">Sucos Naturais</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>9</span>
+        </div>
+        <p class="item__desc">Laranja, uva e limão.</p>
+      </li>
+      <li class="item reveal" style="--i:6">
+        
+        <div class="item__row">
+          <span class="item__name">Água com ou sem gás</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>6</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:7">
+        
+        <div class="item__row">
+          <span class="item__name">Água Tônica</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>9</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Limoneto</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>9</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">H2O</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>9</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Refrigerante lata</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>9</span>
+        </div>
+        
+      </li></ul>
+      </section>
+      <section class="menu-section" id="cervejas" data-nav="Cervejas">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">12</span>
+            <h3 class="subtitle reveal">Cervejas</h3>
+          </div>
+          <div class="divider"></div>
+          
+          
+        </header>
+        
+      <div class="menu-group">
+        <h4 class="menu-group__title reveal">Long Neck</h4>
+        <ul class="menu-list menu-list--compact">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Heineken</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>11</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Heineken Zero</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>11</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Stella Pure Gold</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>11</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:3">
+        
+        <div class="item__row">
+          <span class="item__name">Corona</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>11</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:4">
+        
+        <div class="item__row">
+          <span class="item__name">Corona Zero</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>11</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:5">
+        
+        <div class="item__row">
+          <span class="item__name">Amstel Ultra</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>11</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:6">
+        
+        <div class="item__row">
+          <span class="item__name">Hoegaarden</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>15</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:7">
+        
+        <div class="item__row">
+          <span class="item__name">Blue Moon</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>18</span>
+        </div>
+        
+      </li></ul>
+        
+      </div>
+      <div class="menu-group">
+        <h4 class="menu-group__title reveal">600 ml</h4>
+        <ul class="menu-list menu-list--compact">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Heineken</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>18</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Stella Artois</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>17</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Original</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>16</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:3">
+        
+        <div class="item__row">
+          <span class="item__name">Baden Baden</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>22</span>
+        </div>
+        
+      </li></ul>
+        
+      </div>
+      <div class="menu-group">
+        <h4 class="menu-group__title reveal">Chopp</h4>
+        <div class="reveal"><table class="menu-table"><thead><tr><th scope="col"></th><th scope="col">300 ml</th><th scope="col">500 ml</th></tr></thead><tbody><tr><td>Heineken</td><td><small>R$</small>12</td><td><small>R$</small>17</td></tr><tr><td>Amstel</td><td><small>R$</small>10</td><td><small>R$</small>15</td></tr><tr><td>Brahma</td><td><small>R$</small>12</td><td><small>R$</small>17</td></tr></tbody></table></div>
+        <p class="menu-section__aviso">Consultar disponibilidade.</p>
+      </div>
+      </section>
+      <section class="menu-section" id="destilados" data-nav="Destilados">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">13</span>
+            <h3 class="subtitle reveal">Caipirinhas &amp; Destilados</h3>
+          </div>
+          <div class="divider"></div>
+          
+          
+        </header>
+        
+      <div class="menu-group">
+        <h4 class="menu-group__title reveal">Caipirinhas</h4>
+        <div class="reveal"><table class="menu-table"><thead><tr><th scope="col"></th><th scope="col">Cachaça</th><th scope="col">Vodka</th></tr></thead><tbody><tr><td>3 limões com rapadura</td><td><small>R$</small>30</td><td><small>R$</small>35</td></tr><tr><td>Limão taiti</td><td><small>R$</small>20</td><td><small>R$</small>25</td></tr><tr><td>Morango</td><td><small>R$</small>30</td><td><small>R$</small>35</td></tr><tr><td>Maracujá</td><td><small>R$</small>25</td><td><small>R$</small>30</td></tr></tbody></table></div>
+        
+      </div>
+      <div class="menu-group">
+        <h4 class="menu-group__title reveal">Destilados</h4>
+        <ul class="menu-list menu-list--compact">
+      <li class="item reveal" style="--i:0">
+        
+        <div class="item__row">
+          <span class="item__name">Whisky Jack Daniel's</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>27</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:1">
+        
+        <div class="item__row">
+          <span class="item__name">Whisky Singleton</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>50</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:2">
+        
+        <div class="item__row">
+          <span class="item__name">Campari</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>20</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:3">
+        
+        <div class="item__row">
+          <span class="item__name">Cachaça Reserva Minas Uai</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>9</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:4">
+        
+        <div class="item__row">
+          <span class="item__name">Cachaça Reserva Âmago</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>9</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:5">
+        
+        <div class="item__row">
+          <span class="item__name">Tequila Jose Cuervo Ouro</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>25</span>
+        </div>
+        
+      </li>
+      <li class="item reveal" style="--i:6">
+        
+        <div class="item__row">
+          <span class="item__name">Licor 43</span>
+          <span class="item__leader" aria-hidden="true"></span>
+          <span class="item__price"><small>R$</small>30</span>
+        </div>
+        
+      </li></ul>
+        
+      </div>
+      </section></div>
+      </div>
+    </section>
+
+    <!-- ===================== VINHOS ===================== -->
+    <section class="vinhos section" id="vinhos">
+      <div class="vinhos__banner">
+        <div class="container">
+          <p class="eyebrow eyebrow--light reveal">Carta de vinhos</p>
+          <h2 class="title title--xl title--light reveal">Que cada taça traga<br>uma boa conversa</h2>
+          <p class="vinhos__lead reveal">A Bodega prioriza e valoriza os produtores locais de vinhos de inverno. <strong>Vinhos para viagem possuem 10% de desconto.</strong></p>
+          <div class="chips reveal" id="vinhosChips"><a href="#espumantes" class="chip">Espumantes</a><a href="#brancos" class="chip">Brancos</a><a href="#roses" class="chip">Rosés</a><a href="#tintos" class="chip">Tintos</a><a href="#tacas" class="chip">Taças</a></div>
+        </div>
+      </div>
+      <div class="container">
+        <div id="vinhosRoot" class="menu-root">
+      <section class="menu-section" id="espumantes" data-nav="Espumantes">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">01</span>
+            <h3 class="subtitle reveal">Espumantes</h3>
+          </div>
+          <div class="divider"></div>
+          
+        </header>
+        <div class="wine-grid">
+      <article class="wine reveal" style="--i:0">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Arpuro Moscato Brut</h4>
+        <p class="wine__notes">Notas de frutas brancas, flor de laranjeira, abacaxi e maracujá. Perlage fina e persistente. Método champenoise.</p>
+        <div class="wine__price"><span><small>R$</small>142</span><span class="wine__alc">11,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:1">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Casa Geraldo Viognier Brut</h4>
+        <p class="wine__notes">Notas de damasco maduro, pêssego branco e flores brancas. Produzido no método charmat.</p>
+        <div class="wine__price"><span><small>R$</small>138</span><span class="wine__alc">12% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:2">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Davo Branco Nature</h4>
+        <p class="wine__notes">Notas de pão tostado, brioches e torrefação. Perlage fino e persistente.</p>
+        <div class="wine__price"><span><small>R$</small>145</span><span class="wine__alc">12% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:3">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Maria Maria Sous Les Scaliers</h4>
+        <p class="wine__notes">Notas de panificação, nuances de frutas brancas, como maçã verde. Retrogosto longo e persistente.</p>
+        <div class="wine__price"><span><small>R$</small>194</span><span class="wine__alc">12,8% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:4">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Mirante do Vale</h4>
+        <p class="wine__notes">Em boca, equilibrado com perlage aveludada, acidez delicada, complexidade e persistência gustativa.</p>
+        <div class="wine__price"><span><small>R$</small>150</span><span class="wine__alc">12,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:5">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Primeira Estrada Carvalho Branco</h4>
+        <p class="wine__notes">Notas de manteiga e pão tostado com acidez e final longo.</p>
+        <div class="wine__price"><span><small>R$</small>185</span><span class="wine__alc">12% alc.</span></div>
+      </article></div>
+      </section>
+      <section class="menu-section" id="brancos" data-nav="Brancos">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">02</span>
+            <h3 class="subtitle reveal">Brancos</h3>
+          </div>
+          <div class="divider"></div>
+          
+        </header>
+        <div class="wine-grid">
+      <article class="wine reveal" style="--i:0">
+        <div class="wine__top"><span class="wine__country" title="Portugal"><i></i>Portugal</span></div>
+        <h4 class="wine__name">Fonte Sagrada Vinho Verde</h4>
+        <p class="wine__notes">Notas de frutas cítricas, florais e ótima acidez.</p>
+        <div class="wine__price"><span><small>R$</small>105</span><span class="wine__alc">10% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:1">
+        <div class="wine__top"><span class="wine__country" title="Portugal"><i></i>Portugal</span></div>
+        <h4 class="wine__name">Valemésio Vinho Verde</h4>
+        <p class="wine__notes">Fresco, jovem, com uma acidez equilibrada.</p>
+        <div class="wine__price"><span><small>R$</small>95</span><span class="wine__alc">10% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:2">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">White Blend 3 Tons Casa Geraldo</h4>
+        <p class="wine__notes">Notas de maçã, pêra e abacaxi com toque floral e mineral.</p>
+        <div class="wine__price"><span><small>R$</small>95</span><span class="wine__alc">11,8% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:3">
+        <div class="wine__top"><span class="wine__country" title="Itália"><i></i>Itália</span></div>
+        <h4 class="wine__name">Angelica Grillo Sicilia DOC</h4>
+        <p class="wine__notes">Fermentada em tanques de concreto, possui aromas vibrantes de frutas tropicais, toques minerais e florais.</p>
+        <div class="wine__price"><span><small>R$</small>105</span><span class="wine__alc">14% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:4">
+        <div class="wine__top"><span class="wine__country" title="Argentina"><i></i>Argentina</span></div>
+        <h4 class="wine__name">Munay Torrontés</h4>
+        <p class="wine__notes">Notas de frutas tropicais e cítricas. Fresco, jovem e frutado.</p>
+        <div class="wine__price"><span><small>R$</small>115</span><span class="wine__alc">13% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:5">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Davo Branco Chardonnay</h4>
+        <p class="wine__notes">Notas de frutas brancas como maçã verde e pêssego.</p>
+        <div class="wine__price"><span><small>R$</small>120</span><span class="wine__alc">12,9% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:6">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Primeira Estrada Sauvignon Blanc</h4>
+        <p class="wine__notes">Aromas de maracujá fresco, grama cortada e toques minerais.</p>
+        <div class="wine__price"><span><small>R$</small>145</span><span class="wine__alc">13,4% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:7">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Primeira Estrada Chardonnay</h4>
+        <p class="wine__notes">Notas de frutas cítricas, corpo leve e retrogosto longo.</p>
+        <div class="wine__price"><span><small>R$</small>150</span><span class="wine__alc">12,8% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:0">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Barbara Eliodora Sauvignon Blanc</h4>
+        <p class="wine__notes">Notas de doce de maracujá e um leve toque de grama cortada.</p>
+        <div class="wine__price"><span><small>R$</small>155</span><span class="wine__alc">13,9% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:1">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Kiara Sauvignon Blanc Maria Maria</h4>
+        <p class="wine__notes">Leve toque herbáceo e fruta tropical sutil, destacando maracujá. Final longo e persistente.</p>
+        <div class="wine__price"><span><small>R$</small>185</span><span class="wine__alc">13,4% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:2">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Arpuro Sauvignon Blanc</h4>
+        <p class="wine__notes">Notas de ortiga e menta com aromas frescos e frutados.</p>
+        <div class="wine__price"><span><small>R$</small>190</span><span class="wine__alc">12,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:3">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Três Batalhas Sauvignon Blanc</h4>
+        <p class="wine__notes">Notas de frutas tropicais, pimentão, vegetais e minerais com retrogosto prolongado.</p>
+        <div class="wine__price"><span><small>R$</small>240</span><span class="wine__alc">13,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:4">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Profano Branco Terra Nossa</h4>
+        <p class="wine__notes">Notas de pera, floral, rosa branca, damasco e cítrico. Passagem em barrica de carvalho francês.</p>
+        <div class="wine__price"><span><small>R$</small>245</span><span class="wine__alc">13,5% alc.</span></div>
+      </article></div>
+      </section>
+      <section class="menu-section" id="roses" data-nav="Rosés">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">03</span>
+            <h3 class="subtitle reveal">Rosés</h3>
+          </div>
+          <div class="divider"></div>
+          
+        </header>
+        <div class="wine-grid">
+      <article class="wine reveal" style="--i:0">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Pink Blend 3 Tons Casa Geraldo</h4>
+        <p class="wine__notes">Notas sutis de flores brancas e de frutas vermelhas, como cereja e framboesa.</p>
+        <div class="wine__price"><span><small>R$</small>95</span><span class="wine__alc">11,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:1">
+        <div class="wine__top"><span class="wine__country" title="Chile"><i></i>Chile</span></div>
+        <h4 class="wine__name">Vigia Superior Rosé de Merlot</h4>
+        <p class="wine__notes">Nota refrescante e leve com aroma de frutas vermelhas frescas.</p>
+        <div class="wine__price"><span><small>R$</small>110</span><span class="wine__alc">13% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:2">
+        <div class="wine__top"><span class="wine__country" title="Itália"><i></i>Itália</span></div>
+        <h4 class="wine__name">Kaori Sangiovese</h4>
+        <p class="wine__notes">Notas de pasta de frutas amarelas e cítricas no final.</p>
+        <div class="wine__price"><span><small>R$</small>125</span><span class="wine__alc">12% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:3">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Davo Rosé Syrah</h4>
+        <p class="wine__notes">Notas de frutas brancas e vermelhas, com predominância de lichia e morango.</p>
+        <div class="wine__price"><span><small>R$</small>140</span><span class="wine__alc">13,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:4">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Primeira Estrada Syrah Rosé</h4>
+        <p class="wine__notes">Notas de lichia, morango e um leve toque floral, com frescor evidente.</p>
+        <div class="wine__price"><span><small>R$</small>140</span><span class="wine__alc">13,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:5">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Rosé Flor Barbara Eliodora</h4>
+        <p class="wine__notes">Notas de frutas brancas e vermelhas, como lichia, morango e pêssego.</p>
+        <div class="wine__price"><span><small>R$</small>140</span><span class="wine__alc">12,4% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:6">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Arpuro Rosé</h4>
+        <p class="wine__notes">Notas de frutas vermelhas, pêssego e floral.</p>
+        <div class="wine__price"><span><small>R$</small>175</span><span class="wine__alc">12,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:7">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Três Batalhas Rosé</h4>
+        <p class="wine__notes">Notas de morango, tutti-frutti e papaia com boa acidez e vivacidade em boca.</p>
+        <div class="wine__price"><span><small>R$</small>195</span><span class="wine__alc">13,9% alc.</span></div>
+      </article></div>
+      </section>
+      <section class="menu-section" id="tintos" data-nav="Tintos">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">04</span>
+            <h3 class="subtitle reveal">Tintos</h3>
+          </div>
+          <div class="divider"></div>
+          
+        </header>
+        <div class="wine-grid">
+      <article class="wine reveal" style="--i:0">
+        <div class="wine__top"><span class="wine__country" title="Chile"><i></i>Chile</span></div>
+        <h4 class="wine__name">Ilaia Reserva Cabernet Sauvignon</h4>
+        <p class="wine__notes">Notas de frutas negras maduras e toques de especiarias doces.</p>
+        <div class="wine__price"><span><small>R$</small>99</span><span class="wine__alc">13,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:1">
+        <div class="wine__top"><span class="wine__country" title="Chile"><i></i>Chile</span></div>
+        <h4 class="wine__name">Ilaia Reserva Carmenere</h4>
+        <p class="wine__notes">Notas de frutas negras e especiarias, café e toques de terra úmida.</p>
+        <div class="wine__price"><span><small>R$</small>99</span><span class="wine__alc">13,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:2">
+        <div class="wine__top"><span class="wine__country" title="Chile"><i></i>Chile</span></div>
+        <h4 class="wine__name">Ilaia Reserva Merlot</h4>
+        <p class="wine__notes">Notas leves de tostado e frutas vermelhas.</p>
+        <div class="wine__price"><span><small>R$</small>99</span><span class="wine__alc">13,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:3">
+        <div class="wine__top"><span class="wine__country" title="Portugal"><i></i>Portugal</span></div>
+        <h4 class="wine__name">Terras de Pias</h4>
+        <p class="wine__notes">Frutado com leve tom de madeira.</p>
+        <div class="wine__price"><span><small>R$</small>105</span><span class="wine__alc">13,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:4">
+        <div class="wine__top"><span class="wine__country" title="Portugal"><i></i>Portugal</span></div>
+        <h4 class="wine__name">EA Tinto</h4>
+        <p class="wine__notes">Vinho frutado, jovem e com ligeira adstringência.</p>
+        <div class="wine__price"><span><small>R$</small>120</span><span class="wine__alc">14% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:5">
+        <div class="wine__top"><span class="wine__country" title="Argentina"><i></i>Argentina</span></div>
+        <h4 class="wine__name">Plan B Malbec</h4>
+        <p class="wine__notes">Notas de frutas roxas e toques sutis de baunilha e especiarias.</p>
+        <div class="wine__price"><span><small>R$</small>120</span><span class="wine__alc">14,1% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:6">
+        <div class="wine__top"><span class="wine__country" title="França"><i></i>França</span></div>
+        <h4 class="wine__name">La Grive Musicienne Pinot Noir</h4>
+        <p class="wine__notes">Notas de frutas vermelhas maduras e ervas secas.</p>
+        <div class="wine__price"><span><small>R$</small>125</span><span class="wine__alc">12,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:7">
+        <div class="wine__top"><span class="wine__country" title="Uruguai"><i></i>Uruguai</span></div>
+        <h4 class="wine__name">Dino Darnanelli Tannat</h4>
+        <p class="wine__notes">Taninos doces com notas de frutas vermelhas, pretas e flores.</p>
+        <div class="wine__price"><span><small>R$</small>135</span><span class="wine__alc">12,6% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:0">
+        <div class="wine__top"><span class="wine__country" title="Espanha"><i></i>Espanha</span></div>
+        <h4 class="wine__name">Don Paulino Tinto</h4>
+        <p class="wine__notes">Notas de frutos vermelhos silvestres, cereja e alcaçuz.</p>
+        <div class="wine__price"><span><small>R$</small>135</span><span class="wine__alc">13,7% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:1">
+        <div class="wine__top"><span class="wine__country" title="Itália"><i></i>Itália</span></div>
+        <h4 class="wine__name">Orlando Nero d'Avola DOC</h4>
+        <p class="wine__notes">Frutado com notas de cereja.</p>
+        <div class="wine__price"><span><small>R$</small>140</span><span class="wine__alc">12,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:2">
+        <div class="wine__top"><span class="wine__country" title="Itália"><i></i>Itália</span></div>
+        <h4 class="wine__name">Stallone Primitivo Tarantino</h4>
+        <p class="wine__notes">Notas de frutas maduras e notas leves de canela.</p>
+        <div class="wine__price"><span><small>R$</small>140</span><span class="wine__alc">13,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:3">
+        <div class="wine__top"><span class="wine__country" title="Argentina"><i></i>Argentina</span></div>
+        <h4 class="wine__name">Altus Malbec</h4>
+        <p class="wine__notes">Frutado com notas de ameixa e cerejas.</p>
+        <div class="wine__price"><span><small>R$</small>145</span><span class="wine__alc">14% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:4">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Casa Geraldo Syrah Reserva</h4>
+        <p class="wine__notes">Notas de frutas vermelhas maduras, aveludado, com taninos macios e redondos.</p>
+        <div class="wine__price"><span><small>R$</small>145</span><span class="wine__alc">13,8% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:5">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Davo Cabernet Franc</h4>
+        <p class="wine__notes">Notas de frutas negras maduras, pimenta negra, ervas e especiarias.</p>
+        <div class="wine__price"><span><small>R$</small>150</span><span class="wine__alc">14,1% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:6">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Primeira Estrada Syrah</h4>
+        <p class="wine__notes">Notas de ameixa seca, amora, romã e pimenta preta.</p>
+        <div class="wine__price"><span><small>R$</small>155</span><span class="wine__alc">14,4% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:7">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Casa Geraldo Reserva Malbec</h4>
+        <p class="wine__notes">Notas de frutas vermelhas maduras, chocolate, baunilha e especiarias.</p>
+        <div class="wine__price"><span><small>R$</small>165</span><span class="wine__alc">14,3% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:0">
+        <div class="wine__top"><span class="wine__country" title="Uruguai"><i></i>Uruguai</span></div>
+        <h4 class="wine__name">Familia Dardanelli Marselan</h4>
+        <p class="wine__notes">Frutado com taninos doces e equilibrados.</p>
+        <div class="wine__price"><span><small>R$</small>165</span><span class="wine__alc">13,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:1">
+        <div class="wine__top"><span class="wine__country" title="Itália"><i></i>Itália</span></div>
+        <h4 class="wine__name">Poggio Tosco Sangiovese</h4>
+        <p class="wine__notes">Puras frutas vermelhas frescas, especiarias e um toque de carvalho.</p>
+        <div class="wine__price"><span><small>R$</small>175</span><span class="wine__alc">12,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:2">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Barbara Eliodora Syrah</h4>
+        <p class="wine__notes">Notas de frutas vermelhas, especiaria, com taninos presentes e aveludados.</p>
+        <div class="wine__price"><span><small>R$</small>180</span><span class="wine__alc">13,8% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:3">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Profano Syrah Terra Nossa</h4>
+        <p class="wine__notes">Notas de frutas vermelhas, amoras, ameixa e toques de especiarias.</p>
+        <div class="wine__price"><span><small>R$</small>187</span><span class="wine__alc">14% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:4">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Barbara Eliodora Syrah Cuvée</h4>
+        <p class="wine__notes">Reunindo três safras excepcionais: notas de frutas negras maduras, pimenta rosa e cravo.</p>
+        <div class="wine__price"><span><small>R$</small>200</span><span class="wine__alc">14,2% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:5">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Junia Syrah Maria Maria</h4>
+        <p class="wine__notes">Notas de frutas vermelhas e negras, jabuticaba, couro e especiarias.</p>
+        <div class="wine__price"><span><small>R$</small>218</span><span class="wine__alc">14,4% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:6">
+        <div class="wine__top"><span class="wine__country" title="Argentina"><i></i>Argentina</span></div>
+        <h4 class="wine__name">Anaia Cabernet Sauvignon</h4>
+        <p class="wine__notes">Notas de frutas pretas e especiarias.</p>
+        <div class="wine__price"><span><small>R$</small>220</span><span class="wine__alc">14% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:7">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Três Batalhas Syrah</h4>
+        <p class="wine__notes">Notas de frutas pretas e vermelhas, taninos macios, excelente acidez e final aveludado.</p>
+        <div class="wine__price"><span><small>R$</small>220</span><span class="wine__alc">13,2% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:0">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Arpuro Pix</h4>
+        <p class="wine__notes">Notas de frutas vermelhas maduras, groselha, flores e especiarias. Técnica de fermentação semicarbônica.</p>
+        <div class="wine__price"><span><small>R$</small>257</span><span class="wine__alc">12,8% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:1">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Cateto Terra Nossa</h4>
+        <p class="wine__notes">Notas de frutas do bosque e violetas, de corpo médio, com taninos maduros e redondos.</p>
+        <div class="wine__price"><span><small>R$</small>269</span><span class="wine__alc">14% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:2">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Arpuro Syrah Concreto</h4>
+        <p class="wine__notes">Notas marcantes de frutas negras, especiarias e uma delicada mineralidade. Fermentado em tanques de concreto.</p>
+        <div class="wine__price"><span><small>R$</small>285</span><span class="wine__alc">14% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:3">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Primeira Estrada Gran Reserva</h4>
+        <p class="wine__notes">Notas de ameixa, cassis, pimenta e torrefação. Estágio de 14 meses em carvalho francês.</p>
+        <div class="wine__price"><span><small>R$</small>299</span><span class="wine__alc">15,2% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:4">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Hera Gran Reserva Maria Maria</h4>
+        <p class="wine__notes">Notas de madeira, frutas negras e especiarias. Passagem por barricas de carvalho francês.</p>
+        <div class="wine__price"><span><small>R$</small>345</span><span class="wine__alc">15% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:5">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Três Batalhas Trincheira</h4>
+        <p class="wine__notes">Notas de azeitona, baunilha, chocolate amargo e frutas vermelhas. Envelhecido 12 meses em carvalho francês.</p>
+        <div class="wine__price"><span><small>R$</small>345</span><span class="wine__alc">13,2% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:6">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Davo Syrah Gran Reserva</h4>
+        <p class="wine__notes">Notas de frutas negras em compota com toque de baunilha, coco queimado e chocolate.</p>
+        <div class="wine__price"><span><small>R$</small>349</span><span class="wine__alc">13,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:7">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Ermitage Barbara Eliodora</h4>
+        <p class="wine__notes">Acidez viva, taninos agradáveis, bom corpo e retrogosto longo. Estagia 12 meses em carvalho francês.</p>
+        <div class="wine__price"><span><small>R$</small>350</span><span class="wine__alc">14,8% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:0">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Cabernet Franc Terra Nossa</h4>
+        <p class="wine__notes">Notas de ameixa preta, framboesa, compota de morango e carne de caça.</p>
+        <div class="wine__price"><span><small>R$</small>395</span><span class="wine__alc">14,5% alc.</span></div>
+      </article>
+      <article class="wine reveal" style="--i:1">
+        <div class="wine__top"><span class="wine__country" title="Brasil"><i></i>Brasil</span></div>
+        <h4 class="wine__name">Syrah Viognier Terra Nossa</h4>
+        <p class="wine__notes">Notas de frutas vermelhas, especiarias e ameixa. Envelhecido em barricas de carvalho francês por 14 meses.</p>
+        <div class="wine__price"><span><small>R$</small>395</span><span class="wine__alc">14% alc.</span></div>
+      </article></div>
+      </section>
+      <section class="menu-section" id="tacas" data-nav="Taças">
+        <header class="menu-section__head">
+          <div class="menu-section__title">
+            <span class="menu-section__num reveal">05</span>
+            <h3 class="subtitle reveal">Taças</h3>
+          </div>
+          <div class="divider"></div>
+          <p class="menu-section__aviso reveal">Consultar vinho disponível.</p>
+        </header>
+        <div class="wine-grid">
+      <article class="wine reveal" style="--i:0">
+        <div class="wine__top"><span class="wine__country"><i></i>150 ml</span></div>
+        <h4 class="wine__name">Vinho Branco</h4>
+        <p class="wine__notes"></p>
+        <div class="wine__price"><span><small>R$</small>25</span></div>
+      </article>
+      <article class="wine reveal" style="--i:1">
+        <div class="wine__top"><span class="wine__country"><i></i>150 ml</span></div>
+        <h4 class="wine__name">Vinho Tinto</h4>
+        <p class="wine__notes"></p>
+        <div class="wine__price"><span><small>R$</small>25</span></div>
+      </article></div>
+      </section></div>
+      </div>
+    </section>
+    </div><!-- /.menus -->
+
+    <!-- ===================== CONTATO ===================== -->
+    <section class="contato section" id="contato">
+      <div class="container">
+        <div class="contato__grid">
+          <div class="contato__info">
+            <p class="eyebrow reveal">Visite-nos</p>
+            <h2 class="title reveal">Sinta-se em casa</h2>
+            <div class="divider reveal"></div>
+
+            <ul class="contato__list">
+              <li class="contato__item reveal" data-if="endereco">
+                <span class="contato__label">Endereço</span>
+                <a class="contato__value" data-fill="endereco" data-href="mapsUrl" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Bodega%2C+Av.+Champagnat%2C+355+-+S%C3%A3o+Domingos%2C+Po%C3%A7os+de+Caldas+-+MG%2C+37701-860">Av. Champagnat, 355 – São Domingos, Poços de Caldas – MG, 37701-860</a>
+              </li>
+              <li class="contato__item reveal" data-if="funcionamento">
+                <span class="contato__label">Horário <span class="status-pill is-open" id="statusPill">Aberto agora</span></span>
+                <span class="contato__value contato__value--hours" id="horarioLista"><span class="hours__row hours__row--off"><span>Segunda</span><span>fechado</span></span><span class="hours__row"><span>Terça a quinta</span><span>16h às 23h</span></span><span class="hours__row"><span>Sexta e sábado</span><span>16h às meia-noite</span></span><span class="hours__row hours__row--off"><span>Domingo</span><span>fechado</span></span></span>
+              </li>
+              <li class="contato__item reveal" data-if="whatsapp">
+                <span class="contato__label">Reservas &amp; WhatsApp</span>
+                <a class="contato__value" data-whatsapp="" data-fill="whatsappFmt" href="https://wa.me/5535999893555?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Bodega." target="_blank" rel="noopener">(35) 99989-3555</a>
+              </li>
+              <li class="contato__item reveal" data-if="instagram" hidden="">
+                <span class="contato__label">Instagram</span>
+                <a class="contato__value" data-instagram="" target="_blank" rel="noopener">@</a>
+              </li>
+            </ul>
+
+            <div class="contato__actions reveal">
+              <a href="https://wa.me/5535999893555?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Bodega." class="btn btn--primary" data-whatsapp="" target="_blank" rel="noopener">Reservar pelo WhatsApp</a>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Bodega%2C+Av.+Champagnat%2C+355+-+S%C3%A3o+Domingos%2C+Po%C3%A7os+de+Caldas+-+MG%2C+37701-860" class="btn btn--outline" data-href="mapsUrl" target="_blank" rel="noopener">Como chegar</a>
+            </div>
+          </div>
+
+          <div class="contato__map reveal" data-if="mapEmbed">
+            <iframe id="mapFrame" title="Mapa — Bodega, Av. Champagnat 355, Poços de Caldas" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" src="external/maps.google.com/file/maps__q_q=Bodega%2C+Av.+Champagnat%2C+355%2C+S%C3%A3o+Domingos%2C+Po%C3%A7os+de+Caldas+-.html"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#topo" class="footer__logo" aria-label="Bodega — voltar ao topo">
+        <svg class="logo-svg logo-svg--footer" viewBox="0 0 200 176"><use href="#logo-full"></use></svg>
+      </a>
+      <p class="footer__quote">Que cada taça traga uma boa conversa, bons encontros e memórias inesquecíveis.</p>
+      <p class="footer__addr" data-fill="endereco">Av. Champagnat, 355 – São Domingos, Poços de Caldas – MG, 37701-860</p>
+      <div class="footer__links">
+        <a href="#contato" data-instagram="" target="_blank" rel="noopener" data-if="instagram" hidden="">Instagram</a>
+        <a href="https://wa.me/5535999893555?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Bodega." data-whatsapp="" data-if="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#vinhos">Vinhos</a>
+      </div>
+      <p class="footer__copy">© <span id="ano">2026</span> Bodega · Poços de Caldas – MG</p>
+    </div>
+  </footer>
+
+  <button class="totop is-visible" id="totop" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+  </button>
+
+  <a href="https://wa.me/5535999893555?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Bodega." class="wa-float" data-whatsapp="" data-if="whatsapp" aria-label="Reservar pelo WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"></path></svg>
+  </a>
+
+  <script src="js/dados.js"></script>
+  <script src="js/main.js"></script>
+
+
+
+<iframe id="nl-badge-frame" title="Powered by Netlify" srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;color-scheme&quot; content=&quot;dark&quot;&gt;&lt;style&gt;
+    :root{--nl-vw:1366px;--nl-vh:641px}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:transparent;overflow:hidden}
+    body{display:flex;align-items:flex-end;justify-content:flex-end;height:100vh;
+      padding:8px 18px 18px 8px;
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;color:#f4f9f9;-webkit-font-smoothing:antialiased}
+    .nl-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:10px;width:max-content;max-width:calc(var(--nl-vw,100vw) - 26px)}
+    button{font-family:inherit;cursor:pointer}
+    :focus-visible{outline:2px solid #32e6e2;outline-offset:2px;border-radius:6px}
+    .nl-icon-btn{position:relative;flex:none;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid transparent;background:transparent;color:#d5e3e6;transition:background .15s ease,color .15s ease}
+    .nl-icon-btn:hover{background:rgba(255,255,255,0.08);color:#f4f9f9}
+    .nl-tap::after{content:&quot;&quot;;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:max(100%,44px);height:max(100%,44px)}
+    @keyframes nl-rise{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+    @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition:none!important}}
+  
+      .nl-card{position:relative;display:none;width:min(340px,calc(var(--nl-vw,100vw) - 26px));max-height:calc(var(--nl-vh,100vh) - 84px);overflow-y:auto;background:linear-gradient(180deg,#132832 0%,#0e1e25 100%);border:1px solid rgba(255,255,255,0.09);border-radius:18px;padding:18px;transform-origin:bottom right;animation:nl-rise .3s cubic-bezier(.34,1.4,.4,1) both}
+      .nl-card.open{display:block}
+      .nl-card-close{position:absolute;top:10px;right:10px}
+      .nl-card h2{margin:0;padding-right:30px;font-size:16px;font-weight:750;letter-spacing:-0.015em;line-height:1.35}
+      .nl-card h2 em{font-style:normal;background:linear-gradient(90deg,#32e6e2,#4d7cfe,#9a6bff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+      .nl-card p{margin:8px 0 0;font-size:12.5px;color:#d5e3e6}
+      .nl-prompt{position:relative;margin-top:14px;background:#10222b;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:10px 12px;transition:border-color .15s ease,box-shadow .15s ease}
+      .nl-prompt:focus-within{border-color:#05bdba;box-shadow:0 0 0 3px rgba(5,189,186,0.18)}
+      .nl-prompt textarea{display:block;width:100%;height:38px;resize:none;border:0;outline:none;background:transparent;color:#f4f9f9;font:inherit;font-size:13px;line-height:19px;padding:0 28px 0 0}
+      .nl-prompt textarea::placeholder{color:#a9bdc2}
+      .nl-send{position:absolute;right:9px;bottom:9px;width:24px;height:24px;flex:none;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:50%;background:#05bdba;color:#02191b;transition:background .15s ease}
+      .nl-send:hover{background:#32e6e2}
+      @media (pointer: coarse){
+        .nl-prompt textarea{font-size:16px;line-height:21px;height:42px}
+      }
+      .nl-or{display:flex;align-items:center;gap:10px;margin:12px 0;font-size:10.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#a9bdc2}
+      .nl-or::before,.nl-or::after{content:&quot;&quot;;flex:1;height:1px;background:rgba(255,255,255,0.09)}
+      .nl-drop{display:flex;align-items:center;justify-content:space-between;gap:6px;text-decoration:none;background:#1b3a45;border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600;color:#cfe0e3;transition:background .15s ease,color .15s ease,border-color .15s ease}
+      .nl-drop:hover{background:#224753;color:#f4f9f9;border-color:rgba(50,230,226,0.3)}
+      .nl-drop .nl-arrow{transition:transform .18s cubic-bezier(.34,1.4,.4,1)}
+      .nl-drop:hover .nl-arrow{transform:translateX(3px)}
+      .nl-badge{display:flex;align-items:center;gap:9px;white-space:nowrap;border:1px solid rgba(255,255,255,0.09);background:linear-gradient(180deg,#142b34,#0e1e25);color:#f4f9f9;border-radius:999px;padding:9px 14px 9px 11px;font-size:13px;font-weight:600;letter-spacing:0.01em;transition:border-color .2s ease}
+      .nl-badge:hover{border-color:rgba(50,230,226,0.26)}
+      .nl-hide{display:block;width:100%;margin-top:10px;border:0;background:transparent;color:#a9bdc2;font-size:11.5px;font-weight:600;padding:4px;border-radius:8px;transition:color .15s ease}
+      .nl-hide:hover{color:#d5e3e6;text-decoration:underline}
+      .nl-badge-label{color:#d5e3e6;font-weight:500}
+      .nl-badge-brand{font-weight:750}
+    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+      &lt;div class=&quot;nl-wrap&quot;&gt;
+        &lt;section class=&quot;nl-card&quot; id=&quot;nl-card&quot; aria-label=&quot;Build your own site on Netlify&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;nl-icon-btn nl-tap nl-card-close&quot; id=&quot;nl-card-close&quot; aria-label=&quot;Close&quot;&gt;&lt;svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.9&quot; stroke-linecap=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M4.5 4.5 11.5 11.5M11.5 4.5 4.5 11.5&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;
+          &lt;h2&gt;&lt;em&gt;Build your own site with Netlify&lt;/em&gt;&lt;/h2&gt;
+          &lt;p&gt;Describe what you want, and an AI agent designs, builds and deploys it in minutes.&lt;/p&gt;
+          &lt;form class=&quot;nl-prompt&quot; action=&quot;https://app.netlify.com/start&quot; method=&quot;get&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+            &lt;textarea name=&quot;prompt&quot; rows=&quot;2&quot; required maxlength=&quot;300&quot; autocomplete=&quot;off&quot;
+                      enterkeyhint=&quot;go&quot;
+                      placeholder=&quot;A shop for my handmade surfboards&amp;hellip;&quot;
+                      aria-label=&quot;Describe the site you want to build&quot;&gt;&lt;/textarea&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;nl-send nl-tap&quot; aria-label=&quot;Build this site&quot;&gt;&lt;svg width=&quot;13&quot; height=&quot;13&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M8 12.75v-9.5M3.9 7.35 8 3.25l4.1 4.1&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;utm_source&quot; value=&quot;netlify_badge&quot;&gt;
+            
+            &lt;input type=&quot;hidden&quot; name=&quot;utm_id&quot; value=&quot;f244088c-750a-4784-9b9f-cc73a5f46d8d&quot;&gt;
+          &lt;/form&gt;
+          &lt;div class=&quot;nl-or&quot;&gt;&lt;span&gt;or&lt;/span&gt;&lt;/div&gt;
+          &lt;a class=&quot;nl-drop&quot; href=&quot;https://app.netlify.com/drop?utm_source=netlify_badge&amp;utm_id=f244088c-750a-4784-9b9f-cc73a5f46d8d&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+            &lt;span&gt;Drop a site you already have&lt;/span&gt;&lt;span class=&quot;nl-arrow&quot; aria-hidden=&quot;true&quot;&gt;&amp;rarr;&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;button type=&quot;button&quot; class=&quot;nl-hide&quot; id=&quot;nl-hide&quot;&gt;Hide this badge&lt;/button&gt;
+        &lt;/section&gt;
+        &lt;button type=&quot;button&quot; class=&quot;nl-badge&quot; id=&quot;nl-badge&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;nl-card&quot;
+                aria-label=&quot;Powered by Netlify — build your own site&quot;&gt;
+          &lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 32 32&quot; fill=&quot;none&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;path fill=&quot;#fff&quot; d=&quot;M17.9922 18.3225H14.005L13.6746 17.9921V14.005L14.005 13.6746H17.9922L18.3226 14.005V17.9921L17.9922 18.3225Z&quot;/&gt;
+    &lt;g fill=&quot;#05BDBA&quot;&gt;
+      &lt;path d=&quot;M9.6958 24.3311H9.35705L7.6661 22.6401V22.3041L10.2511 19.7164L12.042 19.7191L12.2808 19.9552V21.7461L9.6958 24.3311Z&quot;/&gt;
+      &lt;path d=&quot;M7.6661 9.69576V9.35701L9.35705 7.66606H9.6958L12.2808 10.2511V12.0392L12.042 12.2808H10.2511L7.6661 9.69576Z&quot;/&gt;
+      &lt;path d=&quot;M10.0457 17.4369H0.205466L0 17.2314V14.7658L0.205466 14.5603H10.0457L10.2511 14.7658V17.2314L10.0457 17.4369Z&quot;/&gt;
+      &lt;path d=&quot;M31.7945 17.4369H21.9544L21.7489 17.2314V14.7658L21.9544 14.5603H31.7945L32 14.7658V17.2314L31.7945 17.4369Z&quot;/&gt;
+      &lt;path d=&quot;M14.5631 10.0456V2.66547L14.7686 2.46001H17.2343L17.4396 2.66547V10.0456L17.2343 10.2511H14.7686L14.5631 10.0456Z&quot;/&gt;
+      &lt;path d=&quot;M14.5631 29.3316V21.9515L14.7686 21.746H17.2343L17.4396 21.9515V29.3316L17.2343 29.5371H14.7686L14.5631 29.3316Z&quot;/&gt;
+    &lt;/g&gt;&lt;/svg&gt;
+          &lt;span&gt;&lt;span class=&quot;nl-badge-label&quot;&gt;Powered by&lt;/span&gt; &lt;span class=&quot;nl-badge-brand&quot;&gt;Netlify&lt;/span&gt;&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;script&gt;
+        
+    function nlSend(){
+      var wrap=document.querySelector('.nl-wrap'),boxes=[];
+      for(var i=0;i&lt;wrap.children.length;i++){
+        var c=wrap.children[i];
+        if(!c.offsetWidth||!c.offsetHeight)continue;
+        boxes.push({x:c.offsetLeft-wrap.offsetLeft+8,
+                    y:c.offsetTop-wrap.offsetTop+8,
+                    w:c.offsetWidth,h:c.offsetHeight});
+      }
+      parent.postMessage({nlHud:'resize',
+        width:wrap.offsetWidth+26,
+        height:wrap.offsetHeight+26,
+        boxes:boxes},'*');
+    }
+    function nlSendSoon(){requestAnimationFrame(nlSend);}
+    window.addEventListener('load',nlSend);
+    window.addEventListener('message',function(e){
+      if(e.source!==parent||!e.data||e.data.nlHud!=='viewport')return;
+      var s=document.documentElement.style;
+      s.setProperty('--nl-vw',e.data.w+'px');
+      s.setProperty('--nl-vh',e.data.h+'px');
+      document.documentElement.classList.toggle('nl-narrow',e.data.w&lt;600);
+      nlSendSoon();
+    });
+    var nlCoarse=window.matchMedia('(pointer: coarse)').matches;
+    function nlSubmit(form){
+      if(form.requestSubmit)return form.requestSubmit();
+      if(form.checkValidity&amp;&amp;!form.checkValidity())
+        return form.reportValidity&amp;&amp;form.reportValidity();
+      form.submit();
+    }
+  
+        var badge=document.getElementById('nl-badge'),card=document.getElementById('nl-card'),
+            box=card.querySelector('textarea');
+        function setOpen(open){
+          card.classList.toggle('open',open);
+          badge.setAttribute('aria-expanded',open?'true':'false');
+          nlSendSoon();
+          if(open&amp;&amp;!nlCoarse)box.focus();
+        }
+        box.addEventListener('keydown',function(e){
+          if(e.key==='Enter'&amp;&amp;!e.shiftKey){e.preventDefault();nlSubmit(box.form);}
+        });
+        badge.addEventListener('click',function(){setOpen(!card.classList.contains('open'));});
+        document.getElementById('nl-card-close').addEventListener('click',function(){setOpen(false);badge.focus();});
+        document.addEventListener('keydown',function(e){
+          if(e.key==='Escape'&amp;&amp;card.classList.contains('open')){setOpen(false);badge.focus();}
+        });
+        document.getElementById('nl-hide').addEventListener('click',function(){
+          parent.postMessage({nlHud:'state',value:'hidden'},'*');
+        });
+      &lt;/script&gt;
+    &lt;/body&gt;&lt;/html&gt;" style="position: fixed; bottom: 0px; right: 0px; border: 0px; margin: 0px; padding: 0px; background: transparent; color-scheme: dark; z-index: 2147483645; width: 197px; height: 64px; clip-path: path(&quot;M 3 3 H 184 V 51 H 3 Z&quot;);" data-nl-ready="1"></iframe></body></html>

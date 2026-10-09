@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+  <rect width="640" height="640" fill="#fbf6ec"/>
+  <ellipse cx="320" cy="560" rx="120" ry="16" fill="#e9dcc2" opacity="0.6"/>
+  <g>
+    <rect x="285" y="110" width="70" height="40" rx="10" fill="#7fb8e0"/>
+    <rect x="270" y="145" width="100" height="24" rx="8" fill="#4a9ac9"/>
+    <path d="M255 180 Q255 165 275 165 L365 165 Q385 165 385 180 L400 230 Q410 250 410 280 L410 470 Q410 500 380 500 L260 500 Q230 500 230 470 L230 280 Q230 250 240 230 Z" fill="#bfe3f4" opacity="0.9"/>
+    <path d="M255 180 Q255 165 275 165 L365 165 Q385 165 385 180 L400 230 Q410 250 410 280 L410 470 Q410 500 380 500 L260 500 Q230 500 230 470 L230 280 Q230 250 240 230 Z" fill="none" stroke="#4a9ac9" stroke-width="4"/>
+    <rect x="240" y="300" width="160" height="120" rx="12" fill="#ffffff" opacity="0.9"/>
+    <text x="320" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#1b6fa8">ÁGUA</text>
+    <path d="M320 380 C305 400 300 412 300 422 C300 434 309 442 320 442 C331 442 340 434 340 422 C340 412 335 400 320 380 Z" fill="#4a9ac9"/>
+    <rect x="250" y="230" width="20" height="220" rx="10" fill="#ffffff" opacity="0.4"/>
+  </g>
+</svg>

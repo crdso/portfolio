@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://nexaagency-web.vercel.app
+Sitemap: https://nexaagency-web.vercel.app/sitemap.xml

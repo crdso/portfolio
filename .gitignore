@@ -1,2 +1,8 @@
 Thumbs.db
 .DS_Store
+debug.log
+tools/.build-sites/
+tools/build-sites-temp/
+tools/.site-validation/
+tools/__pycache__/
+**/__pycache__/

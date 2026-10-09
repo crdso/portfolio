@@ -17,13 +17,10 @@ window.CATEGORIES = [
   { id: 'saude', name: 'Saúde' },
   { id: 'energia', name: 'Energia' },
   { id: 'institucional', name: 'Institucional' },
-  { id: 'sistemas', name: 'Sistemas' }
+  { id: 'ifto', name: 'IFTO' }
 ];
 
 window.PROJECTS = [
-  { id: 'best', cat: 'moda', name: 'Best Multimarcas', type: 'Loja multimarcas', place: 'Araguatins · Augustinópolis — TO',
-    text: 'Site de inauguração de uma nova unidade, com uma abertura em capítulos guiada pela rolagem e os produtos entrando em cena.',
-    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'TypeScript', 'GSAP'], shots: [], status: 'Em desenvolvimento' },
   { id: 'tavares', cat: 'moda', name: 'Studio Tavares', type: 'Salão de beleza', place: 'Brasil',
     text: 'Presença digital editorial para um estúdio de beleza, com tipografia elegante e agendamento em destaque.',
     services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['s1', 's2'] },
@@ -78,14 +75,8 @@ window.PROJECTS = [
   { id: 'nowtech', cat: 'energia', name: 'Nowtech', type: 'Energia solar', place: 'Brasil',
     text: 'Energia solar que reduz custos: projetos, simulação de economia e depoimentos.',
     services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['section-01', 'section-02'] },
-  { id: 'solvex', cat: 'energia', name: 'Solvex', type: 'Energia renovável', place: '—',
-    text: 'Energia renovável com páginas de serviços, projetos e blog.',
-    services: ['Web design'], tech: ['Framer'], shots: ['section-01', 'section-02'] },
   { id: 'solare', cat: 'energia', name: 'Solare', type: 'Energia solar residencial', place: '—',
     text: 'Energia solar residencial com calculadora de economia e processo de instalação.',
-    services: ['Web design'], tech: ['Framer'], shots: ['section-01', 'section-02'] },
-  { id: 'solaix', cat: 'energia', name: 'Solaix', type: 'Energia solar', place: '—',
-    text: 'Site multipágina de energia solar com serviços, projetos, calculadora e blog.',
     services: ['Web design'], tech: ['Framer'], shots: ['section-01', 'section-02'] },
 
   { id: 'advocacia', cat: 'institucional', name: 'Guilherme Podgaietsky', type: 'Advocacia criminal', place: 'Brasil',
@@ -94,17 +85,55 @@ window.PROJECTS = [
   { id: 'portoglass', cat: 'institucional', name: 'Porto Glass', type: 'Vidros, alumínio e mármore', place: 'Bacabal — MA',
     text: 'Vidros, espelhos, alumínio e mármore: catálogo de obras, diferenciais e orçamento pelo WhatsApp.',
     services: ['Web design', 'Desenvolvimento'], tech: ['HTML', 'CSS', 'JavaScript'], shots: ['section-01', 'section-02'] },
-  { id: 'letsfly', cat: 'institucional', name: "Let'sFly", type: 'Aviação executiva', place: '—',
-    text: 'Aviação executiva com fotografia de produto e composição minimalista.',
-    services: ['Web design'], tech: ['Framer'], shots: ['section-02', 'section-03'] },
 
-  { id: 'entec', cat: 'sistemas', name: 'ENTEC 2026', type: 'Evento de tecnologia do IFTO', place: 'IFTO — Tocantins',
+  { id: 'entec', cat: 'ifto', name: 'ENTEC 2026', type: 'Evento de tecnologia do IFTO', place: 'IFTO — Tocantins',
     text: 'Site oficial da ENTEC 2026, criado para reunir as principais informações do evento, inscrições, resultados e o acervo de fotos da edição em uma experiência organizada e fácil de navegar.',
     services: ['Web design', 'Front-end', 'Back-end', 'Banco de dados'], tech: ['JavaScript', 'WebGL', 'Supabase'], shots: ['entec-fotos/hero'] },
-  { id: 'correio', cat: 'sistemas', name: 'Correio Elegante', type: 'Aplicação web', place: 'IFTO — Tocantins',
+  { id: 'correio', cat: 'ifto', name: 'Correio Elegante', type: 'Aplicação web', place: 'IFTO — Tocantins',
     text: 'Aplicação para enviar cartinhas anônimas no evento: fluxo de envio, pagamento, painel administrativo e autenticação.',
     services: ['Web design', 'Front-end', 'Back-end', 'Painel administrativo'], tech: ['React', 'Tailwind', 'Supabase'], shots: ['s1', 's2'] },
-  { id: 'findmap', cat: 'sistemas', name: 'FindMap', type: 'Plataforma de prospecção', place: 'Produto próprio',
-    text: 'Encontre empresas por categoria e localização. Página pública de produto e área privada de busca.',
-    services: ['Web design', 'Front-end', 'Sistema'], tech: ['JavaScript', 'Google Places'], shots: [] }
+
+  { id: 'marcela', cat: 'moda', name: 'Marcela Mendes', type: 'Salão de beleza', place: 'Tapiratiba e Guaxupé',
+    text: 'Site de apresentação e agendamento para um salão de beleza, com foco nos serviços e na identidade da marca.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'sanches', cat: 'moda', name: 'Studio Ricardo Sanches', type: 'Fotografia e revelação', place: 'Araraquara — SP',
+    text: 'Presença digital de um estúdio fotográfico, com destaque para ensaios, produtos e revelação.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'eksdigital', cat: 'tecnologia', name: 'EksDigital', type: 'Soluções para negócios', place: 'Brasil',
+    text: 'Site comercial para planilhas e ferramentas que ajudam empresas a organizar a operação.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'donuts', cat: 'alimentacao', name: 'Hello Donuts & Coffee', type: 'Donuts e cafeteria', place: 'Londrina — PR',
+    text: 'Vitrine digital para donuts, milkshakes e cookies, com cardápio visual e personalidade de marca.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'chapavoadora', cat: 'alimentacao', name: 'Chapa Voadora', type: 'Hamburgueria', place: 'Brasil',
+    text: 'Site de smash burgers com identidade forte, cardápio e caminho direto para o pedido.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'gostoburger', cat: 'alimentacao', name: 'GOSTO! Burger', type: 'Hamburgueria', place: 'Brasil',
+    text: 'Uma apresentação de hamburgueria centrada no produto, com cores marcantes e pedido em evidência.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'sabordapraca', cat: 'alimentacao', name: 'Sabor da Praça', type: 'Hamburgueria', place: 'Brasil',
+    text: 'Cardápio visual e comunicação direta para aproximar a marca de quem procura sua próxima refeição.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'tmlanches', cat: 'alimentacao', name: 'TM Lanches', type: 'Lanchonete', place: 'Uberlândia — MG',
+    text: 'Site de lanchonete com produtos, informações da casa e acesso rápido ao cardápio.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'pastelaria', cat: 'alimentacao', name: 'Pastel do Zoio', type: 'Pastelaria', place: 'Brasil',
+    text: 'Apresentação de pastelaria com identidade própria, produtos em destaque e pedido facilitado.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'recantodoguerreiro', cat: 'alimentacao', name: 'Recanto do Guerreiro', type: 'Bar y Parrilla', place: 'Manacapuru — AM',
+    text: 'Experiência gastronômica com destaque para pratos, ambiente e delivery.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'pegadaspet', cat: 'saude', name: 'Pegadas Pet', type: 'Pet shop e banho e tosa', place: 'Brasil',
+    text: 'Site para serviços de cuidado com cães, banho e tosa e TaxiDog.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'solaris', cat: 'energia', name: 'Solaris Energia', type: 'Energia solar', place: 'Brasil',
+    text: 'Apresentação de soluções de energia solar com foco nos serviços e no contato comercial.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] },
+  { id: 'oficinaautomotivo', cat: 'institucional', name: 'Pit Stop Auto Center', type: 'Oficina automotiva', place: 'Piraí do Sul — PR',
+    text: 'Site para alinhamento, balanceamento e suspensão, com serviços e contato em destaque.',
+    services: ['Web design', 'Desenvolvimento'], tech: ['React', 'Vite'], shots: [] }
 ];
+
+window.PROJECTS.forEach((project) => {
+  project.siteUrl = `/sites/${project.id}/`;
+});

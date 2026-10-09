@@ -242,7 +242,7 @@
           <div class="proj__side">
             <p class="proj__text">${esc(p.text)}</p>
             ${showPlace ? `<dl class="proj__meta"><dt>Local</dt><dd>${esc(p.place)}</dd></dl>` : ''}
-            ${p.url ? `<a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener">Ver projeto <span aria-hidden="true">↗</span></a>` : ''}
+            ${p.siteUrl ? `<a class="btn" href="${esc(p.siteUrl)}" target="_blank" rel="noopener noreferrer">Ver site <span aria-hidden="true">↗</span></a>` : ''}
             ${whatsapp ? `<a class="btn proj__cta" href="${esc(`https://wa.me/${whatsapp}?text=${encodeURIComponent(whatsappMessage)}`)}" target="_blank" rel="noopener">Quero um projeto como este <span aria-hidden="true">↗</span></a>` : ''}
           </div>
         </header>

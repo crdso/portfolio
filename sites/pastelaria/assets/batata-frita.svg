@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+  <rect width="640" height="640" fill="#fbf6ec"/>
+  <ellipse cx="320" cy="560" rx="150" ry="16" fill="#e9dcc2" opacity="0.6"/>
+  <g>
+    <path d="M225 280 L415 280 L390 500 Q386 520 364 520 L276 520 Q254 520 250 500 Z" fill="#c81e1e"/>
+    <path d="M225 280 L415 280 L405 320 L235 320 Z" fill="#e2492b"/>
+    <text x="320" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff">BATATA</text>
+    <g fill="#f2c265" stroke="#c97800" stroke-width="3">
+      <rect x="255" y="150" width="22" height="150" rx="6" transform="rotate(-8 266 225)"/>
+      <rect x="290" y="130" width="22" height="170" rx="6" transform="rotate(-2 301 215)"/>
+      <rect x="325" y="128" width="22" height="172" rx="6" transform="rotate(3 336 214)"/>
+      <rect x="360" y="140" width="22" height="160" rx="6" transform="rotate(9 371 220)"/>
+      <rect x="230" y="170" width="22" height="130" rx="6" transform="rotate(-16 241 235)"/>
+      <rect x="388" y="160" width="22" height="140" rx="6" transform="rotate(15 399 230)"/>
+    </g>
+  </g>
+</svg>

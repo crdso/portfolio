@@ -1,0 +1,1 @@
+import{_ as e,l as t}from"./QuickActions-DyBFSdFX.js";var n=e(),r={verde:`text-verde`,amarelo:`text-amarelo`,laranja:`text-chapeu`};function i({children:e,tone:i=`verde`}){return(0,n.jsxs)(`p`,{className:`flex items-center gap-2.5 font-hand text-[1.625rem] font-bold leading-none ${r[i]}`,children:[(0,n.jsx)(t,{className:`w-4 shrink-0 -rotate-12`}),e]})}export{i as t};

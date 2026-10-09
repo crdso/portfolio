@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+  <rect width="640" height="640" fill="#fbf6ec"/>
+  <ellipse cx="320" cy="470" rx="190" ry="26" fill="#e9dcc2" opacity="0.6"/>
+  <g>
+    <ellipse cx="240" cy="400" rx="70" ry="40" fill="#e8a838"/>
+    <ellipse cx="240" cy="400" rx="70" ry="40" fill="none" stroke="#c97800" stroke-width="4"/>
+    <ellipse cx="340" cy="390" rx="78" ry="46" fill="#eeb04a"/>
+    <ellipse cx="340" cy="390" rx="78" ry="46" fill="none" stroke="#c97800" stroke-width="4"/>
+    <ellipse cx="440" cy="405" rx="66" ry="38" fill="#e29a2f"/>
+    <ellipse cx="440" cy="405" rx="66" ry="38" fill="none" stroke="#c97800" stroke-width="4"/>
+    <g opacity="0.5" stroke="#c97800" stroke-width="2">
+      <circle cx="215" cy="392" r="3"/><circle cx="255" cy="410" r="3"/><circle cx="240" cy="380" r="3"/>
+      <circle cx="320" cy="378" r="3"/><circle cx="360" cy="400" r="3"/><circle cx="345" cy="368" r="3"/>
+      <circle cx="418" cy="398" r="3"/><circle cx="455" cy="412" r="3"/><circle cx="440" cy="388" r="3"/>
+    </g>
+    <rect x="180" y="450" width="280" height="90" rx="16" fill="#ffffff" opacity="0.92"/>
+    <text x="320" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#7a4a00">SALGADO</text>
+    <text x="320" y="516" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#8a5900">FRITO NA HORA</text>
+  </g>
+</svg>

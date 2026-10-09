@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://umami-template.framer.website/sitemap.xml

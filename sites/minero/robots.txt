@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# [INFORMAÇÃO A CONFIRMAR] trocar pelo domínio final quando existir
+Sitemap: https://restaurante-do-minero.vercel.app/sitemap.xml

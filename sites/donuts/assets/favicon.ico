@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Donuts &amp; Coffee Londrina | Donuts, milkshakes e cookies no Centro</title>
+  <meta name="description" content="Hello Donuts &amp; Coffee, unidade de Londrina: donuts sempre frescos, milkshakes e cookies na Rua Goiás, 1820, Centro. Peça pelo WhatsApp (43) 99125-2053.">
+  <!-- Prévia: sem indexação até a loja aprovar. Tirar esta linha na publicação oficial. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#d6336c">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Hello Donuts &amp; Coffee Londrina | Donuts, milkshakes e cookies no Centro">
+  <meta property="og:description" content="Hello Donuts &amp; Coffee, unidade de Londrina: donuts sempre frescos, milkshakes e cookies na Rua Goiás, 1820, Centro. Peça pelo WhatsApp (43) 99125-2053.">
+  <meta property="og:image" content="assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&family=Lilita+One&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
+  <script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('hd-intro'))document.documentElement.classList.add('no-intro')}catch(e){}</script>
+  <noscript><style>.header--auto{transform:none}.intro{display:none}.fab--auto{opacity:1;visibility:visible;transform:none}.order-btn{display:none}</style></noscript>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"Hello Donuts & Coffee Londrina","description":"Unidade de Londrina da Hello Donuts & Coffee: donuts, milkshakes, cookies e cafés.","telephone":"+55 43 99125-2053","address":{"@type":"PostalAddress","streetAddress":"Rua Goiás, 1820, Lojas 01 e 02","addressLocality":"Londrina","addressRegion":"PR","addressCountry":"BR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"12:00","closes":"20:00"}],"servesCuisine":["Donuts","Cafeteria"],"priceRange":"$$","sameAs":["https://www.instagram.com/hellodonuts_londrina/"]}</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M10 7V4.5h4V7M6.5 7l.8 12.5h9.4L17.500 7M10 11v5M14 11v5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M2.5 4h2.600l2.400 10.600h10.200L19.800 7.500H6"/><circle cx="9" cy="18.500" r="1.500"/><circle cx="16.500" cy="18.500" r="1.500"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5a7 7 0 0 0-14 0C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8h.01"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 12H5L6 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 5h5v5M19 5l-8 8M11 7H6.500A1.500 1.500 0 0 0 5 8.500v9A1.500 1.500 0 0 0 6.500 19h9a1.500 1.500 0 0 0 1.500-1.500V13"/></symbol>
+    <symbol id="i-donut" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="m7.300 8.600 1 .900M15.600 6.900l-.700 1.200M17.300 13.300l-1.300.300M8 15.700l1.100-.700M13.300 17.300l-.300-1.200"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.500 2.500 5.200 5.700.800-4.100 4 1 5.700-5.100-2.700-5.100 2.700 1-5.700-4.100-4 5.700-.800Z"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.500A1.500 1.500 0 0 1 5.500 7h2l1.400-2h6.200l1.400 2h2A1.500 1.500 0 0 1 20 8.500v9a1.500 1.500 0 0 1-1.500 1.500h-13A1.500 1.500 0 0 1 4 17.500Z"/><circle cx="12" cy="13" r="3.300"/></symbol>
+    <symbol id="i-whats" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.030-.967-.273-.099-.471-.148-.670.150-.197.297-.767.966-.940 1.164-.173.199-.347.223-.644.075-.297-.150-1.255-.463-2.390-1.475-.883-.788-1.480-1.761-1.653-2.059-.173-.297-.018-.458.130-.606.134-.133.298-.347.446-.520.149-.174.198-.298.298-.497.099-.198.050-.371-.025-.520-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.500-.669-.510-.173-.008-.371-.010-.570-.010-.198 0-.520.074-.792.372-.272.297-1.040 1.016-1.040 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.200 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.360.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.570-.347m-5.421 7.403h-.004a9.870 9.870 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.860 9.860 0 0 1-1.510-5.260c.001-5.450 4.436-9.884 9.888-9.884 2.640 0 5.122 1.030 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.450-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.050 0C5.495 0 .160 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 0 0-3.480-8.413Z"/></symbol>
+  </svg>
+
+  <div class="intro" aria-hidden="true">
+    <div class="intro__logo">
+      <img src="assets/img/logo.webp" width="485" height="318" alt="">
+      <span class="intro__tag">Londrina</span>
+    </div>
+  </div>
+
+  <header class="header header--auto">
+    <div class="container header__inner">
+      <a href="#inicio" class="brand" aria-label="Hello Donuts Londrina, início">
+        <img src="assets/img/logo.webp" width="485" height="318" alt="Hello Donuts">
+        <span class="brand__unit">Unidade<br>Londrina</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="#inicio" class="nav__link is-active">Início</a>
+        <a href="cardapio.html" class="nav__link">Cardápio</a>
+        <a href="#combo" class="nav__link">Combo</a>
+        <a href="#loja" class="nav__link">A loja</a>
+        <a href="#contato" class="nav__link">Contato</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="order-btn" type="button" data-cart-open aria-haspopup="dialog">
+          <svg class="i " aria-hidden="true"><use href="#i-cart"/></svg>
+          <span class="order-btn__txt">Carrinho</span>
+          <span class="order-btn__n" hidden>0</span>
+        </button>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <picture>
+        <source media="(max-aspect-ratio: 5/4), (max-width: 760px)" srcset="assets/img/hero-cena-celular.webp" width="768" height="1150">
+        <source srcset="assets/img/hero-cena-1600.webp 1600w, assets/img/hero-cena.webp 2400w" sizes="100vw">
+        <img class="hero__bg" src="assets/img/hero-cena-1600.webp" width="2400" height="1350" alt="" fetchpriority="high" decoding="async">
+      </picture>
+      <!-- o donut é uma camada do mesmo tamanho da cena: flutua sem sair do lugar em nenhuma tela -->
+      <picture>
+        <source media="(max-aspect-ratio: 5/4), (max-width: 760px)" srcset="assets/img/hero-donut-celular.webp" width="768" height="1150">
+        <source srcset="assets/img/hero-donut-1600.webp 1600w, assets/img/hero-donut.webp 2400w" sizes="100vw">
+        <img class="hero__bg hero__donut" src="assets/img/hero-donut-1600.webp" width="2400" height="1350" alt="" decoding="async">
+      </picture>
+
+      <div class="hero__content">
+        <h1 class="hero__brand">
+          <img class="hero__logo" src="assets/img/logo.webp" width="485" height="318" alt="Hello Donuts &amp; Coffee">
+          <span class="hero__tag">Unidade Londrina</span>
+        </h1>
+
+        <p class="hero__slogan">
+          <span>Life is better</span>
+          <em>with donuts!</em>
+          <svg class="hero__underline" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><path d="M1 5C30 2 70 1 99 1.600"/></svg>
+        </p>
+
+        <ul class="hero__features">
+          <li><svg class="i " aria-hidden="true"><use href="#i-donut"/></svg><span>Donuts<br>fresquinhos</span></li>
+          <li><svg class="i " aria-hidden="true"><use href="#i-star"/></svg><span>Ingredientes<br>selecionados</span></li>
+          <li><svg class="i " aria-hidden="true"><use href="#i-camera"/></svg><span>Ambiente<br>instagramável</span></li>
+        </ul>
+
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--lg" href="cardapio.html">Ver cardápio <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--outline-berry btn--lg" href="#combo">Combo R$ 49,90</a>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#donuts" aria-label="Rolar para os donuts"><svg class="i " aria-hidden="true"><use href="#i-down"/></svg></a>
+    </section>
+
+    <section class="show show--pink" id="donuts">
+      <div class="show__sprinkles" aria-hidden="true"></div>
+      <div class="container">
+        <div class="show__head reveal">
+          <span class="kicker">Nossos donuts</span>
+          <h2 class="title">Os queridinhos <em>da vitrine</em></h2>
+          <p class="show__lead">Do tradicional sem recheio ao super premium: toque no + para montar o carrinho e finalize o pedido pelo WhatsApp.</p>
+          <a class="btn btn--cream" href="cardapio.html">Ver cardápio completo <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="show__stage show__stage--3">
+          <figure class="show__item">
+            <span class="show__img"><img src="assets/img/cut/churros.webp" width="657" height="471" alt="Donut de churros empanado no açúcar e canela, recheado com doce de leite" loading="lazy" decoding="async"></span>
+            <figcaption class="show__tag">
+              <span><strong>Churros</strong><span class="price"><small>R$</small>22,90</span></span>
+              <a class="add-btn" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20pedir%3A%20Donut%20Churros" target="_blank" rel="noopener" data-add="churros" aria-label="Adicionar Donut Churros ao carrinho"><svg class="i " aria-hidden="true"><use href="#i-plus"/></svg><span class="add-n" aria-hidden="true"></span></a>
+            </figcaption>
+          </figure>
+          <figure class="show__item">
+            <span class="show__img"><img src="assets/img/cut/ferrero.webp" width="767" height="577" alt="Donut Ferrero Rocher mordido, mostrando o recheio cremoso de avelã" loading="lazy" decoding="async"></span>
+            <figcaption class="show__tag">
+              <span><strong>Ferrero Rocher</strong><span class="price"><small>R$</small>29,90</span></span>
+              <a class="add-btn" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20pedir%3A%20Donut%20Ferrero%20Rocher" target="_blank" rel="noopener" data-add="ferrero-rocher" aria-label="Adicionar Donut Ferrero Rocher ao carrinho"><svg class="i " aria-hidden="true"><use href="#i-plus"/></svg><span class="add-n" aria-hidden="true"></span></a>
+            </figcaption>
+          </figure>
+          <figure class="show__item">
+            <span class="show__img"><img src="assets/img/cut/mms.webp" width="527" height="528" alt="Donut de chocolate coberto com M&amp;M's coloridos" loading="lazy" decoding="async"></span>
+            <figcaption class="show__tag">
+              <span><strong>M&amp;M's</strong><span class="price"><small>R$</small>25,90</span></span>
+              <a class="add-btn" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20pedir%3A%20Donut%20M%26M's" target="_blank" rel="noopener" data-add="m-m-s" aria-label="Adicionar Donut M&amp;M's ao carrinho"><svg class="i " aria-hidden="true"><use href="#i-plus"/></svg><span class="add-n" aria-hidden="true"></span></a>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="show show--light" id="shakes">
+      <div class="show__sprinkles" aria-hidden="true"></div>
+      <div class="container">
+        <div class="show__head reveal">
+          <span class="kicker">Milkshakes &amp; coffee</span>
+          <h2 class="title">Pra acompanhar, <em>um shake</em></h2>
+          <p class="show__lead">Milkshakes cremosos e o Iced Capuccino da casa para acompanhar o seu donut.</p>
+          <a class="btn btn--primary" href="cardapio.html#shakes">Ver bebidas <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="show__stage show__stage--drinks">
+          <figure class="show__item">
+            <span class="show__img"><img src="assets/img/cut/milk-homer.webp" width="255" height="714" alt="Milkshake Homer cor-de-rosa em taça alta, com chantilly e granulado colorido" loading="lazy" decoding="async"></span>
+            <figcaption class="show__tag">
+              <span><small>Milkshake</small><strong>Homer</strong><span class="price"><small>R$</small>24,90</span></span>
+              <a class="add-btn" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20pedir%3A%20Milkshake%20Homer" target="_blank" rel="noopener" data-add="milkshake-homer" aria-label="Adicionar Milkshake Homer ao carrinho"><svg class="i " aria-hidden="true"><use href="#i-plus"/></svg><span class="add-n" aria-hidden="true"></span></a>
+            </figcaption>
+          </figure>
+          <figure class="show__item">
+            <span class="show__img"><img src="assets/img/cut/milk-morango.webp" width="433" height="615" alt="Milkshake de morango no copo da Hello Donuts, com chantilly e um morango" loading="lazy" decoding="async"></span>
+            <figcaption class="show__tag">
+              <span><small>Milkshake</small><strong>Morango</strong><span class="price"><small>R$</small>24,90</span></span>
+              <a class="add-btn" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20pedir%3A%20Milkshake%20Morango" target="_blank" rel="noopener" data-add="milkshake-morango" aria-label="Adicionar Milkshake Morango ao carrinho"><svg class="i " aria-hidden="true"><use href="#i-plus"/></svg><span class="add-n" aria-hidden="true"></span></a>
+            </figcaption>
+          </figure>
+          <figure class="show__item">
+            <span class="show__img"><img src="assets/img/cut/milk-ovomaltine.webp" width="434" height="782" alt="Milkshake de Ovomaltine no copo da Hello Donuts" loading="lazy" decoding="async"></span>
+            <figcaption class="show__tag">
+              <span><small>Milkshake</small><strong>Ovomaltine</strong><span class="price"><small>R$</small>24,90</span></span>
+              <a class="add-btn" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20pedir%3A%20Milkshake%20Ovomaltine" target="_blank" rel="noopener" data-add="milkshake-ovomaltine" aria-label="Adicionar Milkshake Ovomaltine ao carrinho"><svg class="i " aria-hidden="true"><use href="#i-plus"/></svg><span class="add-n" aria-hidden="true"></span></a>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="combo">
+      <div class="container">
+        <div class="combo reveal">
+          <div class="combo__text">
+            <span class="combo__brush"><span>Combo</span></span>
+            <h2 class="combo__name">Felicidade</h2>
+            <ul class="combo__list">
+              <li><span class="check"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg></span>1 Donut de Frango com Cream Cheese</li>
+              <li><span class="check"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg></span>1 Donut de Chocolate</li>
+              <li><span class="check"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg></span><span>1 Refrigerante de 220 ml<small>Coca-Cola, Coca Zero ou Guaraná Antarctica</small></span></li>
+            </ul>
+            <div class="combo__price">
+              <div><small>APENAS</small><strong><span>R$</span>49,90</strong></div>
+              <div><span class="combo__save"><s>R$ 51,80</s>economize R$ 1,90</span></div>
+            </div>
+            <div class="combo__cta">
+              <a class="btn btn--cream btn--lg" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20pedir%3A%20Combo%20Felicidade" target="_blank" rel="noopener" data-add="combo-felicidade" data-add-open>Quero o combo <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+          <div class="combo__visual">
+            <img class="combo__photo" src="assets/img/combo-felicidade.webp" width="800" height="880" alt="Combo Felicidade: donut de chocolate, donut salgado de frango com cream cheese e uma Coca-Cola" loading="lazy" decoding="async">
+            <ul class="combo__chips" aria-hidden="true"><li>Salgado</li><li>+</li><li>Doce</li><li>+</li><li>Refri</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--blush" id="box">
+      <div class="container">
+        <div class="head reveal">
+          <span class="kicker">Pra dividir (ou não)</span>
+          <h2 class="title">Hello Box <em>com 12 donuts</em></h2>
+          <p class="lead">Uma caixa com doze donuts médios para levar para casa, para o trabalho ou para presentear.</p>
+        </div>
+        <div class="boxes">
+          <article class="box reveal" style="--d:0ms">
+            <div class="box__media">
+              <img src="assets/img/box-tradicional.webp" width="720" height="600" alt="Hello Box Tradicional aberta, com doze donuts" loading="lazy" decoding="async">
+              <span class="box__badge">Sem recheio</span>
+            </div>
+            <div class="box__body">
+              <h3 class="box__name">Hello Box Tradicional</h3>
+              <p class="box__desc">12 donuts médios sem recheio: 4 empanados no açúcar e canela, 4 glazed, 2 americanos de chocolate preto e 2 de chocolate branco.</p>
+              <div class="box__foot">
+                <span class="price"><small>R$</small>49,90</span>
+                <a class="btn btn--primary" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20pedir%3A%20Hello%20Box%20Tradicional" target="_blank" rel="noopener" data-add="hello-box-tradicional"><svg class="i " aria-hidden="true"><use href="#i-plus"/></svg> Adicionar<span class="add-n" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article>
+          <article class="box reveal" style="--d:90ms">
+            <div class="box__media">
+              <img src="assets/img/box-gourmet.webp" width="720" height="600" alt="Hello Box Gourmet aberta, com doze donuts" loading="lazy" decoding="async">
+              <span class="box__badge">Recheados</span>
+            </div>
+            <div class="box__body">
+              <h3 class="box__name">Hello Box Gourmet</h3>
+              <p class="box__desc">12 donuts médios recheados: 2 de morango branco, 2 Homer, 2 de chocolate, 2 de churros, 2 de 4 leites e 2 red velvet.</p>
+              <div class="box__foot">
+                <span class="price"><small>R$</small>69,90</span>
+                <a class="btn btn--primary" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20pedir%3A%20Hello%20Box%20Gourmet" target="_blank" rel="noopener" data-add="hello-box-gourmet"><svg class="i " aria-hidden="true"><use href="#i-plus"/></svg> Adicionar<span class="add-n" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article>
+          <article class="box reveal" style="--d:180ms">
+            <div class="box__media">
+              <img src="assets/img/box-premium.webp" width="720" height="600" alt="Hello Box Premium aberta, com doze donuts" loading="lazy" decoding="async">
+              <span class="box__badge">Recheados premium</span>
+            </div>
+            <div class="box__body">
+              <h3 class="box__name">Hello Box Premium</h3>
+              <p class="box__desc">12 donuts médios recheados: 2 Kinder Bueno, 2 Fini, 2 Ferrero Rocher, 2 Ninho com Nutella, 2 Kit Kat e 2 M&amp;M's.</p>
+              <div class="box__foot">
+                <span class="price"><small>R$</small>89,90</span>
+                <a class="btn btn--primary" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20pedir%3A%20Hello%20Box%20Premium" target="_blank" rel="noopener" data-add="hello-box-premium"><svg class="i " aria-hidden="true"><use href="#i-plus"/></svg> Adicionar<span class="add-n" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="boxes-note reveal">
+          <p>Minis e donuts personalizados? A gente faz sob encomenda.</p>
+          <a class="btn btn--primary" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20encomendar%20minis%20ou%20donuts%20personalizados." target="_blank" rel="noopener">Encomendar pelo WhatsApp <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="loja">
+      <div class="container">
+        <div class="shop">
+          <div class="shop__photo reveal">
+            <img src="assets/img/fachada-800.webp" srcset="assets/img/fachada-800.webp 800w, assets/img/fachada.webp 1292w" sizes="(max-width: 900px) 92vw, 600px" width="1292" height="736" alt="Fachada da Hello Donuts em Londrina: varanda com pergolado branco, paredes amarelas e o letreiro redondo da marca" loading="lazy" decoding="async">
+          </div>
+          <div class="shop__text reveal" style="--d:100ms">
+            <span class="kicker">A loja de Londrina</span>
+            <h2 class="title">Seu ponto de encontro <em>no Centro</em></h2>
+            <p>A Hello Donuts nasceu do desejo de criar um espaço onde cada visita fosse uma experiência única e inesquecível: o ponto de encontro perfeito, seja para um café rápido ou para momentos especiais com amigos e família.</p>
+            <p>Nosso compromisso começa na seleção dos melhores ingredientes, para garantir donuts sempre frescos e deliciosos. E a nossa equipe trabalha com paixão e carinho, sempre pronta para receber você com um sorriso, em um ambiente acolhedor e instagramável.</p>
+            <blockquote class="shop__quote">
+              <p>Nada aqui é sobre nós, é tudo sobre Ele!</p>
+              <footer>Equipe Hello Donuts</footer>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="visit">
+          <div class="visit__cards">
+            <div class="info reveal">
+              <span class="info__icon"><svg class="i " aria-hidden="true"><use href="#i-pin"/></svg></span>
+              <div>
+                <h3>Endereço</h3>
+                <p>Rua Goiás, 1820, Lojas 01 e 02<br>Centro, Londrina/PR</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Hello+Donuts+Rua+Goi%C3%A1s+1820+Centro+Londrina+PR" target="_blank" rel="noopener">Como chegar</a>
+              </div>
+            </div>
+            <div class="info reveal" style="--d:80ms">
+              <span class="info__icon"><svg class="i " aria-hidden="true"><use href="#i-clock"/></svg></span>
+              <div>
+                <h3>Horário</h3>
+                <p>Loja: todos os dias, das 12h às 20h<br>Delivery: das 9h30 às 21h</p>
+              </div>
+            </div>
+            <div class="info reveal" style="--d:160ms">
+              <span class="info__icon"><svg class="i i--fill " aria-hidden="true"><use href="#i-whats"/></svg></span>
+              <div>
+                <h3>Pedidos</h3>
+                <p>WhatsApp e telefone: <span class="nowrap">(43) 99125-2053</span></p>
+                <a href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+              </div>
+            </div>
+          </div>
+          <div class="visit__map reveal" style="--d:120ms">
+            <iframe src="https://www.google.com/maps?q=Rua+Goi%C3%A1s,+1820+-+Centro,+Londrina+-+PR&z=16&output=embed" title="Mapa: Hello Donuts na Rua Goiás, 1820, Centro de Londrina" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="units" aria-labelledby="unidades-titulo">
+      <div class="container units__inner">
+        <div class="reveal">
+          <span class="kicker">A família Hello</span>
+          <h2 id="unidades-titulo">Também tem Hello Donuts em Santa Catarina</h2>
+          <p>Este é o site da unidade de Londrina: cardápio, preços, horários e pedidos daqui valem só para a nossa loja. Para as outras unidades, fale direto com cada uma.</p>
+        </div>
+        <div class="units__list reveal" style="--d:100ms">
+          <a class="unit" href="https://www.instagram.com/hellodonutschapeco/" target="_blank" rel="noopener"><strong>Chapecó</strong><span><svg class="i " aria-hidden="true"><use href="#i-insta"/></svg> @hellodonutschapeco</span></a>
+          <a class="unit" href="https://www.instagram.com/hellodonutsfloripa/" target="_blank" rel="noopener"><strong>Florianópolis</strong><span><svg class="i " aria-hidden="true"><use href="#i-insta"/></svg> @hellodonutsfloripa</span></a>
+          <a class="unit" href="https://www.instagram.com/hellodonutsfloripa/" target="_blank" rel="noopener"><strong>São José</strong><span><svg class="i " aria-hidden="true"><use href="#i-insta"/></svg> @hellodonutsfloripa</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <img class="cta__donut" src="assets/img/cut/hero-donut.webp" width="291" height="282" alt="" loading="lazy" decoding="async">
+          <h2>Bateu a vontade?</h2>
+          <p>Chama a gente no WhatsApp e monte o seu pedido: para retirar na loja ou receber em casa.</p>
+          <div class="cta__actions">
+            <a class="btn btn--whats btn--lg" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg class="i i--fill " aria-hidden="true"><use href="#i-whats"/></svg> Pedir pelo WhatsApp</a>
+            <a class="btn btn--outline-ink btn--lg" href="cardapio.html">Ver cardápio <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contato">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/img/logo.webp" width="485" height="318" alt="Hello Donuts" loading="lazy">
+          <p>Life is better with donuts! Este é o site da unidade de Londrina, no Paraná.</p>
+        </div>
+        <nav aria-label="Rodapé">
+          <h2>Navegue</h2>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="cardapio.html">Cardápio</a></li>
+            <li><a href="#combo">Combo Felicidade</a></li>
+            <li><a href="#box">Hello Box</a></li>
+            <li><a href="#loja">A loja</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Contato</h2>
+          <ul>
+            <li><a href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg class="i i--fill " aria-hidden="true"><use href="#i-whats"/></svg> (43) 99125-2053</a></li>
+            <li><a href="https://www.instagram.com/hellodonuts_londrina/" target="_blank" rel="noopener"><svg class="i " aria-hidden="true"><use href="#i-insta"/></svg> @hellodonuts_londrina</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Hello+Donuts+Rua+Goi%C3%A1s+1820+Centro+Londrina+PR" target="_blank" rel="noopener"><svg class="i " aria-hidden="true"><use href="#i-pin"/></svg> <span>Rua Goiás, 1820, Lojas 01 e 02<br>Centro, Londrina/PR</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Peça também</h2>
+          <ul>
+            <li><a href="https://pratodigital.com.br/hellodonuts/" target="_blank" rel="noopener"><svg class="i " aria-hidden="true"><use href="#i-bag"/></svg> Delivery e retirada online</a></li>
+            <li><a href="https://www.ifood.com.br/delivery/londrina-pr/hello-donuts---londrina-centro/9e4b6aa0-ae2a-4994-b1fc-c3b305a0a804" target="_blank" rel="noopener"><svg class="i " aria-hidden="true"><use href="#i-ext"/></svg> iFood</a></li>
+            <li><span><svg class="i " aria-hidden="true"><use href="#i-clock"/></svg> <span>Loja: todos os dias, 12h às 20h<br>Delivery: 9h30 às 21h</span></span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> Hello Donuts &amp; Coffee · Unidade Londrina.</span>
+        <span>Preços consultados em 06/10/2026 e sujeitos a alteração.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="fab fab--auto" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="Falar com a loja pelo WhatsApp"><svg class="i i--fill " aria-hidden="true"><use href="#i-whats"/></svg></a>
+
+  <button class="cartbar" id="cartbar" type="button" data-cart-open aria-haspopup="dialog" hidden>
+    <span class="cartbar__icon"><svg class="i " aria-hidden="true"><use href="#i-cart"/></svg><span class="cartbar__n">0</span></span>
+    <span class="cartbar__label">Ver carrinho</span>
+    <strong class="cartbar__total">R$ 0,00</strong>
+  </button>
+
+  <dialog class="cart" id="cart" aria-labelledby="cart-title">
+    <div class="cart__panel">
+      <header class="cart__head">
+        <h2 id="cart-title">Seu carrinho <small class="cart__count"></small></h2>
+        <button class="cart__close" type="button" data-cart-close aria-label="Fechar carrinho"><svg class="i " aria-hidden="true"><use href="#i-x"/></svg></button>
+      </header>
+      <div class="cart__body">
+        <div class="cart__empty">
+          <span class="cart__empty-icon"><svg class="i " aria-hidden="true"><use href="#i-cart"/></svg></span>
+          <p><strong>Seu carrinho está vazio</strong>Toque no + dos produtos para montar o seu pedido.</p>
+          <a class="btn btn--primary" href="cardapio.html">Ver cardápio <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="cart__talk" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg class="i i--fill " aria-hidden="true"><use href="#i-whats"/></svg> Prefere conversar? Chame no WhatsApp</a>
+        </div>
+        <ul class="cart__list" id="cart-list" data-cart-full hidden></ul>
+        <label class="cart__obs" data-cart-full hidden>
+          <span>Observações <small>(opcional)</small></span>
+          <textarea id="cart-obs" rows="2" maxlength="300" placeholder="Ex.: Coca Zero no combo, cobertura rosa no Americano"></textarea>
+        </label>
+      </div>
+      <footer class="cart__foot" data-cart-full hidden>
+        <div class="cart__total"><span>Subtotal</span><strong id="cart-total">R$ 0,00</strong></div>
+        <p class="cart__note">A loja confirma os valores, a entrega ou retirada e o pagamento no WhatsApp.</p>
+        <a class="btn btn--whats btn--lg" id="cart-go" href="https://wa.me/5543991252053?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Hello%20Donuts%20Londrina%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg class="i i--fill " aria-hidden="true"><use href="#i-whats"/></svg> Finalizar pelo WhatsApp</a>
+        <button class="cart__clear" type="button">Esvaziar carrinho</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <template id="cart-row">
+    <li class="cart__item">
+      <span class="cart__thumb"><svg class="i " aria-hidden="true"><use href="#i-donut"/></svg></span>
+      <strong class="cart__name"></strong>
+      <span class="cart__sub price"></span>
+      <span class="cart__unit"></span>
+      <span class="qty">
+        <button class="qty__btn" type="button" data-step="-1"><svg class="i " aria-hidden="true"><use href="#i-minus"/></svg></button>
+        <output class="qty__n"></output>
+        <button class="qty__btn" type="button" data-step="1"><svg class="i " aria-hidden="true"><use href="#i-plus"/></svg></button>
+      </span>
+      <small class="cart__opt"></small>
+    </li>
+  </template>
+
+  <div class="sr-only" id="cart-live" aria-live="polite"></div>
+  <script type="application/json" id="hd-catalogo">{"fone":"5543991252053","itens":{"combo-felicidade":["Combo Felicidade",4990,"combo-felicidade","Escreva o refri nas observações: Coca-Cola, Coca Zero ou Guaraná Antarctica."],"hello-box-tradicional":["Hello Box Tradicional",4990,"box-tradicional",""],"hello-box-gourmet":["Hello Box Gourmet",6990,"box-gourmet",""],"hello-box-premium":["Hello Box Premium",8990,"box-premium",""],"ferrero-rocher":["Donut Ferrero Rocher",2990,"ferrero-rocher",""],"kinder-bueno":["Donut Kinder Bueno",2990,"kinder-bueno",""],"pistache":["Donut Pistache",2990,"pistache",""],"donut-americano":["Donut Americano",1450,"americano","Escreva a cor da cobertura nas observações: preto, branco, rosa ou azul."],"glazed":["Donut Glazed",1450,"glazed",""],"churros-sem-recheio":["Donut Churros sem recheio",1450,"churros-sem-recheio",""],"banoffe":["Donut Banoffe",2290,"banoffe",""],"chocolate":["Donut Chocolate",2290,"chocolate",""],"churros":["Donut Churros",2290,"churros",""],"maracuja":["Donut Maracujá",2290,"maracuja",""],"4-leites":["Donut 4 Leites",2290,"quatro-leites",""],"morango-com-chocolate-branco":["Donut Morango com Chocolate Branco",2490,"morango-branco",""],"morango-com-chocolate-preto":["Donut Morango com Chocolate Preto",2490,"morango-preto",""],"prestigio":["Donut Prestígio",2490,"prestigio",""],"red-velvet":["Donut Red Velvet",2490,"red-velvet",""],"homer":["Donut Homer",2490,"homer",""],"ninho-com-nutella":["Donut Ninho com Nutella",2590,"ninho-nutella",""],"ovomaltine":["Donut Ovomaltine",2590,"ovomaltine",""],"rafaello":["Donut Rafaello",2590,"rafaello",""],"m-m-s":["Donut M&M's",2590,"mms",""],"kit-kat":["Donut Kit Kat",2790,"",""],"calabresa":["Donut Calabresa",2490,"calabresa",""],"frango-com-cream-cheese":["Donut Frango com Cream Cheese",2490,"frango-cream-cheese",""],"pizza":["Donut Pizza",2490,"pizza",""],"caprese":["Donut Caprese",2790,"",""],"bolinho-de-4-leites":["Bolinho de 4 Leites",1590,"bolinho-quatro-leites",""],"bolinho-de-chocolate":["Bolinho de Chocolate",1590,"bolinho-chocolate",""],"bolinho-de-chocolate-branco-com-morango":["Bolinho de Chocolate Branco com Morango",1590,"bolinho-morango",""],"cookie-chocolate":["Cookie Chocolate",2290,"cookie-chocolate",""],"cookie-de-nutella":["Cookie de Nutella",2490,"cookie-nutella",""],"cookie-red-velvet":["Cookie Red Velvet",2290,"cookie-red-velvet",""],"iced-capuccino":["Iced Capuccino",2090,"iced-capuccino",""],"milkshake-homer":["Milkshake Homer",2490,"milk-homer",""],"milkshake-morango":["Milkshake Morango",2490,"milk-morango",""],"milkshake-ovomaltine":["Milkshake Ovomaltine",2490,"milk-ovomaltine",""],"milkshake-ninho-com-nutella":["Milkshake Ninho com Nutella",2490,"",""],"milkshake-fini":["Milkshake Fini",2490,"",""],"refrigerante-lata":["Refrigerante lata",650,"","Escreva o sabor nas observações: Coca-Cola, Coca-Cola Zero, Fanta Guaraná, Fanta Uva, Guaraná Antarctica, Sprite ou Sprite Zero."],"coca-cola-220-ml":["Coca-Cola 220 ml",450,"","Escreva nas observações: Original ou Zero."]}}</script>
+
+  <script src="assets/js/app.js?v=3" defer></script>
+</body>
+</html>
