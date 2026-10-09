@@ -436,7 +436,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 28px;pa
         <h3 tabindex="-1">Como podemos falar com você?</h3>
         <div class="fields">
           <label>Nome completo<input id="fName" type="text" autocomplete="name" placeholder="Seu nome"></label>
-          <label>WhatsApp<input id="fTel" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(00) 00000-0000"></label>
+          <label>WhatsApp<input id="fTel" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="xxxxxxxxxxx"></label>
         </div>
         <p class="err" id="err" role="alert"></p>
         <div class="actions"><button class="btn ghost" type="button" data-back="1">Voltar</button><button class="btn primary" type="button" id="to3">Continuar <i><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></button></div>
@@ -466,7 +466,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 28px;pa
         <div><dt>Dia</dt><dd id="sDay">—</dd></div>
         <div><dt>Horário</dt><dd id="sTime">—</dd></div>
       </dl>
-      <p class="info" id="info">Atendimento de seg a sex, das 08h às 18h.<br>Endereço: A definir<br><a href="https://instagram.com/dragabriellacavalcante" target="_blank" rel="noopener">@dragabriellacavalcante</a></p>
+      <p class="info" id="info">Atendimento de seg a sex, das 08h às 18h.<br>Endereço: A definir<br><a href="https://instagram.com/xxxxxxxxxxx" target="_blank" rel="noopener">@demonstração</a></p>
     </aside>
   </div>
 </section>
@@ -476,7 +476,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 28px;pa
   <span id="croLine">Cirurgiã-dentista, CRO a informar</span>
 </footer>
 
-<a class="fab show" id="fab" aria-label="Falar pelo WhatsApp" data-wa="Olá! Gostaria de mais informações." href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5A8.4 8.4 0 1 1 21 11.5z"></path></svg><span>WhatsApp</span></a>
+<a class="fab show" id="fab" aria-label="Falar pelo WhatsApp" data-wa="Olá! Gostaria de mais informações." href="https://wa.me/xxxxxxxxxxx?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5A8.4 8.4 0 1 1 21 11.5z"></path></svg><span>WhatsApp</span></a>
 
 <script src="config.js"></script>
 <script>
@@ -862,7 +862,7 @@ const booking = (() => {
   };
   $('#again').onclick = () => { S.svc = null; S.date = null; S.time = null; opts.querySelectorAll('input').forEach(i => i.checked = false); show(1); };
 
-  $('#info').innerHTML = `Atendimento de ${DOW[SCHEDULE.weekdays[0]]} a ${DOW[SCHEDULE.weekdays[SCHEDULE.weekdays.length - 1]]}, das ${SCHEDULE.open.replace(':00','h')} às ${SCHEDULE.close.replace(':00','h')}.<br>Endereço: ${ADDRESS}<br><a href="https://instagram.com/dragabriellacavalcante" target="_blank" rel="noopener">@dragabriellacavalcante</a>`;
+  $('#info').innerHTML = `Atendimento de ${DOW[SCHEDULE.weekdays[0]]} a ${DOW[SCHEDULE.weekdays[SCHEDULE.weekdays.length - 1]]}, das ${SCHEDULE.open.replace(':00','h')} às ${SCHEDULE.close.replace(':00','h')}.<br>Endereço: ${ADDRESS}<br><a href="https://instagram.com/xxxxxxxxxxx" target="_blank" rel="noopener">@demonstração</a>`;
 
   /* chamado pelo carrossel */
   function pick(i){

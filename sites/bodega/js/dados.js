@@ -7,8 +7,8 @@
 // Informações de contato. Deixe em branco ("") o que ainda não tiver —
 // o site esconde automaticamente o que estiver vazio.
 const CONFIG = {
-  whatsapp: "5535999893555",   // só números, com DDI
-  telefoneFmt: "(35) 99989-3555",
+  whatsapp: "xxxxxxxxxxx",   // só números, com DDI
+  telefoneFmt: "xxxxxxxxxxx",
   instagram: "",               // só o usuário, sem @. Ex: "bodegapocos"
   endereco: "Av. Champagnat, 355 – São Domingos, Poços de Caldas – MG, 37701-860",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Bodega%2C+Av.+Champagnat%2C+355+-+S%C3%A3o+Domingos%2C+Po%C3%A7os+de+Caldas+-+MG%2C+37701-860",

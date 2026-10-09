@@ -137,7 +137,7 @@
 
     $$("[data-if]").forEach((el) => { if (!has(el.dataset.if)) el.hidden = true; });
 
-    const wa = has("whatsapp") ? `https://wa.me/${CONFIG.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent("Olá! Gostaria de fazer uma reserva na Bodega.")}` : "";
+    const wa = has("whatsapp") ? `https://wa.me/${CONFIG.whatsapp.replace(/[^\dx]/g, "")}?text=${encodeURIComponent("Olá! Gostaria de fazer uma reserva na Bodega.")}` : "";
     $$("[data-whatsapp]").forEach((a) => { if (wa) { a.href = wa; a.target = "_blank"; a.rel = "noopener"; } });
 
     $$("[data-instagram]").forEach((a) => {

@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CAPTURES = ROOT / "tools" / ".site-validation"
 NEW_SLUGS = (
     "marcela", "donuts", "chapavoadora", "gostoburger", "sabordapraca",
-    "tmlanches", "eksdigital", "oficinaautomotivo", "solaris", "pastelaria",
+    "tmlanches", "oficinaautomotivo", "solaris", "pastelaria",
     "pegadaspet", "recantodoguerreiro", "sanches",
 )
 

@@ -15,6 +15,8 @@ import subprocess
 from pathlib import Path
 from urllib.parse import quote
 
+from sanitize_demo_contacts import sanitize_site
+
 
 PORTFOLIO = Path(__file__).resolve().parents[1]
 WORKSPACE = PORTFOLIO.parent
@@ -49,7 +51,6 @@ MANIFEST = [
     ("gostoburger", "Sites/-- Sites CLONE/Hamburgueria_GOSTOBurger", "alimentacao", "vite", False),
     ("sabordapraca", "Sites/-- Sites CLONE/Hamburgueria_SabordaPraça", "alimentacao", "vite", False),
     ("tmlanches", "Sites/-- Sites CLONE/Hamburgueria_TMLanches", "alimentacao", "vite", False),
-    ("eksdigital", "Sites/-- Sites CLONE/Negócios_Eksdigital", "tecnologia", "vite", False),
     ("oficinaautomotivo", "Sites/-- Sites CLONE/Oficina_Automotivo", "institucional", "vite", False),
     ("solaris", "Sites/-- Sites CLONE/PainelSolar_Solaris", "energia", "vite", False),
     ("pastelaria", "Sites/-- Sites CLONE/Pastelaria_Demo", "alimentacao", "vite", False),
@@ -430,6 +431,9 @@ def main() -> None:
             publish_vite(slug, WORKSPACE / source)
         elif method == "entec":
             publish_entec(WORKSPACE / source)
+        counts = sanitize_site(SITES / slug)
+        if counts:
+            print(f"{slug}: anonymized demo contacts {dict(counts)}", flush=True)
 
 
 if __name__ == "__main__":

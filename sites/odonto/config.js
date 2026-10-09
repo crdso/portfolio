@@ -2,7 +2,7 @@
    CONFIGURAÇÃO DO SITE  (é o único arquivo que você precisa editar)
    Depois de editar, publique de novo (veja o LEIA-ME.txt).
    ===================================================================== */
-const WHATSAPP = "5500000000000";      // DDI + DDD + número, só dígitos
+const WHATSAPP = "xxxxxxxxxxx";      // DDI + DDD + número, só dígitos
 const SERVICES = [
   {short:"Check-up",    name:"Check-up odontológico", desc:"Avaliação completa da saúde da boca, com orientação e plano de cuidado.", price:""},
   {short:"Limpeza",     name:"Limpeza dental",        desc:"Remoção de placa e tártaro para uma boca limpa e saudável.",              price:""},

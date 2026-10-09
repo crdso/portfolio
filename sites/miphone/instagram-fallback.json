@@ -6,13 +6,13 @@
   "followers": 21800,
   "following": 1872,
   "bio": "Loja de celulares\nTecnologia para você e sua família 🧡\nCelulares • Acessórios • Assistência\nUpgrade com seu aparelho usado\nFale com nossos consultores no link",
-  "profileUrl": "https://www.instagram.com/mi.phonestore/",
+  "profileUrl": "https://instagram.com/xxxxxxxxxxx",
   "posts": [
-    { "id": "1", "image": "/instagram/fixado1.jpg", "permalink": "https://www.instagram.com/mi.phonestore/", "type": "image", "alt": "MiPhone - iPhone seminovo revisado" },
-    { "id": "2", "image": "/instagram/fixado2.jpg", "permalink": "https://www.instagram.com/mi.phonestore/", "type": "video", "alt": "MiPhone - bastidores da bancada" },
-    { "id": "3", "image": "/instagram/fixado3.jpg", "permalink": "https://www.instagram.com/mi.phonestore/", "type": "image", "alt": "MiPhone - detalhe do aparelho" },
-    { "id": "4", "image": "/instagram/post4.jpg", "permalink": "https://www.instagram.com/mi.phonestore/", "type": "image", "alt": "MiPhone - atendimento" },
-    { "id": "5", "image": "/instagram/post5.jpg", "permalink": "https://www.instagram.com/mi.phonestore/", "type": "video", "alt": "MiPhone - entrega" },
-    { "id": "6", "image": "/instagram/post6.jpg", "permalink": "https://www.instagram.com/mi.phonestore/", "type": "image", "alt": "MiPhone - acessórios" }
+    { "id": "1", "image": "/instagram/fixado1.jpg", "permalink": "https://instagram.com/xxxxxxxxxxx", "type": "image", "alt": "MiPhone - iPhone seminovo revisado" },
+    { "id": "2", "image": "/instagram/fixado2.jpg", "permalink": "https://instagram.com/xxxxxxxxxxx", "type": "video", "alt": "MiPhone - bastidores da bancada" },
+    { "id": "3", "image": "/instagram/fixado3.jpg", "permalink": "https://instagram.com/xxxxxxxxxxx", "type": "image", "alt": "MiPhone - detalhe do aparelho" },
+    { "id": "4", "image": "/instagram/post4.jpg", "permalink": "https://instagram.com/xxxxxxxxxxx", "type": "image", "alt": "MiPhone - atendimento" },
+    { "id": "5", "image": "/instagram/post5.jpg", "permalink": "https://instagram.com/xxxxxxxxxxx", "type": "video", "alt": "MiPhone - entrega" },
+    { "id": "6", "image": "/instagram/post6.jpg", "permalink": "https://instagram.com/xxxxxxxxxxx", "type": "image", "alt": "MiPhone - acessórios" }
   ]
 }
